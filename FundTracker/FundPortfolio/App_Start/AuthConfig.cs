@@ -26,7 +26,9 @@ namespace FundPortfolio
 			//    appId: "",
 			//    appSecret: "");
 
-			//OAuthWebSecurity.RegisterGoogleClient();
+			OAuthWebSecurity.RegisterGoogleClient();
+				
+			
 		}
 	}
 }
