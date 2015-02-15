@@ -1,4 +1,173 @@
-﻿html {
+﻿/* Header css */
+
+header {
+	margin: 0;
+	width: 100%;
+}
+#header-upper {
+	margin: 0;
+	width: 100%;
+	height: 66px;
+	
+    background: -webkit-linear-gradient(rgb(41, 42, 71), #05A);
+    background: -o-linear-gradient(rgb(41, 42, 71), #05A);
+    background: -moz-linear-gradient(rgb(41, 42, 71), #05A);
+    background: linear-gradient(rgb(41, 42, 71), #05A);
+}
+#header-upper a {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#header-lower {
+	margin: 0;
+	width: 100%;
+	overflow: hidden;
+
+	border-style: solid;
+	border-width: 6px;
+	border-color: #000;
+	
+	border-left: none;
+	border-right: none;
+
+	background-color: #FFFFFF;
+
+/*    background: -webkit-linear-gradient(rgb(65, 121, 186), #CBE1E5, rgb(116, 123, 129));
+    background: -o-linear-gradient(rgb(65, 121, 186), #CBE1E5, rgb(116, 123, 129));
+    background: -moz-linear-gradient(rgb(65, 121, 186), #CBE1E5, rgb(116, 123, 129));
+    background: linear-gradient(rgb(65, 121, 186), #CBE1E5, rgb(116, 123, 129));
+*/}
+.logo {
+	margin: 0px;
+}
+.login-bubble {
+	display: table;
+
+	padding: 9px 6px 9px 14px;
+	
+	border-style: none none solid solid;
+	border-width: 3px;
+	border-color: #000;
+	border-radius: 0px 0px 0px 9px;
+	-moz-border-radius: 0px 0px 0px 9px;
+	-webkit-border-radius: 0px 0px 0px 9px;
+
+	background-color: #F5F5F5;
+
+	-webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.login-bubble a.vertical-divider {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000;
+}
+
+div.nav-options {
+	/*display: table;*/
+	margin-left: 10px;
+    /*margin-right: auto;*/
+
+    font-size: 19px;
+    font-style: bold;
+    /*font-variant: small-caps;*/
+}
+
+div.nav-option {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+div.search {
+    margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+    padding: 3px;
+    padding-left: 5px;
+    border: solid;
+    border-width: 1px;
+}
+
+#logoutForm {
+    display: inline;
+}
+
+#logoutForm a:not(:last-child){
+    display: none;
+}
+
+
+/* Main css */
+html, body {
+	margin: 0;
+	width: 100%;
+    background-color: #246093;
+}
+
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.top {
+	vertical-align: top;
+}
+
+.vcenter {
+	vertical-align: middle;
+}
+.hcenter {
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.section {
+	display: table;
+	
+	margin-top: 15px;
+
+	padding: 20px;
+	padding-top: 0px;
+
+	border-style: solid;
+	border-width: 3px;
+	border-color: #000;
+	border-radius: 25px;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+
+	background-color: #FFFFFF;
+
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+div.hdivider {
+	position: relative;
+
+	left: -20px;
+
+	border-top-style: dotted;
+	border-width: 1px;
+	border-color: #A1A1A1;
+
+	margin-top: 13px;
+	margin-bottom: 13px;
+
+	width: calc(100% + 40px);
+}
+
+/* Pre-exisiting css */
+
+
+html {
     background-color: #e2e2e2;
     margin: 0;
     padding: 0;
@@ -14,13 +183,13 @@ body {
     padding: 0;
 }
 
-a {
+/*a {
     color: #333;
     outline: none;
     padding-left: 3px;
     padding-right: 3px;
     text-decoration: underline;
-}
+}*/
 
     a:link, a:visited,
     a:active, a:hover {
@@ -424,7 +593,7 @@ label.checkbox {
     display: inline;
 }
 
-input, textarea {
+/*input, textarea {
     border: 1px solid #e2e2e2;
     background: #fff;
     color: #333;
@@ -432,7 +601,7 @@ input, textarea {
     margin: 5px 0 6px 0;
     padding: 5px;
     width: 300px;
-}
+}*/
 
 textarea {
     font-family: inherit;
@@ -714,9 +883,9 @@ tr.pager td {
         }
 
     /* forms */
-    input {
+    /*input {
         width: 90%;
-    }
+    }*/
 
     /* login page */
     #loginForm {
