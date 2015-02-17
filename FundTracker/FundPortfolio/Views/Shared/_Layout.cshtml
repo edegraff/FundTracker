@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <title>Fund Tracker - @ViewBag.Title</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     @Styles.Render("~/Content/css")
@@ -56,17 +56,15 @@
 
     <div id="body">
         @RenderSection("featured", required: false)
-        <section class="content-wrapper main-content clear-fix">
             @RenderBody()
-        </section>
     </div>
-    <footer>
+    @*<footer>
         <div class="content-wrapper">
             <div class="float-left">
                 <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
             </div>
         </div>
-    </footer>
+    </footer>*@
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
 </body>
