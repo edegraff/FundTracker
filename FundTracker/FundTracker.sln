@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundPortfolio", "FundPortfo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundPortfolio.Tests", "FundPortfolio.Tests\FundPortfolio.Tests.csproj", "{3BD57362-ACC8-46B6-8C49-033CF64A24AD}"
 EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "FundPortfolio.Azure", "FundPortfolio.Azure\FundPortfolio.Azure.ccproj", "{BCEFDBAB-41B2-4906-BC3B-22854E3FD212}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3BD57362-ACC8-46B6-8C49-033CF64A24AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BD57362-ACC8-46B6-8C49-033CF64A24AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BD57362-ACC8-46B6-8C49-033CF64A24AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCEFDBAB-41B2-4906-BC3B-22854E3FD212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCEFDBAB-41B2-4906-BC3B-22854E3FD212}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCEFDBAB-41B2-4906-BC3B-22854E3FD212}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCEFDBAB-41B2-4906-BC3B-22854E3FD212}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
