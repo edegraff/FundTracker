@@ -15,7 +15,7 @@
 <body>
     <header>
         <div id="header-upper">
-            <div class="left"><a href="~/Views/Home/Index.cshtml"><img class="logo" src="~/Images/FundTrackerLogo.png"></a></div>
+            <div class="left"><a href="/Home/Index"><img class="logo" src="~/Images/FundTrackerLogo.png"></a></div>
 
             @{ if (Request.IsAuthenticated) //if logged in
                 {
@@ -41,13 +41,12 @@
         </div>
         <div id="header-lower">
             <div class="nav-options">
-                <div class="nav-option left"><a href="index.html">Funds</a></div>
-                <div class="nav-option left"><a href="index.html">Reporting</a></div>
-                <div class="nav-option left"><a href="index.html">Portfolio</a></div>
-                <div class="nav-option left"><a href="index.html">Notifications</a></div>
-                <div class="nav-option left" style="display:none"><a href="index.html">Home</a></div>
+                <a class="nav-option left" href="/Home/Index>Funds</a>
+                <a class="nav-option left" href="/Home/Index">Reporting</a>
+                <a class="nav-option left" href="/Home/Index">Portfolio</a>
+                <a class="nav-option left" href="/Home/Index">Notifications</a>
                 <div class="search right">
-                    <input class="vcenter" name="search-box" type="text" placeholder="Search..." style="border: none; outline: none;">
+                    <input class="vcenter" name="search-box" type="text" placeholder="Search Funds..." style="border: none; outline: none;">
                     <input class="vcenter" name="search-button" type="image" src="~/Images/button_search.png">
                 </div>
             </div>
@@ -58,13 +57,6 @@
         @RenderSection("featured", required: false)
             @RenderBody()
     </div>
-    @*<footer>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
-            </div>
-        </div>
-    </footer>*@
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
 </body>
