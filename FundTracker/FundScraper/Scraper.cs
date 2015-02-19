@@ -5,9 +5,10 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using FundTracker.Common;
 using Newtonsoft.Json;
 
-namespace FundScraper
+namespace FundTracker.FundScraper
 {
     class Scraper
     {
@@ -113,6 +114,10 @@ namespace FundScraper
                 string[] date = json.Root.ElementAt(2).ToString().Split();
                 fund.currentDate = DateTime.Now;
             }
+
+			var db = new Database();
+			db.Funds.AddRange(this.funds);
+			
         }
 
     }
