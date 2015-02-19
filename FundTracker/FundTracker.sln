@@ -8,6 +8,7 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundPortfolio.Tests", "FundPortfolio.Tests\FundPortfolio.Tests.csproj", "{3BD57362-ACC8-46B6-8C49-033CF64A24AD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundScraper", "FundScraper\FundScraper.csproj", "{5D035291-2BC0-4362-B874-1BDC056C543F}"
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "FundPortfolio.Azure", "FundPortfolio.Azure\FundPortfolio.Azure.ccproj", "{BCEFDBAB-41B2-4906-BC3B-22854E3FD212}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +28,10 @@ Global
 		{5D035291-2BC0-4362-B874-1BDC056C543F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D035291-2BC0-4362-B874-1BDC056C543F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D035291-2BC0-4362-B874-1BDC056C543F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCEFDBAB-41B2-4906-BC3B-22854E3FD212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCEFDBAB-41B2-4906-BC3B-22854E3FD212}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCEFDBAB-41B2-4906-BC3B-22854E3FD212}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCEFDBAB-41B2-4906-BC3B-22854E3FD212}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
