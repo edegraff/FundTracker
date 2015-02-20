@@ -37,7 +37,8 @@ namespace FundPortfolio.Controllers
 		{
 			ViewBag.Funds = (from funds in db.Funds
 							 where funds.name.Contains(searchBox)
-							 select funds).ToList();
+							 group funds by funds.id into eachFund
+							 select eachFund.FirstOrDefault()).ToList();
 			var k = (from funds in db.Funds select funds).ToList();
 			return View();
 		}

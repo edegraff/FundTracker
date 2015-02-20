@@ -48,12 +48,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201502201631416_FundEntityPrimaryKeyChange.cs" />
+    <Compile Include="Migrations\201502201631416_FundEntityPrimaryKeyChange.Designer.cs">
+      <DependentUpon>201502201631416_FundEntityPrimaryKeyChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FundEntity.cs" />
     <Compile Include="Models\GeneralModelDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201502201631416_FundEntityPrimaryKeyChange.resx">
+      <DependentUpon>201502201631416_FundEntityPrimaryKeyChange.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

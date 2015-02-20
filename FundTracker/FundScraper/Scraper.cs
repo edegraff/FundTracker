@@ -115,14 +115,12 @@ namespace FundTracker.FundScraper
                 string[] date = json.Root.ElementAt(2).ToString().Split();
                 fund.currentDate = DateTime.Now;
             }
-
         }
 
 		private void SaveFundData()
 		{
 			using (var db = new Database())
 			{
-				db.Funds.Add(new FundEntity() { id = "123", currentDate = DateTime.Now, currentValue = 0, name = "test" });
 				db.Funds.AddRange(this.funds);
 				db.SaveChanges();
 			}
