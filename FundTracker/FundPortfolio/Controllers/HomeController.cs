@@ -39,7 +39,6 @@ namespace FundPortfolio.Controllers
 							 where funds.name.Contains(searchBox)
 							 group funds by funds.id into eachFund
 							 select eachFund.FirstOrDefault()).ToList();
-			var k = (from funds in db.Funds select funds).ToList();
 			return View();
 		}
 	}
