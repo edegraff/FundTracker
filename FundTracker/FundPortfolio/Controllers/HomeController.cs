@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FundTracker.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,8 @@ namespace FundPortfolio.Controllers
 	[RequireHttps]
 	public class HomeController : Controller
 	{
+		Database db = new Database();
+
 		public ActionResult Index()
 		{
 			ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
@@ -27,6 +30,15 @@ namespace FundPortfolio.Controllers
 		{
 			ViewBag.Message = "Your contact page.";
 
+			return View();
+		}
+
+		public ActionResult SearchResults(String searchBox)
+		{
+			ViewBag.Funds = (from funds in db.Funds
+							 where funds.name.Contains(searchBox)
+							 select funds).ToList();
+			var k = (from funds in db.Funds select funds).ToList();
 			return View();
 		}
 	}

@@ -34,6 +34,7 @@ namespace FundTracker.FundScraper
             RetrieveHTML();
             ParseHTML();
             ParseJSON();
+			SaveFundData();
         }
 
         private void RetrieveHTML()
@@ -115,10 +116,16 @@ namespace FundTracker.FundScraper
                 fund.currentDate = DateTime.Now;
             }
 
-			var db = new Database();
-			db.Funds.AddRange(this.funds);
-			
         }
 
+		private void SaveFundData()
+		{
+			using (var db = new Database())
+			{
+				db.Funds.Add(new FundEntity() { id = "123", currentDate = DateTime.Now, currentValue = 0, name = "test" });
+				db.Funds.AddRange(this.funds);
+				db.SaveChanges();
+			}
+		}
     }
 }

@@ -46,8 +46,11 @@
                 <a class="nav-option left" href="/Home/Index">Portfolio</a>
                 <a class="nav-option left" href="/Home/Index">Notifications</a>
                 <div class="search right">
-                    <input class="vcenter" name="search-box" type="text" placeholder="Search Funds..." style="border: none; outline: none;">
-                    <input class="vcenter" name="search-button" type="image" src="~/Images/button_search.png">
+					@using (Html.BeginForm("searchResults", "home"))
+					 {
+						@Html.TextBox("searchBox", null, new { @class = "vcenter searchbox", @placeholder = "Search Funds..." });
+						<input class="vcenter" name="search-button" type="image" src="~/Images/button_search.png">
+					 }
                 </div>
             </div>
         </div>

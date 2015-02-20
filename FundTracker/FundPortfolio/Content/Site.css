@@ -225,6 +225,10 @@ div.hdivider {
 	width: calc(100% + 40px);
 }
 
+.searchbox{
+	border: none; 
+	outline: none;
+}
 /* Styling for auto generated elements 
     -----------------------------------------------------------------------------------------------------------------------------------------------
 */
