@@ -1,285 +1,38 @@
-﻿/* Header css */
+﻿/* Add sidebar options to small drop down */
 
-header {
-	margin: 0;
-	width: 100%;
-
-    background: -webkit-linear-gradient(#223A1D, #5BC744, #5CDD3F);
-    background: -o-linear-gradient(#223A1D, #5BC744, #5CDD3F);
-    background: -moz-linear-gradient(#223A1D, #5BC744, #5CDD3F);
-    background: linear-gradient(#223A1D, #5BC744, #5CDD3F);
-}
-#header-upper {
-	margin: 0;
-	width: 100%;
-	height: 50px;
-}
-#header-upper a {
-	margin-left: 5px;
-	margin-right: 5px;
-}
-
-#header-lower {
-	margin: 0;
-	width: 100%;
-	overflow: hidden;
-
-    border-style: solid;
-	border-width: 1px;
-	border-color: #7B7B7B;
-	
-	border-left: none;
-	border-right: none;
-
-	/*background-color: #FFFFFF;*/
-
-    background: -webkit-linear-gradient(#E0E0E0, #FFFFFF, #F5F5F5, #ECECEC, #A1A1A1);
-    background: -o-linear-gradient(#E0E0E0, #FFFFFF, #F5F5F5, #ECECEC, #A1A1A1);
-    background: -moz-linear-gradient(#E0E0E0, #FFFFFF, #F5F5F5, #ECECEC, #A1A1A1);
-    background: linear-gradient(#E0E0E0, #FFFFFF, #F5F5F5, #ECECEC, #A1A1A1);
-}
-.logo {
-	margin: 0px;
-}
-.login-bubble {
-	display: table;
-
-	padding: 9px 6px 9px 14px;
-	
-	border-style: none none solid solid;
-	border-width: 2px;
-	border-color: #153F15;
-	border-radius: 0px 0px 0px 6px;
-	-moz-border-radius: 0px 0px 0px 6px;
-	-webkit-border-radius: 0px 0px 0px 6px;
-
-	background-color: #F5F5F5;
-
-	-webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-}
-a.vertical-divider {
-	border-style: solid;
-	border-width: 1px;
-	border-color: #000;
-}
-
-div.nav-options {
-	/*display: table;*/
-	margin-left: 10px;
-    /*margin-right: auto;*/
-
-    font-size: 19px;
-    font-style: bold;
-    /*font-variant: small-caps;*/
-}
-
-a.nav-option:first-child {
-    border-left-style: solid;
-}
-
-a.nav-option {
-    border-right-style: solid;
-    border-width: 1px;
-    border-color: #AEAEAE;
-
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-
-    font-family: Verdana, fantasy, sans-serif;
-    font-size: 1em;
-    text-decoration: none;
-    color: #B6C6CF;
-    text-shadow: 1px 1px 0px #000000, -1px 1px 0px #000000, -1px -1px 0px #000000, 1px -1px 0px #000000;
-}
-
-a.nav-option:hover {
-    background: -webkit-linear-gradient(#C3C3C3, #EFEFEF, #F7F7F7, #FFFFFF, #E7E7E7);
-    background: -o-linear-gradient(#C3C3C3, #EFEFEF, #F7F7F7, #FFFFFF, #E7E7E7);
-    background: -moz-linear-gradient(#C3C3C3, #EFEFEF, #F7F7F7, #FFFFFF, #E7E7E7);
-    background: linear-gradient(#C3C3C3, #EFEFEF, #F7F7F7, #FFFFFF, #E7E7E7);
-    color: #EEEFFC;
-}
-
-div.search {
-    background: white;
-
-    margin-left: 20px;
-	margin-right: 20px;
-	margin-top: 5px;
-	margin-bottom: 5px;
-
-    padding: 3px;
-    padding-left: 5px;
-    border: solid;
-    border-width: 1px;
-}
-
-#logoutForm {
-    display: inline;
-}
-
-#logoutForm a:not(:last-child){
+ul.sidebar-nav-options {
     display: none;
 }
 
-
-/* Main css */
-html, body {
-	margin: 0;
-    padding: 0;
-	width: 100%;
-    height: 100vh;
-    position: fixed;
-    overflow: inherit;
-    /*background-color: #B4E0B1;*/
-    background: -webkit-linear-gradient(#D3FFC9, #398B2A);
-    background: -o-linear-gradient(#D3FFC9, #398B2A);
-    background: -moz-linear-gradient(#D3FFC9, #398B2A);
-    background: linear-gradient(#D3FFC9, #398B2A);
-}
-
-.left {
-	float: left;
-}
-.right {
-	float: right;
-}
-.top {
-	vertical-align: top;
-}
-
-.vcenter {
-	vertical-align: middle;
-}
-.hcenter {
-	display: table;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.hspan {
-    width: 100%;
-}
-
-.medium-padding {
-    padding: 10px;
-}
-
-.divider-right {
-    padding-right: 30px;
-    margin-right: 30px;
-    border-right-style: solid;
-    border-right-width: 2px;
-    border-right-color: rgb(145, 145, 145);
-}
-
-.htwo {
-    width: 50%;
-}
-
-.indent {
-    margin-left: 60px;
-}
-
-.section {
-	display: table;
-	
-	margin-top: 20px;
-    margin-bottom: 20px;
-
-	padding: 20px;
-	padding-top: 0px;
-    padding-bottom: 0px;
-
-	border-style: solid;
-	border-width: 1px;
-	border-color: #000;
-    border-radius: 3px;
-
-    box-shadow: 6px 8px 0px rgba(6, 6, 6, 0.2);
-
-	background-color: #FFFFFF;
-
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-
-    font-style: normal;
-    font-family: sans-serif;
-}
-
-div.hdivider {
-	position: relative;
-
-	left: -20px;
-
-	border-top-style: dotted;
-	border-width: 1px;
-	border-color: #A1A1A1;
-
-	margin-top: 13px;
-	margin-bottom: 13px;
-
-	width: calc(100% + 40px);
-}
-
-.searchbox{
-	border: none; 
-	outline: none;
-}
-/* Styling for auto generated elements 
-    -----------------------------------------------------------------------------------------------------------------------------------------------
-*/
-
-/* forms */
-
-fieldset {
-    border: none;
-    margin: 0;
-    margin-left: 60px;
-    padding: 0;
-}
-
-    fieldset legend {
-        display: none;
-    }
-
-    fieldset ol {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-    }
-
-        fieldset ol li {
-            margin-top: 15px;
-            margin-bottom: 15px;
-        }
-
-label {
+div.navbar-collapse.collapse.in ul.sidebar-nav-options {
     display: block;
-    font-size: 1.2em;
-    font-weight: 300;
 }
 
-label.checkbox {
-    display: inline;
-}
+/* for the log out button */
 
-    input[type="submit"],
-    input[type="button"],
-    button {
-        font-size: 1.2em;
-        font-weight: 300;
-        padding: 15px;
-        padding-top: 3px;
-        padding-bottom: 3px;
-        margin-right: 8px;
-        width: auto;
+.nav>li>form>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+.navbar-nav>li>form>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px;
+}
+@media (min-width: 768px) {
+    .navbar-nav > li > form > a {
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
+}
+.navbar-inverse .navbar-nav>li>form>a {
+    color: #9d9d9d;
+}
 
-table.bold tr td:first-child {
-    font-size: 1.3em;
-    padding-left: 15px;
+.navbar-inverse .navbar-nav > li > form > a:hover,
+.navbar-inverse .navbar-nav > li > form > a:focus {
+  color: #fff;
+  background-color: transparent;
+  text-decoration: none;
 }
