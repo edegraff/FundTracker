@@ -1,11 +1,13 @@
 ﻿/* Add sidebar options to small drop down */
 
-ul.sidebar-nav-options {
-    display: none;
+@media (max-width: 768px) {
+    div.navbar-collapse.collapse.in ul.sidebar-nav-options {
+        display: block;
+    }
 }
 
-div.navbar-collapse.collapse.in ul.sidebar-nav-options {
-    display: block;
+ul.sidebar-nav-options {
+    display: none;
 }
 
 /* for the log out button */
