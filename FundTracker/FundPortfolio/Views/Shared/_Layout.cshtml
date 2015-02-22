@@ -28,6 +28,9 @@
                 @Html.ActionLink("FundTracker", "Index", "Home", routeValues: null, htmlAttributes: new { @class = "navbar-brand" })
             </div>
             <div id="navbar" class="navbar-collapse collapse">
+                <form class="navbar-form navbar-right search-form">
+                    <input type="text" class="form-control" placeholder="Search Funds...">
+                </form>
                 <ul class="nav navbar-nav navbar-right">
                     @{ if (Request.IsAuthenticated) //if logged in
                      {
@@ -47,9 +50,6 @@
                      }
                     }
                 </ul>
-                <form class="navbar-form navbar-right">
-                    <input type="text" class="form-control" placeholder="Search...">
-                </form>
                 <ul class="nav navbar-nav navbar-right sidebar-nav-options">
                     <li>@Html.ActionLink("Funds", "Index", "Home")</li>
                     <li>@Html.ActionLink("Reporting", "Index", "Home")</li>

@@ -10,6 +10,13 @@ ul.sidebar-nav-options {
     display: none;
 }
 
+/* For the search bar */
+@media (max-width: 768px) {
+    .navbar-form.search-form {
+        margin-top: 0px;
+    }
+}
+
 /* for the log out button */
 
 .nav>li>form>a {
