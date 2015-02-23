@@ -7,7 +7,7 @@ namespace FundTracker.Common
 	public class Database : DbContext
 	{
 		public Database()
-			: base("DefaultConnection")
+			: base("AzureConnection")
 		{
 		
 		}

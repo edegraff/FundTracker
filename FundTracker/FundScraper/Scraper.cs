@@ -20,7 +20,6 @@ namespace FundTracker.FundScraper
         public Scraper(string url)
         {
             this.url = url;
-            this.ids = new string[] {"580", "581", "483", "583", "937"};
         }
 
         static void Main(string[] args)
@@ -32,7 +31,8 @@ namespace FundTracker.FundScraper
         public void Scrape()
         {
             RetrieveHTML();
-            ParseHTML();
+            ParseIds();
+            ParseNames();
             ParseJSON();
 			SaveFundData();
         }
@@ -66,7 +66,21 @@ namespace FundTracker.FundScraper
             this.html = data;
         }
 
-        private void ParseHTML()
+        private void ParseIds()
+        {
+            this.funds = new List<FundEntity>();
+            HtmlAgilityPack.HtmlDocument htmlDoc = new HtmlAgilityPack.HtmlDocument();
+            htmlDoc.LoadHtml(this.html);
+            var nodes = htmlDoc.DocumentNode.SelectNodes("//*[contains(text(), '.rates.x1_Month.rate\"')]");
+            var pids = new SortedSet<string>(); 
+            foreach(var node in nodes)
+            {
+                pids.Add(node.InnerText.Substring(node.InnerText.IndexOf("p") + 1, 3));
+            }
+            this.ids = pids.ToArray<string>();
+        }
+
+        private void ParseNames()
         {
             this.funds = new List<FundEntity>();
             HtmlAgilityPack.HtmlDocument htmlDoc = new HtmlAgilityPack.HtmlDocument();
