@@ -28,7 +28,7 @@
 				@Html.ActionLink("FundTracker", "Index", "Home", routeValues: null, htmlAttributes: new { @class = "navbar-brand" })
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
-				@using (Html.BeginForm("searchResults", "home", FormMethod.Post, new { @class = "navbar-form navbar-right search-form" }))
+				@using (Html.BeginForm("index", "fundEntities", FormMethod.Post, new { @class = "navbar-form navbar-right search-form" }))
 				{
 					@Html.TextBox("searchBox", null, new { @class = "form-control", @placeholder = "Search Funds..." });
 				}
@@ -53,7 +53,7 @@
 					}
 				</ul>
 				<ul class="nav navbar-nav navbar-right sidebar-nav-options">
-					<li>@Html.ActionLink("Funds", "Index", "Home")</li>
+					<li>@Html.ActionLink("Funds", "Index", "FundEntities")</li>
 					<li>@Html.ActionLink("Reporting", "Index", "Home")</li>
 					<li>@Html.ActionLink("Portfolio", "Index", "Home")</li>
 					<li>@Html.ActionLink("Notifications", "Index", "Home")</li>
@@ -66,7 +66,7 @@
 		<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar">
 				<ul class="nav nav-sidebar">
-					<li>@Html.ActionLink("Funds", "Index", "Home")</li>
+					<li>@Html.ActionLink("Funds", "Index", "FundEntities")</li>
 					<li>@Html.ActionLink("Reporting", "Index", "Home")</li>
 					<li>@Html.ActionLink("Portfolio", "Index", "Home")</li>
 					<li>@Html.ActionLink("Notifications", "Index", "Home")</li>

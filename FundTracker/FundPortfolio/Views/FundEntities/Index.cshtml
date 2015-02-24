@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Common.Models.FundEntity>
+
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Available Funds</h2>
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.name)
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					<a href="@(Url.Action("Details", "FundEntities", new { id = item.id}))">
+						@Html.DisplayFor(modelItem => item.name)
+					</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

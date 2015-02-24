@@ -32,13 +32,5 @@ namespace FundPortfolio.Controllers
 
 			return View();
 		}
-
-		public ActionResult SearchResults(String searchBox)
-		{
-			ViewBag.Funds = (from fund in db.Funds
-							 where fund.name.Contains(searchBox)
-							 select fund).ToList();
-			return View();
-		}
 	}
 }

@@ -1,0 +1,15 @@
+﻿@model Common.Models.FundEntity
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Html.DisplayFor(model => model.name)</h2>
+
+<div>
+	
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
