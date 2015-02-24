@@ -89,8 +89,8 @@ namespace FundTracker.FundScraper
             {
                 FundEntity f = new FundEntity();
                 f.id = id;
-                f.name = htmlDoc.DocumentNode.SelectSingleNode("//*[contains(text(), '" + id + ".rates.x1_Month.rate\"')]").ParentNode.ParentNode.ChildNodes[1].FirstChild.InnerText;
-                this.funds.Add(f);
+				f.name = htmlDoc.DocumentNode.SelectSingleNode("//*[contains(text(), '" + id + ".rates.x1_Month.rate\"')]").ParentNode.ParentNode.ChildNodes[1].Element("a").InnerText;
+				this.funds.Add(f);
             }
         }
 
