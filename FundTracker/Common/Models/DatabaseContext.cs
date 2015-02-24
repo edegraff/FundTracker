@@ -1,4 +1,5 @@
-namespace FundTracker.Common
+
+namespace Common.Models
 {
 	using System;
 	using System.Data.Entity;
@@ -9,7 +10,7 @@ namespace FundTracker.Common
 		public DatabaseContext()
 			: base("AzureConnection")
 		{
-		
+
 		}
 
 		// Add a DbSet for each entity type that you want to include in your model. For more information 

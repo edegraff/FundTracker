@@ -52,9 +52,14 @@
     <Compile Include="Migrations\201502201631416_FundEntityPrimaryKeyChange.Designer.cs">
       <DependentUpon>201502201631416_FundEntityPrimaryKeyChange.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201502240112386_ExtractFundHistoryFromFundEntity.cs" />
+    <Compile Include="Migrations\201502240112386_ExtractFundHistoryFromFundEntity.Designer.cs">
+      <DependentUpon>201502240112386_ExtractFundHistoryFromFundEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FundEntity.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
+    <Compile Include="Models\FundHistory.cs" />
     <Compile Include="Models\UserProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,6 +69,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201502201631416_FundEntityPrimaryKeyChange.resx">
       <DependentUpon>201502201631416_FundEntityPrimaryKeyChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502240112386_ExtractFundHistoryFromFundEntity.resx">
+      <DependentUpon>201502240112386_ExtractFundHistoryFromFundEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,18 +5,37 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Globalization;
 
-namespace FundTracker.Common
+namespace Common.Models
 {
 	[Table("FundEntity")]
     public class FundEntity
     {
-		[Key, Column(Order = 0)]
+		public FundEntity()
+		{
+			FundHistory = new List<FundHistory>();
+		}
+
+		[Key]
 		public String id { get; set; }
 
 
 		public string name { get; set; }
-		public float currentValue { get; set; }
-		[Key, Column(Order = 1)]
-		public DateTime currentDate { get; set; }
+
+		public virtual List<FundHistory> FundHistory { get; set; }
+		
+		[NotMapped]
+		public float CurrentValue
+		{
+			get
+			{
+				if (FundHistory.Count == 0)
+					throw new InvalidOperationException("There is no historic data for this fund");
+				return FundHistory[FundHistory.Count - 1].Value;
+			}
+			set
+			{
+				FundHistory.Add(new FundHistory() { Value = value, Date = DateTime.Now });
+			}
+		}
     }
 }

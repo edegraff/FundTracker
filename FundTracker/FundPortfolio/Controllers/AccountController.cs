@@ -10,7 +10,7 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using FundPortfolio.Filters;
 using FundPortfolio.Models;
-using FundTracker.Common;
+using Common.Models;
 
 namespace FundPortfolio.Controllers
 {

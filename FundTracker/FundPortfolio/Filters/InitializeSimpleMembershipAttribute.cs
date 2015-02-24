@@ -5,7 +5,7 @@ using System.Threading;
 using System.Web.Mvc;
 using WebMatrix.WebData;
 using FundPortfolio.Models;
-using FundTracker.Common;
+using Common.Models;
 
 namespace FundPortfolio.Filters
 {

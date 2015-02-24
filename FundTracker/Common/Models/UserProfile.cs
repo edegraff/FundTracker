@@ -6,7 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FundTracker.Common
+
+namespace Common.Models
 {
 	[Table("UserProfile")]
 	public class UserProfile

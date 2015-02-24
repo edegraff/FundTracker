@@ -1,4 +1,4 @@
-﻿using FundTracker.Common;
+﻿using Common.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,10 +35,9 @@ namespace FundPortfolio.Controllers
 
 		public ActionResult SearchResults(String searchBox)
 		{
-			ViewBag.Funds = (from funds in db.Funds
-							 where funds.name.Contains(searchBox)
-							 group funds by funds.id into eachFund
-							 select eachFund.FirstOrDefault()).ToList();
+			ViewBag.Funds = (from fund in db.Funds
+							 where fund.name.Contains(searchBox)
+							 select fund).ToList();
 			return View();
 		}
 	}
