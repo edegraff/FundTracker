@@ -4,9 +4,9 @@ namespace FundTracker.Common
 	using System.Data.Entity;
 	using System.Linq;
 
-	public class Database : DbContext
+	public class DatabaseContext : DbContext
 	{
-		public Database()
+		public DatabaseContext()
 			: base("AzureConnection")
 		{
 		
@@ -16,6 +16,7 @@ namespace FundTracker.Common
 		// on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
 		public virtual DbSet<FundEntity> Funds { get; set; }
+		public virtual DbSet<UserProfile> UserProfiles { get; set; }
 	}
 
 

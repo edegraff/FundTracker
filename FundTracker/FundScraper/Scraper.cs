@@ -133,7 +133,7 @@ namespace FundTracker.FundScraper
 
 		private void SaveFundData()
 		{
-			using (var db = new Database())
+			using (var db = new DatabaseContext())
 			{
 				db.Funds.AddRange(this.funds);
 				db.SaveChanges();

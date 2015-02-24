@@ -5,6 +5,7 @@ using System.Threading;
 using System.Web.Mvc;
 using WebMatrix.WebData;
 using FundPortfolio.Models;
+using FundTracker.Common;
 
 namespace FundPortfolio.Filters
 {
@@ -25,11 +26,11 @@ namespace FundPortfolio.Filters
 		{
 			public SimpleMembershipInitializer()
 			{
-				Database.SetInitializer<UsersContext>(null);
+				Database.SetInitializer<DatabaseContext>(null);
 
 				try
 				{
-					using (var context = new UsersContext())
+					using (var context = new DatabaseContext())
 					{
 						if (!context.Database.Exists())
 						{

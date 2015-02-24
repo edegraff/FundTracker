@@ -10,6 +10,7 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using FundPortfolio.Filters;
 using FundPortfolio.Models;
+using FundTracker.Common;
 
 namespace FundPortfolio.Controllers
 {
@@ -263,7 +264,7 @@ namespace FundPortfolio.Controllers
 			if (ModelState.IsValid)
 			{
 				// Insert a new user into the database
-				using (UsersContext db = new UsersContext())
+				using (DatabaseContext db = new DatabaseContext())
 				{
 					UserProfile user = db.UserProfiles.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
 					// Check if user already exists

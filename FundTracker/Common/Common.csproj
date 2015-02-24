@@ -54,7 +54,8 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FundEntity.cs" />
-    <Compile Include="Models\GeneralModelDatabase.cs" />
+    <Compile Include="Models\DatabaseContext.cs" />
+    <Compile Include="Models\UserProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
