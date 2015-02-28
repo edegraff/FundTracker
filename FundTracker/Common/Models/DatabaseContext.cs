@@ -18,6 +18,10 @@ namespace Common.Models
 
 		public virtual DbSet<FundEntity> Funds { get; set; }
 		public virtual DbSet<UserProfile> UserProfiles { get; set; }
+
+		public System.Data.Entity.DbSet<Common.Models.Notification> Notifications { get; set; }
+
+		public System.Data.Entity.DbSet<Common.Models.UserTransaction> UserTransactions { get; set; }
 	}
 
 

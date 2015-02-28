@@ -37,7 +37,7 @@ namespace FundPortfolio.Controllers
                 return HttpNotFound();
             }
             return View(fundEntity);
-        }      
+        } 
 
         protected override void Dispose(bool disposing)
         {

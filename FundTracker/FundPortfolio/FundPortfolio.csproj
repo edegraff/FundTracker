@@ -197,6 +197,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FundEntitiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NotificationsController.cs" />
+    <Compile Include="Controllers\UserTransactionsController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -314,6 +316,16 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\FundEntities\Details.cshtml" />
     <Content Include="Views\FundEntities\Index.cshtml" />
+    <Content Include="Views\Notifications\Create.cshtml" />
+    <Content Include="Views\Notifications\Delete.cshtml" />
+    <Content Include="Views\Notifications\Details.cshtml" />
+    <Content Include="Views\Notifications\Edit.cshtml" />
+    <Content Include="Views\Notifications\Index.cshtml" />
+    <Content Include="Views\UserTransactions\Create.cshtml" />
+    <Content Include="Views\UserTransactions\Delete.cshtml" />
+    <Content Include="Views\UserTransactions\Details.cshtml" />
+    <Content Include="Views\UserTransactions\Edit.cshtml" />
+    <Content Include="Views\UserTransactions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

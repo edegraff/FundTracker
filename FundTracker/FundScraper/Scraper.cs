@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Common.Models;
 using Newtonsoft.Json;
 
-namespace FundTracker.FundScraper
+namespace FundService
 {
 	class Scraper
 	{

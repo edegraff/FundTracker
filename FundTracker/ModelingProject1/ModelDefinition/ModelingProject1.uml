@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="3fa45840-67de-4910-a31d-9b456e9c2cb0"
+  name="ModelingProject1" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="32d2662c-e967-4b05-bcd9-932d94d3cea7">
+      <profileInstance
+        Id="3c82b182-420b-4425-b677-c551062c29f1"
+        name="CSharpProfile" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="10c582b5-5043-4cf1-a319-db5e071f5c06"
+        LastKnownName="Common"
+        LastKnownLocation="Package_1333.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="eb634b35-b41f-4cbd-a6bf-8debefa70704"
+        LastKnownName="System"
+        LastKnownLocation="Package2_1333.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="3c31eed3-3d4e-4bf8-9e53-9dac183bcd8a"
+        LastKnownName="FundPortfolio"
+        LastKnownLocation="Package_1334.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="6e4e39ec-fe87-4b72-97de-e4c1a75b9cf9"
+        name="Class1" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="d0eecc39-db07-4918-99e8-263d51096880"
+        name="Bob" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="b0d875b1-24b5-407c-93d6-d19bfb2e6199"
+        LastKnownName="FundTracker"
+        LastKnownLocation="Package_1338.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="41f2e96f-3fbd-4d2a-82e3-2814866fb22b"
+        name="Sequence1"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <lifelines>
+          <lifeline
+            Id="20079fb7-f56f-43c9-9064-fd2ba9329815"
+            name="fundEntity : FundEntity"
+            isActor="false"
+            lifelineDisplayName="fundEntity : FundEntity">
+            <represents>
+              <propertyMoniker
+                Id="45e6f747-818a-447b-a8e0-599e157cafd6"
+                LastKnownLocation="ModelingProject1.uml" />
+            </represents>
+          </lifeline>
+          <lifeline
+            Id="98967877-d832-4628-8592-a8e0778a5faa"
+            name="fundHistory : FundHistory"
+            isActor="false"
+            lifelineDisplayName="fundHistory : FundHistory">
+            <represents>
+              <propertyMoniker
+                Id="45337711-6df6-4c92-a564-5867fea5887e"
+                LastKnownLocation="ModelingProject1.uml" />
+            </represents>
+          </lifeline>
+        </lifelines>
+        <ownedAttributesInternal>
+          <property
+            Id="45e6f747-818a-447b-a8e0-599e157cafd6"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="1b76f1da-2870-4be7-8eaf-89b712a36764"
+                LastKnownName="FundEntity"
+                LastKnownLocation="Package1_1333.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="45337711-6df6-4c92-a564-5867fea5887e"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="7c7d959b-4185-46d9-9a81-eab3153a6bd3"
+                LastKnownName="FundHistory"
+                LastKnownLocation="Package1_1333.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="99885c23-865f-4e38-bf6f-31315591db13"
+        LastKnownName="FundService"
+        LastKnownLocation="Package_1530.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

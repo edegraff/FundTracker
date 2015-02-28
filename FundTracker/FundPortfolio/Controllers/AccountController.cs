@@ -266,12 +266,12 @@ namespace FundPortfolio.Controllers
 				// Insert a new user into the database
 				using (DatabaseContext db = new DatabaseContext())
 				{
-					UserProfile user = db.UserProfiles.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
+					UserProfile user = db.UserProfiles.FirstOrDefault(u => u.Email.ToLower() == model.UserName.ToLower());
 					// Check if user already exists
 					if (user == null)
 					{
 						// Insert name into the profile table
-						db.UserProfiles.Add(new UserProfile { UserName = model.UserName });
+						db.UserProfiles.Add(new UserProfile { Email = model.UserName });
 						db.SaveChanges();
 
 						OAuthWebSecurity.CreateOrUpdateAccount(provider, providerUserId, model.UserName);

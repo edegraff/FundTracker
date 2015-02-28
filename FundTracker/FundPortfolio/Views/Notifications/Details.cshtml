@@ -1,0 +1,51 @@
+﻿@model Common.Models.Notification
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Notification</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserProfile.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserProfile.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AutoReset)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AutoReset)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThresholdValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThresholdValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeSpan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeSpan)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

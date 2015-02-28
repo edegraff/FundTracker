@@ -12,16 +12,14 @@ namespace Common.Models
     {
 		public FundEntity()
 		{
-			FundHistory = new List<FundHistory>();
+			FundHistory = new List<FundData>();
 		}
 
 		[Key]
 		public String id { get; set; }
-
-
 		public string name { get; set; }
 
-		public virtual List<FundHistory> FundHistory { get; set; }
+		public virtual List<FundData> FundHistory { get; set; }
 		
 		[NotMapped]
 		public float CurrentValue
@@ -34,7 +32,7 @@ namespace Common.Models
 			}
 			set
 			{
-				FundHistory.Add(new FundHistory() { Value = value, Date = DateTime.Now });
+				FundHistory.Add(new FundData() { Value = value, Date = DateTime.Now });
 			}
 		}
     }

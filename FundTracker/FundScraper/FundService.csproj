@@ -7,7 +7,7 @@
     <ProjectGuid>{5D035291-2BC0-4362-B874-1BDC056C543F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FundScraper</RootNamespace>
+    <RootNamespace>FundService</RootNamespace>
     <AssemblyName>FundScraper</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -54,6 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FundService.cs" />
+    <Compile Include="Notifier.cs" />
     <Compile Include="Scraper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,0 +1,1541 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="99885c23-865f-4e38-bf6f-31315591db13"
+  name="FundService"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="382c5251-b01b-471c-9f7f-357d8108e7f1"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DFundService"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="360d931d-597e-4765-b722-cc53695374f5"
+        name="Scraper"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="23239c0f-e2b2-4aee-9988-859f3392b5bd"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundScraper%2Fbin%2FDebug%2FFundScraper.exe Namespace%3DFundService Type%3DScraper"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="42c11b1f-be39-484f-93e8-5f59c3157292"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f6e46406-bfbd-45e2-aca0-f3c921304375">
+                <propertyInstance
+                  Id="a3b86f8f-94c3-46dc-b14a-ee6db87e55b4"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="82d2b582-89b6-4f70-8dfb-1ad4096980e5">
+                <propertyInstance
+                  Id="0ebb6c59-fd04-4035-b681-2dab0f08b512"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="93465daa-9e6b-4ba0-b252-eea1d1da469e">
+                <propertyInstance
+                  Id="71994f5b-a69f-4921-8385-8ea66b29e0ef"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="75fb0443-4af6-447c-b6ac-5514c8bf5131">
+                <propertyInstance
+                  Id="a5cdcc3b-9838-48c3-bbd6-1720eb887b12"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6e9b4c9c-e851-4669-a790-79efab5c4cfc">
+                <propertyInstance
+                  Id="c19328e9-11c7-4879-a79d-6c51e435cade"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="b1e70835-5974-4c93-b804-de8b61dd4e99"
+            isDerived="false"
+            sourceEndRoleName="Scraper"
+            targetEndRoleName="FundEntity"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="1b76f1da-2870-4be7-8eaf-89b712a36764"
+              LastKnownName="FundEntity"
+              LastKnownLocation="Package1_1333.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8b23a992-f82b-46f7-9b3c-155765a3025c"
+                  name="Scraper"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="3046c543-2c15-497e-94a4-8c86a60a5067"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="4b1ddaa9-2f6c-4ed5-9939-81620caed461"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d3bfbbdc-f45b-4bd5-848e-16050648d293"
+                  name="FundEntity"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="02ed6e6b-fc32-4319-b4ae-a1b7caedc854"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="05b2c12a-a5b4-472e-a732-787bd31b7f52"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="cf27fd3a-0f9e-4b80-b8f0-28931e1a18fd"
+            name="url"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="9a8fd78c-bd3a-4264-8d33-d7c85fe8c8e7"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundScraper%2Fbin%2FDebug%2FFundScraper.exe Namespace%3DFundService Type%3DScraper Member%3Durl"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="38f4aa6e-f4f4-4bb9-ae1c-0b66901d6302"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c14b1896-c9a8-4426-8db7-abff0de71bfe">
+                    <propertyInstance
+                      Id="6b0a9c30-cbdf-4b2a-b2cd-1c2c63c0c124"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="06d687be-5581-4b8a-8104-90f240e1acb7">
+                    <propertyInstance
+                      Id="1828f19b-5bf3-408f-8482-40b49fc64c47"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="33c2f4b0-87a0-4516-b571-c4b66df27ac1">
+                    <propertyInstance
+                      Id="f61f7245-f3f1-408e-873b-ff6e689a682d"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4f854127-8a90-47c2-9749-34ef3339db1b">
+                    <propertyInstance
+                      Id="64936172-6b91-41c3-a20d-f548449e4c27"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fae49432-a9ea-49cd-bd7b-d682cb2ff2bc">
+                    <propertyInstance
+                      Id="b747f099-f470-475f-b68e-50f6dedb428f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3f153350-d16c-4c77-931e-61088e150008"
+            name="html"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="d0ce71ef-811a-45e0-8a05-5ce303d58896"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundScraper%2Fbin%2FDebug%2FFundScraper.exe Namespace%3DFundService Type%3DScraper Member%3Dhtml"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f6d5efc6-cb1d-477a-8760-37e71f3df204"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="45083e45-b456-461f-a427-74ee7667a1c7">
+                    <propertyInstance
+                      Id="fc4e3fcb-7d57-421f-afe8-bb548f821562"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="37903652-e289-4789-b710-c9dcdc596b65">
+                    <propertyInstance
+                      Id="b2c4578b-e4b6-401a-92f5-e543b58d25fd"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="902c01dd-c693-4c3f-8eae-159da15ad83f">
+                    <propertyInstance
+                      Id="9312a0fd-69ae-4657-b0d2-d59a39fc7f54"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4df49433-21f4-4da0-a7d5-8345e4d7066a">
+                    <propertyInstance
+                      Id="34786f49-5f65-420b-b346-747edcb9b533"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="66404d8e-2c20-4b08-b8dc-8eb802a7a7ab">
+                    <propertyInstance
+                      Id="56a750b1-38ad-4eae-899c-cc6f420adc2f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="35246332-56cb-4993-b54a-95797aaaeaa7"
+            name="ids"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isOrdered="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="315f10a4-b030-4eca-8f44-737bdd80b3a0"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundScraper%2Fbin%2FDebug%2FFundScraper.exe Namespace%3DFundService Type%3DScraper Member%3Dids"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d3bff9f5-1df0-41ed-b924-aaaffdcdab0b"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5e95fbc0-2cff-4b9d-aa2f-daf3b49a11b3">
+                    <propertyInstance
+                      Id="143768d7-6ec6-4ec4-9e6b-b16b706c6368"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f7f46e41-983e-4622-ac4f-44895998139e">
+                    <propertyInstance
+                      Id="1b3efcdf-cfd1-489f-97da-4f2103f148b7"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a54afc48-6266-4354-9d4a-7ae1f6c29a4a">
+                    <propertyInstance
+                      Id="48f7e16b-6dca-4491-b6ad-68eea9e88b9e"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="eefead44-e289-4c48-91f9-0a7f8dee2a1f">
+                    <propertyInstance
+                      Id="93edcfab-a156-4b35-aa81-aef3e258db99"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4e062b33-5e69-4a7b-aa08-5bf0537360a6">
+                    <propertyInstance
+                      Id="e2b6e11b-3ca2-4cc5-89df-c164b57a35b5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <lowerValueInternal>
+              <literalString
+                Id="30d85003-5ae0-4194-9f26-ba7695addb24"
+                name="Lower"
+                value="*" />
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString
+                Id="1ca68eb8-d00a-487a-8797-cc4ba308b65d"
+                name="Upper"
+                value="*" />
+            </upperValueInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="132faa7a-78c7-4635-83aa-06a73a29578b"
+            name="funds"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="b519d220-190f-47f2-bc2f-d912edb4d0f3"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundScraper%2Fbin%2FDebug%2FFundScraper.exe Namespace%3DFundService Type%3DScraper Member%3Dfunds"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="15a8df3d-65bf-4859-8ff4-ddac5dde6cd5"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a66d1bac-0982-472f-acd8-790ee3308015">
+                    <propertyInstance
+                      Id="466915c8-56de-47d8-ad0b-7623f7adb6ce"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="085f6188-bae2-4eb5-9e2f-41b23cddc188">
+                    <propertyInstance
+                      Id="26bd994d-11b4-4a87-b270-a0a31ffde304"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a0b5ad7e-fb3e-4f88-80e7-384aabf4055f">
+                    <propertyInstance
+                      Id="f7092613-4f7c-47fa-b7cb-17ca69b63e30"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bbd0c26a-8247-48a3-9ad8-c3aa52082248">
+                    <propertyInstance
+                      Id="38919451-94f1-44a2-b415-0e2e0aea0bc3"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="26087d5f-5f10-4e50-a504-b261b8e2e13c">
+                    <propertyInstance
+                      Id="6c470494-e059-4d25-8ff9-20057ce4ca7d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="534b89ca-a3a8-4600-9839-083bfacb9a37"
+                LastKnownName="List&lt;FundEntity‎&gt;"
+                LastKnownLocation="Package6_1333.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="7c7484fe-3fe4-433a-a9ea-3fbc3642e802"
+            name="Scraper"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="5b703653-0761-493f-bb06-84b3c3b81ad5"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundScraper%2Fbin%2FDebug%2FFundScraper.exe Namespace%3DFundService Type%3DScraper Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d54cfc67-6946-4d9d-91b7-e02d43bdac64"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="eb8cd769-c6ae-4202-b310-58fc7b200142">
+                    <propertyInstance
+                      Id="1da24b88-2897-4a5e-809b-7c96f540b7af"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="256dfa92-d00f-434f-838a-7d3b5310d6b1">
+                    <propertyInstance
+                      Id="e192b5bd-b5c5-4591-b109-b62a10ac16cd"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="26f26881-08dd-4e07-8952-973666b95cee">
+                    <propertyInstance
+                      Id="0b69da2e-719e-4c4b-99ea-433e7e8113b1"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="467ce7a4-d561-4fe7-8873-da675c73b780">
+                    <propertyInstance
+                      Id="6505bacf-7360-49f3-91c6-251b5e8d6688"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b3816d0b-908a-4633-b929-beacae41895e">
+                    <propertyInstance
+                      Id="bca27ea5-853f-47b8-8e8e-d8c7bdd9a9f7"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fa749ba9-1a58-4243-ab27-df2104feedd8">
+                    <propertyInstance
+                      Id="234ce792-7ac7-43d5-a814-878f84f487b5"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4b9c3774-c96a-455b-8a3b-6e4bd68455df"
+                  name="url"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="6ef6cea4-0aec-446f-9c12-cec0b54c39a2"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundScraper%2Fbin%2FDebug%2FFundScraper.exe Namespace%3DFundService Type%3DScraper Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Durl"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="65b157ef-b335-4443-a501-d0e865a4b66a"
+            name="Main"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="4e5ec071-1dd0-4d73-a810-c59522a47dac"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundScraper%2Fbin%2FDebug%2FFundScraper.exe Namespace%3DFundService Type%3DScraper Member%3D(Name%3DMain OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3D(Name%3DString ArrayRank%3D1 ParentType%3DString))])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="fc55fbc6-03a9-448b-a7df-2c1fcf591083"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e07937d3-c9ac-4992-9a46-fda09e243d37">
+                    <propertyInstance
+                      Id="9563fcb7-f0f1-4ebb-8556-47d2af1196d4"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="64697042-b7fe-4f14-8f80-b0ababba3413">
+                    <propertyInstance
+                      Id="c504391b-0d82-47d7-b5ba-8453366d8fc2"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3fd3a334-ab31-494c-9984-76fb3c5fde0c">
+                    <propertyInstance
+                      Id="05551acd-4f8c-4a56-bbf9-6ed58210772c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2492f15f-f40e-4a6a-a3b7-7ae2bcb7831a">
+                    <propertyInstance
+                      Id="a3e21bcb-13a9-454d-a98b-e6c8af9c1c3f"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4ec58214-3b4e-483a-be95-c4eb856305d8">
+                    <propertyInstance
+                      Id="5218bd90-65c4-4bfe-ad4d-b12639ae4dcc"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="04536017-74d5-4a30-976e-e475d5db2e2e">
+                    <propertyInstance
+                      Id="fa2eaedb-1055-4aa7-acf5-1e2fbee93127"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7d9095bc-9754-454d-8220-7187fcd74730"
+                  name="args"
+                  direction="In"
+                  isOrdered="true">
+                  <referencesInternal>
+                    <reference
+                      Id="e5180707-3c24-4149-9e19-41f52ba2b6ec"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundScraper%2Fbin%2FDebug%2FFundScraper.exe Namespace%3DFundService Type%3DScraper Member%3D(Name%3DMain OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3D(Name%3DString ArrayRank%3D1 ParentType%3DString))]) ParameterIdentifier%3Dargs"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <lowerValueInternal>
+                    <literalString
+                      Id="a17da89a-f859-43f8-80d9-133dae42cdaf"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="18435c4f-5985-4c49-b432-772d1db008d9"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f3437a14-a6d5-4a1a-a970-101722554666"
+            name="Scrape"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="f500316f-2589-4b4d-9033-b7a06cef2f54"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundScraper%2Fbin%2FDebug%2FFundScraper.exe Namespace%3DFundService Type%3DScraper Member%3DScrape"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="81f39fbe-488c-43e6-865c-a97ae9a33c76"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0e2d7435-136d-4384-aa49-72b1150440c5">
+                    <propertyInstance
+                      Id="bf7521bd-e2a1-4857-8edb-98bf48e869ca"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f902a81a-a4de-4545-a812-85fcd9ce0f48">
+                    <propertyInstance
+                      Id="1a24cee3-f32e-4583-a42d-e2bae97db793"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="16aa2ab3-bb36-4aa3-bae8-37113876f9ce">
+                    <propertyInstance
+                      Id="f693733b-8fbd-40c7-95ce-31c8ae3fbdac"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cc239b08-e8f6-4673-884c-ceaf9bac3a0a">
+                    <propertyInstance
+                      Id="4e3cf656-d2fc-45ca-a4ff-73bc52c1334a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="920be469-a55c-4472-8393-d2916f64c964">
+                    <propertyInstance
+                      Id="b229fb94-52c8-44a4-ae46-5d0f0ac0c7a1"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="df031d3d-ee41-4022-a50e-e997bc0502de">
+                    <propertyInstance
+                      Id="0878e421-07a4-4eb7-911d-8431dc082c6b"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="7425e255-59e0-418e-aba5-aeff3edf25a9"
+            name="RetrieveHTML"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="82965d50-7a79-49cf-8e40-4bb4b8c996a0"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundScraper%2Fbin%2FDebug%2FFundScraper.exe Namespace%3DFundService Type%3DScraper Member%3DRetrieveHTML"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="79bb0e96-a753-4788-ac84-6c1666a232aa"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fe9c9e32-3657-45d3-9eb7-7dd30376f057">
+                    <propertyInstance
+                      Id="8a41a4eb-a318-48da-8340-7e25ec5b401a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3a4f2ae4-4f15-4d8d-b98e-77aaf18c3326">
+                    <propertyInstance
+                      Id="3bfe4e38-a477-403f-ad68-a7c2be6b404d"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e7c326ee-3557-414a-a14b-ca94de50b759">
+                    <propertyInstance
+                      Id="ab13b577-9ce6-4b75-b7b9-17c0dec83b68"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="50f1dcd9-35f8-49b1-9e13-e465f7b94fb4">
+                    <propertyInstance
+                      Id="c8d9c19c-9b0f-404c-ae89-93bb3b7a74be"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="88fb315a-a0f2-49c9-89fe-6eca6cac0f37">
+                    <propertyInstance
+                      Id="45adf051-e83e-4c63-a06c-b9a6fe2826b7"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a4d76252-aef1-4ffb-a48a-44737b2b832f">
+                    <propertyInstance
+                      Id="fde16ae0-c304-489c-9ae1-b1b42fc5793e"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="421b7063-9d6e-4a2b-ad86-5ca4666c8406"
+            name="ParseIds"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="e78ad4b3-8dba-430a-86e3-afcace52d5c8"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundScraper%2Fbin%2FDebug%2FFundScraper.exe Namespace%3DFundService Type%3DScraper Member%3DParseIds"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ef8ba0ac-ef6a-4619-9dfd-7b432e770a50"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1f28e731-6a7d-40f8-8f41-e826ee5a01cc">
+                    <propertyInstance
+                      Id="2d93e63f-3342-4b65-a554-2ba15a2e9774"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6db77770-1c36-4324-bd0c-4765939607e6">
+                    <propertyInstance
+                      Id="6c88831f-c977-46e9-bf1d-f04683297172"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="564842b1-d4c8-491f-8629-6ab31f5fdcd4">
+                    <propertyInstance
+                      Id="ad5fcb15-42ad-4fe2-892d-a104acf11e84"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="26c55231-77a4-4edb-9c00-818abe701c0d">
+                    <propertyInstance
+                      Id="3f13cec3-bc2a-47de-9cca-9eae71de8d84"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="86f6388e-05e8-451a-80c6-3b9d7a61fb51">
+                    <propertyInstance
+                      Id="26bedacd-85bd-4568-9a20-be384c558044"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a83b989d-dc2c-4f4e-8c7d-7bfac0c6f213">
+                    <propertyInstance
+                      Id="164e8487-56f2-4bd3-a765-46f155fa71a1"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="84641cc4-6aa6-43a0-9ba2-d0bd2fa845c7"
+            name="ParseNames"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="3a9f1d47-9fc4-4cab-a662-4713e6859c18"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundScraper%2Fbin%2FDebug%2FFundScraper.exe Namespace%3DFundService Type%3DScraper Member%3DParseNames"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="0ebaa848-9dec-4d7d-918c-8dd0b49ba080"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="37730f07-1754-4d78-9b1e-ac77f01f677c">
+                    <propertyInstance
+                      Id="4b0627ce-be9b-48f6-a72d-cfbd43c9ed6a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="49918fca-2c92-49d5-b961-f853a8b4fcdc">
+                    <propertyInstance
+                      Id="71da59b2-2ab7-4206-ac4e-962416534068"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3d874ff4-8660-4235-9e4d-5f1751ddb2f1">
+                    <propertyInstance
+                      Id="b0f7d618-1089-4f68-8bf5-efd40a5110fc"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b917ecbd-4d54-4489-8a4d-abfaeb09a309">
+                    <propertyInstance
+                      Id="01764de0-4eec-4b1a-bb0e-6c0c5c8105aa"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7c30437d-2946-4caf-b469-47b12f28cf45">
+                    <propertyInstance
+                      Id="8a5c40dc-05ed-4b43-b3ed-b664396f227d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="477450e7-4631-44a0-95a2-89bc18cc19fb">
+                    <propertyInstance
+                      Id="3bf38c0e-098f-4832-b888-6153023428e3"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="2bcf5601-0ea2-4d31-a27d-9da2923b525d"
+            name="MakeRequest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="d003c732-44f9-4655-8503-fc2ea842a397"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundScraper%2Fbin%2FDebug%2FFundScraper.exe Namespace%3DFundService Type%3DScraper Member%3D(Name%3DMakeRequest OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="bd73b7ad-dde0-4924-a221-5de5a7235c22"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0f46de9e-28da-47e5-96d4-295169e901ae">
+                    <propertyInstance
+                      Id="4a9a81e3-a479-4b85-bfbd-07b898926a61"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="134c0ffd-4856-4fbb-92b6-2d324129caf9">
+                    <propertyInstance
+                      Id="f15cbd57-24c6-4c9c-bc38-d8f81680fbb3"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8ed7d4ba-7537-4b3e-9dc8-b2ceafd9751e">
+                    <propertyInstance
+                      Id="6a7f6d18-81c4-4b07-805a-58130c3724bb"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8dcb6858-32d9-4965-a3c4-af990ec869c5">
+                    <propertyInstance
+                      Id="44708d28-b1a7-41b7-a41e-39fda3479aa0"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="23fb4a41-0954-49bb-a910-61b097937916">
+                    <propertyInstance
+                      Id="741dca3a-adaa-46f4-85c4-555044e3109e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="533a984a-86fc-446b-9456-4054b12b2ecd">
+                    <propertyInstance
+                      Id="9faeefa3-e417-401a-9e59-b41fba954cb7"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d5927d0a-7cff-444e-8476-cc2519c66ca3"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="08960b96-31bb-4cfb-afab-7e9e0bf10652"
+                  name="url"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="19d7186a-6653-4d74-80b4-69785eaeaf55"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundScraper%2Fbin%2FDebug%2FFundScraper.exe Namespace%3DFundService Type%3DScraper Member%3D(Name%3DMakeRequest OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Durl"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="68998887-6d42-4bcc-bd30-127585920157"
+            name="ParseJSON"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="750b118a-93ff-45b6-be85-0e15a214ba41"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundScraper%2Fbin%2FDebug%2FFundScraper.exe Namespace%3DFundService Type%3DScraper Member%3DParseJSON"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="dbeee221-9c6b-461e-982d-80dd13da10b4"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="22a7ee69-1d58-4f8f-a1a3-489e6f3fe7b8">
+                    <propertyInstance
+                      Id="b0292433-df80-42a8-b394-1e28389b032e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c3c67cb6-ffa3-4854-bbf5-370aefd23525">
+                    <propertyInstance
+                      Id="9ac9db5c-5a6f-4283-800b-2bc5aa561a02"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="689ba9ca-18d1-4f1a-82c0-ae8c76946780">
+                    <propertyInstance
+                      Id="ab46668d-ef2e-4898-9987-2f23a00480c6"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a0b4828d-a2cf-4f41-b08e-4dc6acfca05e">
+                    <propertyInstance
+                      Id="edde9479-b5e9-47a6-8986-b5e291cc9edf"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0a415fd9-47e0-4206-b02d-410a3722218d">
+                    <propertyInstance
+                      Id="b66f566d-e788-4ee2-bb95-c0b9e41798d1"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="675ce595-6bf9-4e71-9fe1-8f572248ac8f">
+                    <propertyInstance
+                      Id="4c3b1ab1-1d0a-405b-a84c-f0f290a7c125"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="ede97864-ce0c-421e-900f-fdfdcbcaf405"
+            name="SaveFundData"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="534b5e3e-4483-4539-a4ea-7b392bedf9e2"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundScraper%2Fbin%2FDebug%2FFundScraper.exe Namespace%3DFundService Type%3DScraper Member%3DSaveFundData"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="36d1dd51-4d14-4274-84a2-eda0a371cdc3"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5af02719-1b6b-42ed-ad38-5b0cfade5cfb">
+                    <propertyInstance
+                      Id="a04a4046-8330-4e4e-9e1b-37d27df79124"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="02300510-6cd1-4695-a15b-a699410d7918">
+                    <propertyInstance
+                      Id="ca353895-f28e-4d00-8c7d-55de4ec15a6c"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c390e595-b2e7-45d0-867f-668ad51d0710">
+                    <propertyInstance
+                      Id="e9d5b860-3569-4521-b8c8-d1f283ad5aaa"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a4d5bd0a-0998-4519-aa89-2bffcc316f78">
+                    <propertyInstance
+                      Id="247cf1a9-bd55-453b-bf52-bc7a5aa286ad"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c73c1bf3-719e-427c-b85a-131c2cf4b34e">
+                    <propertyInstance
+                      Id="3f67a7c6-ad02-49b1-99f7-ccc48bc81e0e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9dd86780-ba2e-4bac-a300-ce9cf6461283">
+                    <propertyInstance
+                      Id="900c30f2-80b3-43a9-a766-72ad5b28eb6f"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4d62e316-9995-4152-b33c-58fc56c627f8"
+        name="Notifier"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="3ec4b48f-d1a4-4428-a0e9-07a958410565"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundScraper%2Fbin%2FDebug%2FFundScraper.exe Namespace%3DFundService Type%3DNotifier"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="224507b7-161b-403c-a4ba-bc465ceee351"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b3cc9daf-98d9-43b4-9e25-2a6b44b132e9">
+                <propertyInstance
+                  Id="eb8c850c-82ca-4c52-9837-13f695b2d782"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="68250393-b464-420a-acf8-9ffd6d559165">
+                <propertyInstance
+                  Id="e038a4c9-5132-4f52-bb73-6c0d30bd20b5"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="22e0c412-1ee6-4441-adfe-d3d2890c9362">
+                <propertyInstance
+                  Id="a873d42b-61e8-4309-8c76-4272b192099a"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="395709cb-c5ca-4c2b-87f9-2fb7d2451731">
+                <propertyInstance
+                  Id="9385d061-335b-4809-8ff7-03828c7d6285"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d60b3b1f-9f56-49fb-9eb8-7f7001973c38">
+                <propertyInstance
+                  Id="7067e679-e4c7-43c2-9f4c-bb56c818428a"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="6d99c869-d1d6-4739-9a82-9a5cc53b476a"
+            isDerived="false"
+            sourceEndRoleName="Notifier"
+            targetEndRoleName="Notification"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="7d0cf39c-7a04-4cf4-9db7-b935863bdca1"
+              LastKnownName="Notification"
+              LastKnownLocation="Package1_1333.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="95719941-5c91-4aa6-9dc5-c2847cd12160"
+                  name="Notifier"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="529f02cc-96a1-4c83-85ee-41145f7656bc"
+                  name="Notification"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="7814ab86-6bb1-4724-9a29-02e24ad98634"
+            name="Notify"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="d263f437-9402-4c3c-b777-5a51e4e6fce5"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundScraper%2Fbin%2FDebug%2FFundScraper.exe Namespace%3DFundService Type%3DNotifier Member%3DNotify"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="adcffdfb-5c14-43e8-b8f1-009b10669d25"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b65227ae-6b9f-48e5-a8bb-fbdebb37cd48">
+                    <propertyInstance
+                      Id="50c5cac0-325d-4e75-bb1d-2c0abf9c20d4"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9d96e711-0489-43d4-90bb-244f163db68b">
+                    <propertyInstance
+                      Id="6567c01a-7494-493a-abdd-a1baed897615"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="01062959-843f-464e-945c-f54f4de36fee">
+                    <propertyInstance
+                      Id="c161332a-b344-4329-8c75-5b0ee4b70563"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6d29ed7b-9539-46c8-b2ca-e669aaf65e20">
+                    <propertyInstance
+                      Id="51287535-488a-4c27-91d9-0b5febdd0262"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7eb2bc14-4e68-4cfb-bbe9-1941c4d9a871">
+                    <propertyInstance
+                      Id="a282c83c-2970-44ee-90a9-249602dc6a8a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9587b651-1913-4f71-834f-0fa4955a09e5">
+                    <propertyInstance
+                      Id="d34cb0d0-3a6d-4686-8310-a2b951b2b4eb"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="285f82ff-e04f-4f1f-a157-a6d393a4b093"
+            name="Notifier"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="58ec406b-cbe7-4f1c-b55d-bd5d9937f02e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundScraper%2Fbin%2FDebug%2FFundScraper.exe Namespace%3DFundService Type%3DNotifier Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="914281f5-128a-4cf8-bd33-dd7ae06e21b8"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="104be247-081c-4859-b86b-16a9801edfb7">
+                    <propertyInstance
+                      Id="9eca87e4-d4e5-41fb-8f0c-2a442cd1ccac"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fe1a2416-4cd8-4905-abd3-47603c07e0fb">
+                    <propertyInstance
+                      Id="3ba3e5e5-a934-49cb-ab38-4cf77f3442e9"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="634d1740-3792-42fc-a1a6-3dd926ef7876">
+                    <propertyInstance
+                      Id="2284f445-3007-4fb7-978d-73d0af3cfa3c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="91fda42d-292a-42f5-acc0-8610b20dc676">
+                    <propertyInstance
+                      Id="62680681-282b-4f14-98de-dca977e6ce1d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1250ef6e-7155-4d3b-974f-b902f9053d5f">
+                    <propertyInstance
+                      Id="53e159b3-ec6d-43b2-9d27-eb270da5d8cb"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="673da366-4b0f-435f-ad79-4c88561b3aef">
+                    <propertyInstance
+                      Id="e599f16e-d152-45dc-8ba8-1ee66b673bf4"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4a4ec6e9-24ab-4bdc-9e71-cd511593ccb0"
+        name="FundService"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="cdd80d81-34a8-4bd1-9a94-27f622c4a323"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundScraper%2Fbin%2FDebug%2FFundScraper.exe Namespace%3DFundService Type%3DFundService"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="58d4d0f2-fdc8-4662-aea9-90a023646908"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5dfd0e35-efac-4e02-a7ac-e69ab1062ab8">
+                <propertyInstance
+                  Id="06287e24-a46e-49e3-b128-6207363c739e"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="299edc94-de1e-48f9-ad50-06ff47c8d843">
+                <propertyInstance
+                  Id="4e498d02-ecd2-4d00-be67-6b05bea98eba"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="41443bfd-5958-4930-9d3f-9d3d1af9ba7b">
+                <propertyInstance
+                  Id="1e80a8a6-044c-4b65-a311-2aca49d4458d"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="52a16855-d7d0-4618-a98b-54e52b5fd8f1">
+                <propertyInstance
+                  Id="2fea4268-0dce-44f3-84f1-00c1e9bfba63"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0628f12f-40f5-4af3-8e80-677cc524d5ed">
+                <propertyInstance
+                  Id="29b67e22-374c-404b-a0f0-6329b73718d0"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="be290312-2e3f-4a36-ba2e-c25ea24c160d"
+            isDerived="false"
+            sourceEndRoleName="FundService"
+            targetEndRoleName="Notifier"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="4d62e316-9995-4152-b33c-58fc56c627f8"
+              LastKnownName="Notifier"
+              LastKnownLocation="Package_1530.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1f71d5b1-4c5f-443a-b8fe-65be98a276a3"
+                  name="FundService"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1d90c1fa-76f0-43a2-b256-f1484b68cce7"
+                  name="Notifier"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="105183be-d81b-47c8-91bd-ae8342547af6"
+            isDerived="false"
+            sourceEndRoleName="FundService"
+            targetEndRoleName="Scraper"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="360d931d-597e-4765-b722-cc53695374f5"
+              LastKnownName="Scraper"
+              LastKnownLocation="Package_1530.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="791a6f47-222c-4669-81a1-8f3ab715edf8"
+                  name="FundService"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2695a8f3-aa32-427a-acbd-a317f19b1ef6"
+                  name="Scraper"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="e383106b-79ad-4b8a-8ef2-98846abee5d9"
+            name="FundService"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="85da2bb7-ecaf-4c17-9f90-27a744403906"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundScraper%2Fbin%2FDebug%2FFundScraper.exe Namespace%3DFundService Type%3DFundService Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c0c8fe63-6a50-402b-9a6f-319725a01a3b"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2cca0e85-7690-4a21-bbda-5e611c4dd331">
+                    <propertyInstance
+                      Id="7edb3afd-9219-4018-8dee-12c089483b1a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="83b215a6-8674-4116-a585-6ce763adce3c">
+                    <propertyInstance
+                      Id="78063745-3fd8-4d40-96e9-f1957d349aff"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6fc4f50e-84b9-4050-80f5-7f9a400dc56b">
+                    <propertyInstance
+                      Id="ac37baac-476e-4666-b263-b55400026660"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="722c42cd-0919-4644-8eef-87bcda52e9ea">
+                    <propertyInstance
+                      Id="acaa297b-6d98-4278-99b0-b2bccf56c193"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7ccf804b-1eb3-4c77-a6a8-f11e7ec1959e">
+                    <propertyInstance
+                      Id="afd16566-2dee-4a40-8ee9-92a4d5a80ee5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ac619e31-b399-434f-a046-384067dfb864">
+                    <propertyInstance
+                      Id="46b820cb-be93-4ccb-89b7-15dae9920ea6"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -57,10 +57,15 @@
       <DependentUpon>201502240112386_ExtractFundHistoryFromFundEntity.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ChangeNotification.cs" />
     <Compile Include="Models\FundEntity.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\FundHistory.cs" />
+    <Compile Include="Models\FundProjector.cs" />
+    <Compile Include="Models\Notification.cs" />
     <Compile Include="Models\UserProfile.cs" />
+    <Compile Include="Models\UserTransaction.cs" />
+    <Compile Include="Models\ValueNotification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
