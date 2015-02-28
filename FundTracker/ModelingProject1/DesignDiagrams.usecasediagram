@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="c29dc8d5-734d-4c04-8bbf-f9851a3fd677" name="DesignDiagrams" linkedPackageId="46660af8-7ea3-49e7-a9a8-add780156613" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="e8289dca-b4d6-430f-8b39-2af7121b4282">
+      <profileInstance Id="57aad9fd-781b-46cb-9617-c5f186867bb1" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="3725cac1-7766-44ba-aaf7-24dcab7cf600">
+      <profileInstance Id="c0f3b561-5723-4be4-a3d6-dcf3615a1138" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="1ae0820b-f77c-407a-b588-741088c4e185">
+      <profileInstance Id="2565d4ce-abe5-4c22-aed2-6711b7057145" name="CSharpProfile">
+        <elementDefinition Id="3c82b182-420b-4425-b677-c551062c29f1" />
+      </profileInstance>
+      <elementDefinition Id="32d2662c-e967-4b05-bcd9-932d94d3cea7" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="b04157d8-76f6-484b-bc23-779bdf0a27dd" name="User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3cb2a74e-7c70-4fc8-a41e-0745357cc24e" />
+        <targetEnds>
+          <association Id="1ab7ad86-d72c-4bff-83f6-7be27108d9ba" isDerived="false" sourceEndRoleName="User" targetEndRoleName="UC-1: Create an Account" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="31c610a6-f100-4400-ae59-731052de54f4" LastKnownName="UC-1: Create an Account" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="76a013a0-6c34-4697-8b3f-6b3afcce93fd" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="29b0f2ea-dc92-4951-823b-18471496cb61" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="409b960e-de0a-4261-80a4-7d1845315647" name="UC-1: Create an Account" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ae205785-4f62-4563-a8a1-bca840641d97" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="810eb057-4fdf-4330-ac98-182c048adc5e" />
+          </association>
+          <association Id="5f6a184d-9175-4714-a832-19b2ca4c1fb6" isDerived="false" sourceEndRoleName="User" targetEndRoleName="UC-2: Login" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="83c42542-f2f8-4e9b-8080-c9e167a830a7" LastKnownName="UC-2: Login" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8a318643-2811-4418-825d-14e4e6dbcfcf" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f5459a01-cca1-44f5-8c4b-e7e1c3645281" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="69d75237-b8d0-4106-9726-056b1ef3155b" name="UC-2: Login" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="20c435df-8234-4f7c-be2c-ca71e1138963" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8a55a7e2-1917-4ad8-8135-84ca96c34342" />
+          </association>
+          <association Id="2ada3761-96b6-48c6-9bff-bb512a67a905" isDerived="false" sourceEndRoleName="User" targetEndRoleName="UC-3: Enter Fund Transaction" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="673fbec5-e945-4e6f-bc63-3daf39307929" LastKnownName="UC-3: Enter Fund Transaction" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3c469194-4126-426f-aa7e-dd806a608cf4" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="dfec101b-db47-4f23-82f1-2820619acc2f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f0f26755-0f81-4d8b-87e1-551bfc9421ce" name="UC-3: Enter Fund Transaction" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="fc60610f-fe99-44dc-a1c8-6a249cc3b3fb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0075903f-3812-4f6b-9ca8-1474684f69e3" />
+          </association>
+          <association Id="d27631e0-e84f-4761-9e21-75e89ac57869" isDerived="false" sourceEndRoleName="User" targetEndRoleName="UC-4: Search and View and Forcast Funds" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="e0a606d9-4e84-4c1e-8179-77a6c444a80d" LastKnownName="UC-4: Search and View and Forcast Funds" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e1f5c292-9ea7-4cce-94d8-ad134e1ff520" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2d70dd74-b6bf-4fa9-b294-eb18e835cbdb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="309cb231-f2fc-413b-806b-2854aae17b39" name="UC-4: Search and View and Forcast Funds" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="008ab974-2821-48be-9549-bc63d2f824d4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="095707e6-2d6a-4ec8-988c-2632076a0ea4" />
+          </association>
+          <association Id="d664ea74-ab96-442e-9ea3-45d5a38a1f4b" isDerived="false" sourceEndRoleName="User" targetEndRoleName="UC-5: Fund Reporting" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="19119bb7-b95d-41f4-8899-3a98d3a6b5b6" LastKnownName="UC-5: Fund Reporting" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="862f3c42-5d5e-433f-ad66-f0e05da05146" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="da308713-8341-425d-ace6-80bbaeaa35b9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e5319cf9-57c3-407b-98a2-a39e332eff51" name="UC-5: Fund Reporting" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0b4f0ef8-f43e-4125-a57a-b5555351882f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="bcffdd19-578f-4cdf-9546-3d58399d2499" />
+          </association>
+          <association Id="45a15149-0c18-4e10-92f3-b6b96fdb9a75" isDerived="false" sourceEndRoleName="User" targetEndRoleName="UC-6: Setting a Notification" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="20da3ae0-c232-4e3f-8373-394317fd09b2" LastKnownName="UC-6: Setting a Notification" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2f025117-eb03-45e8-95dc-34e67b99c70b" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e802cb9d-ca86-4e93-b024-7f2ad31704dc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d5b8eb18-6d32-4e0b-8d94-a452a0bc4669" name="UC-6: Setting a Notification" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f332ad1f-7a28-41a6-9370-beda0124a801" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ade33be7-a1b6-4495-be66-2d14777b45dd" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="31c610a6-f100-4400-ae59-731052de54f4" name="UC-1: Create an Account" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7a44f86a-4ca9-4f85-b754-7dcf652112de" />
+        <subjects>
+          <subsystemMoniker Id="85a5f64e-791a-46d2-9ae6-374794c40f1e" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="83c42542-f2f8-4e9b-8080-c9e167a830a7" name="UC-2: Login" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d6614e07-4801-4116-b831-6d8f3c7e06e3" />
+        <subjects>
+          <subsystemMoniker Id="85a5f64e-791a-46d2-9ae6-374794c40f1e" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="673fbec5-e945-4e6f-bc63-3daf39307929" name="UC-3: Enter Fund Transaction" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2af68293-bd8d-4eb5-831f-e6af25a25fd0" />
+        <subjects>
+          <subsystemMoniker Id="85a5f64e-791a-46d2-9ae6-374794c40f1e" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="68c8ee28-5cb5-4938-b23d-179cb5b51084" name="UC-7:Notifying User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e86efd74-947c-4d25-ad7d-a997f0feaf47" />
+        <targetEnds>
+          <association Id="3afd3bf6-44fe-4015-8201-2b302dc540c0" isDerived="false" sourceEndRoleName="UC-7:Notifying User" targetEndRoleName="User" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="b04157d8-76f6-484b-bc23-779bdf0a27dd" LastKnownName="User" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0e0d4c22-6e54-4359-b21c-9a00d2b5a378" name="UC-7:Notifying User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a712696f-3dbb-4b73-810f-433e3f2d7d89" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ee1f6d33-4329-4647-88a6-157f15b63079" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="476fb8c0-536e-40b0-9058-b4c4414a7966" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="96b4ec9d-06d0-4692-8fca-1c30e6d2ce30" />
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker Id="85a5f64e-791a-46d2-9ae6-374794c40f1e" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e0a606d9-4e84-4c1e-8179-77a6c444a80d" name="UC-4: Search and View and Forcast Funds" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2429f749-9c73-4197-897d-be8fcfa6a328" />
+        <subjects>
+          <subsystemMoniker Id="85a5f64e-791a-46d2-9ae6-374794c40f1e" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="19119bb7-b95d-41f4-8899-3a98d3a6b5b6" name="UC-5: Fund Reporting" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="eb21ea56-ef86-4ff4-8279-4787000b0ff0" />
+        <subjects>
+          <subsystemMoniker Id="85a5f64e-791a-46d2-9ae6-374794c40f1e" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="20da3ae0-c232-4e3f-8373-394317fd09b2" name="UC-6: Setting a Notification" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2afd4591-c63a-4f63-afcb-789116656adc" />
+        <subjects>
+          <subsystemMoniker Id="85a5f64e-791a-46d2-9ae6-374794c40f1e" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="f74d8c6d-f121-43eb-9e14-2a612ff5d486" name="Visitor" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b1f5979b-d47a-4da4-a744-e43863597a67" />
+        <targetEnds>
+          <association Id="751a37b3-faea-45d6-97bd-fab9db375164" isDerived="false" sourceEndRoleName="Visitor" targetEndRoleName="UC-1: Create an Account" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="31c610a6-f100-4400-ae59-731052de54f4" LastKnownName="UC-1: Create an Account" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0109f326-a841-4f6d-94c4-247ff8b8e846" name="Visitor" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="79b1f544-d1bc-42d3-980e-20bfb60bf147" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bd72ee53-3626-49d1-b372-4dbf278c180c" name="UC-1: Create an Account" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d2610a9d-4b56-48e6-8944-4c1259180b8b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="48cd8935-ebc2-449e-acc1-1bc07bc1beaa" />
+          </association>
+          <association Id="0f56e2f6-5918-49a9-bb44-2d2f703ebb99" isDerived="false" sourceEndRoleName="Visitor" targetEndRoleName="UC-4: Search and View and Forcast Funds" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="e0a606d9-4e84-4c1e-8179-77a6c444a80d" LastKnownName="UC-4: Search and View and Forcast Funds" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8d4554ff-54a2-453f-938e-503e4e3ec12a" name="Visitor" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="594be685-5bc3-4841-ab9c-d43cdc3fe888" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b8d2d161-ef19-48d3-afcb-e9d8a2e38def" name="UC-4: Search and View and Forcast Funds" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ff748445-d994-4441-9b51-a6f445cbccb1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fa9a9002-ec7e-4c9f-a664-9472526d2b27" />
+          </association>
+          <association Id="34f70c46-88f0-4acd-a94e-2b42abb2ad99" isDerived="false" sourceEndRoleName="Visitor" targetEndRoleName="UC-5: Fund Reporting" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="19119bb7-b95d-41f4-8899-3a98d3a6b5b6" LastKnownName="UC-5: Fund Reporting" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="da2c6ad7-92bd-45bd-8a92-d5c26533f0b6" name="Visitor" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b09dd524-0555-4d48-972c-b58a7dede07a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="507a3842-d4f2-4918-aff7-65323b7dbe6e" name="UC-5: Fund Reporting" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ae25d8b1-3d22-4d6f-bd7b-10ccc408ca5a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="41850475-ae7a-4da7-944a-002c5aeb7f03" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="62d7d504-764d-4531-a181-e20b071fae55" name="FundService" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4d885a34-1b7f-45aa-b0d6-8e343422a9f3" />
+        <targetEnds>
+          <association Id="9eed0778-a255-4693-acee-c0bd4af2e1b3" isDerived="false" sourceEndRoleName="FundService" targetEndRoleName="UC-8: Scrape data" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="4ebb9270-a094-4733-bf0c-bdad41f95400" LastKnownName="UC-8: Scrape data" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7951cf6b-2a2b-4469-8931-a8f9ba3cae4b" name="FundService" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e74097f8-c758-44af-a9a3-33cf5a8b39ac" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0bb5d320-0da8-4951-b033-e59d417601c8" name="UC-8: Scrape data" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="fd561630-f649-4d7c-9566-dbfcaa544f86" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5a3081f6-d062-402f-8e15-242ccf2930e5" />
+          </association>
+          <association Id="d67fd560-79b9-4b5e-af26-48790f2d2a04" isDerived="false" sourceEndRoleName="FundService" targetEndRoleName="UC-7:Notifying User" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="68c8ee28-5cb5-4938-b23d-179cb5b51084" LastKnownName="UC-7:Notifying User" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fc38137e-de49-49c7-82c8-c30eef871abb" name="FundService" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6a60c2a3-c934-4439-bb6b-16b42f8c0ef4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="140b6735-b760-47fc-9a9a-b6646b1704ae" name="UC-7:Notifying User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f3a41efb-425c-445d-9f4e-a6b5ed5a8392" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b17ca8a6-d17b-4711-9673-cb90bf4239a3" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="4ebb9270-a094-4733-bf0c-bdad41f95400" name="UC-8: Scrape data" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ce0844fc-2df5-4302-a2a4-387face80014" />
+        <subjects>
+          <subsystemMoniker Id="85a5f64e-791a-46d2-9ae6-374794c40f1e" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="85a5f64e-791a-46d2-9ae6-374794c40f1e" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3861fe63-0fdc-42a3-aa30-b52c8de1301f" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="46660af8-7ea3-49e7-a9a8-add780156613" name="ModelingProject1">
+    <elementDefinition Id="3fa45840-67de-4910-a31d-9b456e9c2cb0" />
+  </package>
+</useCaseModelRoot>
