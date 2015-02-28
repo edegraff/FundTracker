@@ -78,7 +78,7 @@
       <SubType>Content</SubType>
     </Content>
     <Folder Include="ModelDefinition\" />
-    <Content Include="ModelDefinition\ModelingProject1.uml">
+    <Content Include="ModelDefinition\DesignDiagrams.uml">
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>

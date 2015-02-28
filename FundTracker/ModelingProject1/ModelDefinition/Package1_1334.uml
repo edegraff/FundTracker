@@ -211,7 +211,7 @@
                     <primitiveTypeMoniker
                       Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
                       LastKnownName="String"
-                      LastKnownLocation="ModelingProject1.uml" />
+                      LastKnownLocation="DesignDiagrams.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -328,7 +328,7 @@
                     <primitiveTypeMoniker
                       Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
                       LastKnownName="String"
-                      LastKnownLocation="ModelingProject1.uml" />
+                      LastKnownLocation="DesignDiagrams.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -682,7 +682,7 @@
                     <primitiveTypeMoniker
                       Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
                       LastKnownName="String"
-                      LastKnownLocation="ModelingProject1.uml" />
+                      LastKnownLocation="DesignDiagrams.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -701,7 +701,7 @@
                     <primitiveTypeMoniker
                       Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
                       LastKnownName="String"
-                      LastKnownLocation="ModelingProject1.uml" />
+                      LastKnownLocation="DesignDiagrams.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -995,7 +995,7 @@
                     <primitiveTypeMoniker
                       Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
                       LastKnownName="String"
-                      LastKnownLocation="ModelingProject1.uml" />
+                      LastKnownLocation="DesignDiagrams.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1014,7 +1014,7 @@
                     <primitiveTypeMoniker
                       Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
                       LastKnownName="String"
-                      LastKnownLocation="ModelingProject1.uml" />
+                      LastKnownLocation="DesignDiagrams.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1112,7 +1112,7 @@
                     <primitiveTypeMoniker
                       Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
                       LastKnownName="String"
-                      LastKnownLocation="ModelingProject1.uml" />
+                      LastKnownLocation="DesignDiagrams.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1229,7 +1229,7 @@
                     <primitiveTypeMoniker
                       Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
                       LastKnownName="String"
-                      LastKnownLocation="ModelingProject1.uml" />
+                      LastKnownLocation="DesignDiagrams.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1406,7 +1406,7 @@
                     <primitiveTypeMoniker
                       Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
                       LastKnownName="String"
-                      LastKnownLocation="ModelingProject1.uml" />
+                      LastKnownLocation="DesignDiagrams.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1584,7 +1584,7 @@
                     <primitiveTypeMoniker
                       Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
                       LastKnownName="String"
-                      LastKnownLocation="ModelingProject1.uml" />
+                      LastKnownLocation="DesignDiagrams.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1664,7 +1664,7 @@
                     <primitiveTypeMoniker
                       Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
                       LastKnownName="String"
-                      LastKnownLocation="ModelingProject1.uml" />
+                      LastKnownLocation="DesignDiagrams.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1873,6 +1873,7 @@
             sourceEndRoleName="FundEntitiesController"
             targetEndRoleName="FundEntity"
             isLeaf="false"
+            name="*"
             isAbstract="false">
             <classMoniker
               Id="1b76f1da-2870-4be7-8eaf-89b712a36764"
@@ -1902,7 +1903,20 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false" />
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="2cd0f68e-7a9c-4c5e-a7a3-25777bbbb2ab"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="73328d33-684e-403d-91bd-bb997c6ffec6"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -2057,8 +2071,9 @@
               <operationHasOwnedParameters>
                 <parameter
                   Id="c5328e86-3532-41d6-9d32-3dbcca22080e"
-                  name="id"
-                  direction="In">
+                  name="ids"
+                  direction="In"
+                  isUnique="false">
                   <referencesInternal>
                     <reference
                       Id="2c52ed26-c78c-465d-bdad-d1d6b5a13598"
@@ -2066,10 +2081,36 @@
                       tag="ViewCode" />
                   </referencesInternal>
                   <type_NamedElement>
-                    <primitiveTypeMoniker
-                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                      LastKnownName="String"
-                      LastKnownLocation="ModelingProject1.uml" />
+                    <undefinedTypeMoniker
+                      Id="29ff7718-0668-4590-8e19-76cc128be488"
+                      LastKnownName="List&lt;String&gt;"
+                      LastKnownLocation="DesignDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f8c3dfcd-f123-4ba2-990a-3134b4d6f6b1"
+                  name="StartDate"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="23fcfacb-cad9-471d-8b3a-1b6346436848"
+                      LastKnownName="DateTime"
+                      LastKnownLocation="DesignDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7e14d143-12ec-450a-8c83-cfb6a93ee003"
+                  name="EndDate"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="23fcfacb-cad9-471d-8b3a-1b6346436848"
+                      LastKnownName="DateTime"
+                      LastKnownLocation="DesignDiagrams.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -2156,7 +2197,7 @@
                     <primitiveTypeMoniker
                       Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
                       LastKnownName="Boolean"
-                      LastKnownLocation="ModelingProject1.uml" />
+                      LastKnownLocation="DesignDiagrams.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -2254,7 +2295,7 @@
                     <primitiveTypeMoniker
                       Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
                       LastKnownName="String"
-                      LastKnownLocation="ModelingProject1.uml" />
+                      LastKnownLocation="DesignDiagrams.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -2324,6 +2365,37 @@
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="685df0c5-edd8-45ef-9fa4-3586c3903e48"
+            name="ExportReport"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4be2ab86-417f-45f1-a76c-686fb54caf53"
+                  name="id"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="DesignDiagrams.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5c1b35f0-101b-4121-bee2-98887062e7e8"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -3136,7 +3208,7 @@
                     <primitiveTypeMoniker
                       Id="220a3521-e091-4221-bae9-3ef9018e845c"
                       LastKnownName="Integer"
-                      LastKnownLocation="ModelingProject1.uml" />
+                      LastKnownLocation="DesignDiagrams.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -3223,7 +3295,7 @@
                     <primitiveTypeMoniker
                       Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
                       LastKnownName="Boolean"
-                      LastKnownLocation="ModelingProject1.uml" />
+                      LastKnownLocation="DesignDiagrams.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -4764,7 +4836,7 @@
                     <primitiveTypeMoniker
                       Id="220a3521-e091-4221-bae9-3ef9018e845c"
                       LastKnownName="Integer"
-                      LastKnownLocation="ModelingProject1.uml" />
+                      LastKnownLocation="DesignDiagrams.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -4851,7 +4923,7 @@
                     <primitiveTypeMoniker
                       Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
                       LastKnownName="Boolean"
-                      LastKnownLocation="ModelingProject1.uml" />
+                      LastKnownLocation="DesignDiagrams.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>

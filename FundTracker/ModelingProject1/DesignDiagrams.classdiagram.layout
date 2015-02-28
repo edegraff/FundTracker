@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 30.75, 16.625" name="UMLClassDiagram1">
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 32.125, 16.625" name="UMLClassDiagram1">
   <logicalClassDesignerModelMoniker Id="568cf1bd-0695-43f7-af2d-0adf08f39b58" />
   <nestedChildShapes>
     <classShape Id="f1f3b6b1-62fe-436c-86a4-2a2c06e19dd2" absoluteBounds="27.125, 1, 3.375, 1.8284605995813994" hideQualifiedName="false" increaseHeight="0.18800345897674561" customColor="181, 193, 223">
@@ -53,14 +53,14 @@
         <classShapeMoniker Id="877c4289-7d17-4f94-ad73-a71d366526d5" />
       </nodes>
     </associationConnector>
-    <classShape Id="d356b709-fe5d-4e37-8ee8-ed1a8b0c5c77" absoluteBounds="4.25, 0.625, 4.375, 1.8284605995814003" hideQualifiedName="false" increaseHeight="0.18800345897674561" customColor="181, 193, 223">
+    <classShape Id="d356b709-fe5d-4e37-8ee8-ed1a8b0c5c77" absoluteBounds="4.25, 0.625, 4.375, 1.9886168446143469" hideQualifiedName="false" increaseHeight="0.18800345897674561" customColor="181, 193, 223">
       <classMoniker Id="c04ab455-8974-4bee-a23f-ed5b17dc8d5c" LastKnownName="FundEntitiesController" />
       <nestedChildShapes>
         <AttributeElementListCompartment Id="c812cea6-13cd-4685-8a02-c7699dd636b1" absoluteBounds="4.2650000000000006, 1.1403356393178328, 4.3450000000000006, 0.36132811258236563" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-        <OperationElementListCompartment Id="70fb2546-de1e-4fd2-b17d-85ab0ddf45ca" absoluteBounds="4.2650000000000006, 1.5116637519001941, 4.3450000000000006, 0.84179684768120455" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="70fb2546-de1e-4fd2-b17d-85ab0ddf45ca" absoluteBounds="4.2650000000000006, 1.5116637519001941, 4.3450000000000006, 1.0019530927141507" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7.65625 : 2.4534605995814); (7.65625 : 11.5)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="1" targetMultiplicity="1">
+    <associationConnector edgePoints="[(7.65625 : 2.61361684461435); (7.65625 : 11.5)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="1" targetMultiplicity="*">
       <associationMoniker Id="6dfd974e-925d-4f23-bf5b-f69695c49a53" />
       <relativeChildShapes />
       <nodes>
@@ -282,5 +282,9 @@
         <classShapeMoniker Id="fb5336d4-a7f1-4cb7-9e64-bb776f3d347e" />
       </nodes>
     </associationConnector>
+    <commentShape Id="ebde47e9-2c98-4199-90b1-c9156c97b3ce" absoluteBounds="30.625, 1.25, 1.25, 1.125" customColor="251, 247, 200">
+      <commentMoniker Id="1920cf79-6fd3-4ac3-9824-4c35d251010e" />
+      <relativeChildShapes />
+    </commentShape>
   </nestedChildShapes>
 </logicalClassDesignerDiagram>

@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="568cf1bd-0695-43f7-af2d-0adf08f39b58" name="UMLClassDiagram1" linkedPackageId="973fbda5-7635-43cb-be3a-5957a34048a8" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="568cf1bd-0695-43f7-af2d-0adf08f39b58" name="CompleteClassDiagram" linkedPackageId="973fbda5-7635-43cb-be3a-5957a34048a8" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="1920cf79-6fd3-4ac3-9824-4c35d251010e">
+      <elementDefinition Id="e318b100-6a50-41e3-b2c6-4c608bc13078" />
+      <body>Database Is connected to every controller and FundEntity, Notification, UserProfile, UserTransaction</body>
+    </comment>
+  </ownedCommentsInternal>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="db9c8639-802a-4152-b366-05c348874af7" name="DatabaseContext" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -2711,7 +2717,7 @@
         </appliedStereotypesInternal>
         <elementDefinition Id="5dea8939-177b-4518-a46a-cc04b0ee9856" />
         <targetEnds>
-          <association Id="6dfd974e-925d-4f23-bf5b-f69695c49a53" isDerived="false" sourceEndRoleName="FundEntitiesController" targetEndRoleName="FundEntity" isLeaf="false" isAbstract="false">
+          <association Id="6dfd974e-925d-4f23-bf5b-f69695c49a53" isDerived="false" sourceEndRoleName="FundEntitiesController" targetEndRoleName="FundEntity" isLeaf="false" name="*" isAbstract="false">
             <classMoniker Id="fa0b7904-c54d-4a65-96af-be9d0783d04d" LastKnownName="FundEntity" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -2721,6 +2727,16 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd Id="f969941b-5ad9-45fd-bd9d-f2fb63c33394" name="FundEntity" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="1204a486-bd20-4499-bb7b-32ad6176590b" name="Lower" value="*">
+                      <elementDefinition Id="2cd0f68e-7a9c-4c5e-a7a3-25777bbbb2ab" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="fa19f184-e7b7-4e6f-b10b-5685d3174545" name="Upper" value="*">
+                      <elementDefinition Id="73328d33-684e-403d-91bd-bb997c6ffec6" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="425bf312-6482-46bb-b5e6-9b3d39fe8c34" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -2839,7 +2855,7 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="6234459f-bae1-4104-8ce2-f694efe98252" name="id" direction="In">
+                <parameter Id="6234459f-bae1-4104-8ce2-f694efe98252" name="ids" direction="In" isUnique="false">
                   <referencesInternal>
                     <reference Id="651d9c35-e5d7-4569-9f16-e2c1673793b6" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FSteven%2FDesktop%2FFundTracker%2FFundTracker%2FFundPortfolio%2Fbin%2FFundPortfolio.dll Namespace%3DFundPortfolio.Controllers Type%3DFundEntitiesController Member%3D(Name%3DDetails OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Did" tag="ViewCode">
                       <elementDefinition Id="2c52ed26-c78c-465d-bdad-d1d6b5a13598" />
@@ -2847,7 +2863,23 @@
                   </referencesInternal>
                   <elementDefinition Id="c5328e86-3532-41d6-9d32-3dbcca22080e" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="aec4b0cb-6b0e-4516-a08a-9f1cc526e728" LastKnownName="String" />
+                    <referencedTypeMoniker Id="a59c350a-ee18-4dea-ab20-5484dfe21ed9" LastKnownName="List&lt;String&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="165fdaa7-9244-40b0-8378-0ed5bf34ef01" name="StartDate" direction="In">
+                  <elementDefinition Id="f8c3dfcd-f123-4ba2-990a-3134b4d6f6b1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b218465a-a9e4-431d-9fee-f894a27bfbe8" LastKnownName="DateTime" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="949797d3-24f0-42ba-b909-44a7afc675f7" name="EndDate" direction="In">
+                  <elementDefinition Id="7e14d143-12ec-450a-8c83-cfb6a93ee003" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b218465a-a9e4-431d-9fee-f894a27bfbe8" LastKnownName="DateTime" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -3043,6 +3075,24 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="f3f6ab98-fefe-4949-918e-00fc1c6d643d" />
+          </operation>
+          <operation Id="ba9d0ee9-2e72-46de-91b7-7a80a59a7abf" name="ExportReport" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="685df0c5-edd8-45ef-9fa4-3586c3903e48" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0956094e-910e-4104-b63c-15e83eb275be" name="id" direction="In" isUnique="false">
+                  <elementDefinition Id="4be2ab86-417f-45f1-a76c-686fb54caf53" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="aec4b0cb-6b0e-4516-a08a-9f1cc526e728" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="21baa297-66b2-487c-980c-84bb58ed743b" direction="In" isUnique="false">
+                  <elementDefinition Id="5c1b35f0-101b-4121-bee2-98887062e7e8" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -8701,6 +8751,16 @@
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="a59c350a-ee18-4dea-ab20-5484dfe21ed9" name="List&lt;String&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;String&gt;">
+        <elementDefinition Id="29ff7718-0668-4590-8e19-76cc128be488" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b218465a-a9e4-431d-9fee-f894a27bfbe8" name="DateTime" isAbstract="false" isLeaf="false" cachedFullName="DateTime">
+        <elementDefinition Id="23fcfacb-cad9-471d-8b3a-1b6346436848" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="973fbda5-7635-43cb-be3a-5957a34048a8" name="ModelingProject1">
     <elementDefinition Id="3fa45840-67de-4910-a31d-9b456e9c2cb0" />

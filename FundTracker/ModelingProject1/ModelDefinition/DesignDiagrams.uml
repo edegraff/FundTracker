@@ -3,6 +3,12 @@
   dslVersion="1.0.0.0"
   Id="3fa45840-67de-4910-a31d-9b456e9c2cb0"
   name="ModelingProject1" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="e318b100-6a50-41e3-b2c6-4c608bc13078">
+      <body>Database Is connected to every controller and FundEntity, Notification, UserProfile, UserTransaction</body>
+    </comment>
+  </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -76,7 +82,7 @@
             <represents>
               <propertyMoniker
                 Id="45e6f747-818a-447b-a8e0-599e157cafd6"
-                LastKnownLocation="ModelingProject1.uml" />
+                LastKnownLocation="DesignDiagrams.uml" />
             </represents>
           </lifeline>
           <lifeline
@@ -87,7 +93,7 @@
             <represents>
               <propertyMoniker
                 Id="45337711-6df6-4c92-a564-5867fea5887e"
-                LastKnownLocation="ModelingProject1.uml" />
+                LastKnownLocation="DesignDiagrams.uml" />
             </represents>
           </lifeline>
         </lifelines>
@@ -132,6 +138,16 @@
         Id="99885c23-865f-4e38-bf6f-31315591db13"
         LastKnownName="FundService"
         LastKnownLocation="Package_1530.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="29ff7718-0668-4590-8e19-76cc128be488"
+        name="List&lt;String&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="23fcfacb-cad9-471d-8b3a-1b6346436848"
+        name="DateTime" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
