@@ -94,7 +94,7 @@ namespace FundService
 			}
 		}
 
-		public string MakeRequest(string url)
+		private string MakeRequest(string url)
 		{
 			try
 			{
@@ -119,7 +119,7 @@ namespace FundService
 			}
 		}
 
-		public void ParseJSON()
+		private void ParseJSON()
 		{
 			foreach (FundEntity fund in this.funds)
 			{
