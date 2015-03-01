@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="a4e13673-b10e-4ba0-bbbb-d7e4abbd05af"
   name="Generic"
@@ -238,6 +238,84 @@
                     <classMoniker
                       Id="1b76f1da-2870-4be7-8eaf-89b712a36764"
                       LastKnownName="FundEntity"
+                      LastKnownLocation="Package1_1333.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="af64c720-a61b-46cb-b04b-bf150c4c4018"
+                      LastKnownLocation="Package6_1333.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+            </relationshipOwnedElementsInternal>
+          </templateBinding>
+        </signatures>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a6603669-9613-4fbd-8b32-5a8a442d9064"
+        name="List&lt;FundData‎&gt;"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="99a3df24-ea16-4f09-95a6-487b1f9d742b"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4a2dab00-ed84-4790-b8f4-f5058334d5a2">
+                <propertyInstance
+                  Id="9a6b136a-58f1-485d-9720-ab17e03e23b3"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c613e6d8-c85e-482b-827e-587195a9f456">
+                <propertyInstance
+                  Id="46c9c784-eec2-41e8-a7bd-9b1a866624ab"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f4d6e4e0-2bc9-4b2c-877f-edbcd94cce71">
+                <propertyInstance
+                  Id="92593107-f966-4cd4-96cd-a69acf031997"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c8c36019-d5bf-49e7-99af-c737b6f42dc1">
+                <propertyInstance
+                  Id="ef963771-61bf-4482-a3fa-d7657c36f1d5"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5c76a513-3a31-4644-9666-2bf84570fdcc">
+                <propertyInstance
+                  Id="6228526f-d4a0-4659-84f3-2fedd64cd9e6"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <signatures>
+          <templateBinding
+            Id="9bb6be36-280f-4a24-9040-ab98c4285d79">
+            <redefinableTemplateSignatureMoniker
+              Id="1cea442e-f904-4f53-8de7-fe8a9121562e"
+              LastKnownLocation="Package6_1333.uml" />
+            <relationshipOwnedElementsInternal>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="95af51d8-179a-4a7b-9358-88005ba44cc6">
+                  <actuals>
+                    <classMoniker
+                      Id="2a933d6e-b920-4c29-8dcc-e8066fb52f1c"
+                      LastKnownName="FundData"
                       LastKnownLocation="Package1_1333.uml" />
                   </actuals>
                   <formal>

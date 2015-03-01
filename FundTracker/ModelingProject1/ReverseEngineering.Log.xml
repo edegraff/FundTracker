@@ -6,30 +6,22 @@
   <MessageClass Name="Error" Label="Error" Option="Show errors" />
   <MessageClass Name="Property" Label="Property" Option="Show metadata" />
   <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
-  <Message Timestamp="2015-02-28T16:09:09" Importance="High" Text="Reverse Engineering Started." />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Integer' -  (PrimitiveType)" />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::Common' -  (Package)" />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::Common::Models' -  (Package)" />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::Common::Models::FundEntity' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::Common::Models::UserProfile' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="Medium" Text="Element reverse engineered into the UML model: 'ModelingProject1::Common::Models::UserTransaction' -  (Class)" />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::Common::Models::UserTransaction::Date' -  (Property)" />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::Common::Models::UserTransaction::FundEntity' -  (Property)" />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::Common::Models::UserTransaction::FundEntityId' -  (Property)" />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::Common::Models::UserTransaction::UserId' -  (Property)" />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::Common::Models::UserTransaction::UserProfile' -  (Property)" />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::Common::Models::UserTransaction::UserTransaction' -  (Operation)" />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::Common::Models::UserTransaction::UserTransactionId' -  (Property)" />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::Common::Models::UserTransaction::Value' -  (Property)" />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::System' -  (Package)" />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::System::DateTime' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::System::Single' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'String' -  (PrimitiveType)" />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject1::Common::Models::UserTransaction to ModelingProject1::Common::Models::FundEntity (Association)" />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject1::Common::Models::UserTransaction to ModelingProject1::Common::Models::UserProfile (Association)" />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject1::Common::Models::UserTransaction to ModelingProject1::System::DateTime (Association)" />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject1::Common::Models::UserTransaction to ModelingProject1::System::Single (Association)" />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="High" Text="(1) type(s) fully reverse engineered." />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="High" Text="(4) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
-  <Message Timestamp="2015-02-28T16:09:10" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
+  <Message Timestamp="2015-02-28T17:15:44" Importance="High" Text="Reverse Engineering Started." />
+  <Message Timestamp="2015-02-28T17:15:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'af64c720-a61b-46cb-b04b-bf150c4c4018' -  (ClassifierTemplateParameter)" />
+  <Message Timestamp="2015-02-28T17:15:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::Common' -  (Package)" />
+  <Message Timestamp="2015-02-28T17:15:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::Common::Models' -  (Package)" />
+  <Message Timestamp="2015-02-28T17:15:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::Common::Models::FundData' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-28T17:15:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::Common::Models::FundEntity' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-28T17:15:45" Importance="Medium" Text="Element reverse engineered into the UML model: 'ModelingProject1::Common::Models::FundProjector' -  (Class)" />
+  <Message Timestamp="2015-02-28T17:15:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::Common::Models::FundProjector::FundProjector' -  (Operation)" />
+  <Message Timestamp="2015-02-28T17:15:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::Common::Models::FundProjector::ProjectData' -  (Operation)" />
+  <Message Timestamp="2015-02-28T17:15:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::Common::Models::FundProjector::ProjectData::fundEntity' -  (Parameter)" />
+  <Message Timestamp="2015-02-28T17:15:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::System' -  (Package)" />
+  <Message Timestamp="2015-02-28T17:15:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::System::Collections' -  (Package)" />
+  <Message Timestamp="2015-02-28T17:15:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::System::Collections::Generic' -  (Package)" />
+  <Message Timestamp="2015-02-28T17:15:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::System::Collections::Generic::List' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-28T17:15:45" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::System::Collections::Generic::List&lt;FundData‎&gt;' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-28T17:15:45" Importance="High" Text="(1) type(s) fully reverse engineered." />
+  <Message Timestamp="2015-02-28T17:15:45" Importance="High" Text="(4) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
+  <Message Timestamp="2015-02-28T17:15:45" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
 </Log>

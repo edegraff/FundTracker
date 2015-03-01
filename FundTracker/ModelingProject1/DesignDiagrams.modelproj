@@ -84,6 +84,34 @@
     <Content Include="ModelDefinition\Package_1530.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="UC-1-CreatingAnAccount.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UC-1-CreatingAnAccount.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UC-1-CreatingAnAccount.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="UC-2-Login.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UC-2-Login.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UC-2-Login.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="UC-4-SearchViewForecastAndExportFunds.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UC-4-SearchViewForecastAndExportFunds.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UC-4-SearchViewForecastAndExportFunds.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="UC-5-CRUDofNotifications.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UC-5-CRUDofNotifications.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UC-5-CRUDofNotifications.sequencediagram</DependentUpon>
+    </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\DesignDiagrams.uml">
       <SubType>Content</SubType>

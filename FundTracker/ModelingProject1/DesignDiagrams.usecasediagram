@@ -58,7 +58,7 @@
             <elementDefinition Id="8a55a7e2-1917-4ad8-8135-84ca96c34342" />
           </association>
           <association Id="2ada3761-96b6-48c6-9bff-bb512a67a905" isDerived="false" sourceEndRoleName="User" targetEndRoleName="UC-3: Enter Fund Transaction" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="673fbec5-e945-4e6f-bc63-3daf39307929" LastKnownName="UC-3: Enter Fund Transaction" />
+            <useCaseMoniker Id="673fbec5-e945-4e6f-bc63-3daf39307929" LastKnownName="UC-3: CRUD Fund Transactions" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="3c469194-4126-426f-aa7e-dd806a608cf4" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -74,7 +74,7 @@
             <elementDefinition Id="0075903f-3812-4f6b-9ca8-1474684f69e3" />
           </association>
           <association Id="d27631e0-e84f-4761-9e21-75e89ac57869" isDerived="false" sourceEndRoleName="User" targetEndRoleName="UC-4: Search and View and Forcast Funds" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="e0a606d9-4e84-4c1e-8179-77a6c444a80d" LastKnownName="UC-4: Search and View and Forcast Funds" />
+            <useCaseMoniker Id="e0a606d9-4e84-4c1e-8179-77a6c444a80d" LastKnownName="UC-4: Search View Forcast and report Funds" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="e1f5c292-9ea7-4cce-94d8-ad134e1ff520" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -89,24 +89,8 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="095707e6-2d6a-4ec8-988c-2632076a0ea4" />
           </association>
-          <association Id="d664ea74-ab96-442e-9ea3-45d5a38a1f4b" isDerived="false" sourceEndRoleName="User" targetEndRoleName="UC-5: Fund Reporting" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="19119bb7-b95d-41f4-8899-3a98d3a6b5b6" LastKnownName="UC-5: Fund Reporting" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="862f3c42-5d5e-433f-ad66-f0e05da05146" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="da308713-8341-425d-ace6-80bbaeaa35b9" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="e5319cf9-57c3-407b-98a2-a39e332eff51" name="UC-5: Fund Reporting" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="0b4f0ef8-f43e-4125-a57a-b5555351882f" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="bcffdd19-578f-4cdf-9546-3d58399d2499" />
-          </association>
           <association Id="45a15149-0c18-4e10-92f3-b6b96fdb9a75" isDerived="false" sourceEndRoleName="User" targetEndRoleName="UC-6: Setting a Notification" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="20da3ae0-c232-4e3f-8373-394317fd09b2" LastKnownName="UC-6: Setting a Notification" />
+            <useCaseMoniker Id="20da3ae0-c232-4e3f-8373-394317fd09b2" LastKnownName="UC-6: CRUD Notifications" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="2f025117-eb03-45e8-95dc-34e67b99c70b" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -141,7 +125,7 @@
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="673fbec5-e945-4e6f-bc63-3daf39307929" name="UC-3: Enter Fund Transaction" isAbstract="false" isLeaf="false">
+      <useCase Id="673fbec5-e945-4e6f-bc63-3daf39307929" name="UC-3: CRUD Fund Transactions" isAbstract="false" isLeaf="false">
         <elementDefinition Id="2af68293-bd8d-4eb5-831f-e6af25a25fd0" />
         <subjects>
           <subsystemMoniker Id="85a5f64e-791a-46d2-9ae6-374794c40f1e" />
@@ -175,7 +159,7 @@
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="e0a606d9-4e84-4c1e-8179-77a6c444a80d" name="UC-4: Search and View and Forcast Funds" isAbstract="false" isLeaf="false">
+      <useCase Id="e0a606d9-4e84-4c1e-8179-77a6c444a80d" name="UC-4: Search View Forcast and report Funds" isAbstract="false" isLeaf="false">
         <elementDefinition Id="2429f749-9c73-4197-897d-be8fcfa6a328" />
         <subjects>
           <subsystemMoniker Id="85a5f64e-791a-46d2-9ae6-374794c40f1e" />
@@ -183,15 +167,7 @@
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="19119bb7-b95d-41f4-8899-3a98d3a6b5b6" name="UC-5: Fund Reporting" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="eb21ea56-ef86-4ff4-8279-4787000b0ff0" />
-        <subjects>
-          <subsystemMoniker Id="85a5f64e-791a-46d2-9ae6-374794c40f1e" />
-        </subjects>
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="20da3ae0-c232-4e3f-8373-394317fd09b2" name="UC-6: Setting a Notification" isAbstract="false" isLeaf="false">
+      <useCase Id="20da3ae0-c232-4e3f-8373-394317fd09b2" name="UC-6: CRUD Notifications" isAbstract="false" isLeaf="false">
         <elementDefinition Id="2afd4591-c63a-4f63-afcb-789116656adc" />
         <subjects>
           <subsystemMoniker Id="85a5f64e-791a-46d2-9ae6-374794c40f1e" />
@@ -219,7 +195,7 @@
             <elementDefinition Id="48cd8935-ebc2-449e-acc1-1bc07bc1beaa" />
           </association>
           <association Id="0f56e2f6-5918-49a9-bb44-2d2f703ebb99" isDerived="false" sourceEndRoleName="Visitor" targetEndRoleName="UC-4: Search and View and Forcast Funds" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="e0a606d9-4e84-4c1e-8179-77a6c444a80d" LastKnownName="UC-4: Search and View and Forcast Funds" />
+            <useCaseMoniker Id="e0a606d9-4e84-4c1e-8179-77a6c444a80d" LastKnownName="UC-4: Search View Forcast and report Funds" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="8d4554ff-54a2-453f-938e-503e4e3ec12a" name="Visitor" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -233,22 +209,6 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="fa9a9002-ec7e-4c9f-a664-9472526d2b27" />
-          </association>
-          <association Id="34f70c46-88f0-4acd-a94e-2b42abb2ad99" isDerived="false" sourceEndRoleName="Visitor" targetEndRoleName="UC-5: Fund Reporting" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="19119bb7-b95d-41f4-8899-3a98d3a6b5b6" LastKnownName="UC-5: Fund Reporting" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="da2c6ad7-92bd-45bd-8a92-d5c26533f0b6" name="Visitor" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="b09dd524-0555-4d48-972c-b58a7dede07a" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="507a3842-d4f2-4918-aff7-65323b7dbe6e" name="UC-5: Fund Reporting" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="ae25d8b1-3d22-4d6f-bd7b-10ccc408ca5a" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="41850475-ae7a-4da7-944a-002c5aeb7f03" />
           </association>
         </targetEnds>
       </actor>
