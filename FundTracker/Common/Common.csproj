@@ -56,6 +56,10 @@
     <Compile Include="Migrations\201502240112386_ExtractFundHistoryFromFundEntity.Designer.cs">
       <DependentUpon>201502240112386_ExtractFundHistoryFromFundEntity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503020527440_createdAllModels.cs" />
+    <Compile Include="Migrations\201503020527440_createdAllModels.Designer.cs">
+      <DependentUpon>201503020527440_createdAllModels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ChangeNotification.cs" />
     <Compile Include="Models\FundEntity.cs" />
@@ -77,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201502240112386_ExtractFundHistoryFromFundEntity.resx">
       <DependentUpon>201502240112386_ExtractFundHistoryFromFundEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503020527440_createdAllModels.resx">
+      <DependentUpon>201503020527440_createdAllModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

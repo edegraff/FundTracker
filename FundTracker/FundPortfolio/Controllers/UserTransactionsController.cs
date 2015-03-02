@@ -10,6 +10,7 @@ using Common.Models;
 
 namespace FundPortfolio.Controllers
 {
+	[Authorize]
     public class UserTransactionsController : Controller
     {
         private DatabaseContext db = new DatabaseContext();
