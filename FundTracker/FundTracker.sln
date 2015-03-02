@@ -13,7 +13,7 @@ Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "FundPortfolio.Azure", "Fund
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{377DE6ED-3E7F-4AC9-BD54-58FB0A9E2913}"
 EndProject
-Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "DesignDiagrams", "ModelingProject1\DesignDiagrams.modelproj", "{211603A7-7A9D-4AD8-A831-04D53D54C3CB}"
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "DesignDiagrams", "DesignDiagrams\DesignDiagrams.modelproj", "{211603A7-7A9D-4AD8-A831-04D53D54C3CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

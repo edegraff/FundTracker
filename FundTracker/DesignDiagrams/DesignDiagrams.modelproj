@@ -98,6 +98,13 @@
       <SubType>Content</SubType>
       <DependentUpon>UC-2-Login.sequencediagram</DependentUpon>
     </Content>
+    <Content Include="UC-3-CRUDFundTransactions.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UC-3-CRUDFundTransactions.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UC-3-CRUDFundTransactions.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="UC-4-SearchViewForecastAndExportFunds.sequencediagram">
       <SubType>Content</SubType>
     </Content>
@@ -111,6 +118,20 @@
     <Content Include="UC-5-CRUDofNotifications.sequencediagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>UC-5-CRUDofNotifications.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="UC-6-NotifyingUser.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UC-6-NotifyingUser.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UC-6-NotifyingUser.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="UC-7-ScrapeData.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UC-7-ScrapeData.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UC-7-ScrapeData.sequencediagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\DesignDiagrams.uml">
