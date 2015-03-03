@@ -1,25 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="c29dc8d5-734d-4c04-8bbf-f9851a3fd677" name="DesignDiagrams" linkedPackageId="46660af8-7ea3-49e7-a9a8-add780156613" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
-  <profileInstances>
-    <packageHasProfileInstances Id="e8289dca-b4d6-430f-8b39-2af7121b4282">
-      <profileInstance Id="57aad9fd-781b-46cb-9617-c5f186867bb1" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="3725cac1-7766-44ba-aaf7-24dcab7cf600">
-      <profileInstance Id="c0f3b561-5723-4be4-a3d6-dcf3615a1138" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="1ae0820b-f77c-407a-b588-741088c4e185">
-      <profileInstance Id="2565d4ce-abe5-4c22-aed2-6711b7057145" name="CSharpProfile">
-        <elementDefinition Id="3c82b182-420b-4425-b677-c551062c29f1" />
-      </profileInstance>
-      <elementDefinition Id="32d2662c-e967-4b05-bcd9-932d94d3cea7" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="c29dc8d5-734d-4c04-8bbf-f9851a3fd677" name="DesignDiagrams" linkedPackageId="46660af8-7ea3-49e7-a9a8-add780156613" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="51bbc799-698f-4e29-8adb-b0c8467d5a92">
+      <elementDefinition Id="68b6491e-c9fc-4c11-b2e6-3ba898fbb270" />
+      <body>Overview of the sequence diagrams</body>
+    </comment>
+  </ownedCommentsInternal>
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="b04157d8-76f6-484b-bc23-779bdf0a27dd" name="User" isAbstract="false" isLeaf="false">
@@ -90,7 +76,7 @@
             <elementDefinition Id="095707e6-2d6a-4ec8-988c-2632076a0ea4" />
           </association>
           <association Id="45a15149-0c18-4e10-92f3-b6b96fdb9a75" isDerived="false" sourceEndRoleName="User" targetEndRoleName="UC-6: Setting a Notification" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="20da3ae0-c232-4e3f-8373-394317fd09b2" LastKnownName="UC-6: CRUD Notifications" />
+            <useCaseMoniker Id="20da3ae0-c232-4e3f-8373-394317fd09b2" LastKnownName="UC-5: CRUD Notifications" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="2f025117-eb03-45e8-95dc-34e67b99c70b" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -133,7 +119,7 @@
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="68c8ee28-5cb5-4938-b23d-179cb5b51084" name="UC-7:Notifying User" isAbstract="false" isLeaf="false">
+      <useCase Id="68c8ee28-5cb5-4938-b23d-179cb5b51084" name="UC-6:Notifying User" isAbstract="false" isLeaf="false">
         <elementDefinition Id="e86efd74-947c-4d25-ad7d-a997f0feaf47" />
         <targetEnds>
           <association Id="3afd3bf6-44fe-4015-8201-2b302dc540c0" isDerived="false" sourceEndRoleName="UC-7:Notifying User" targetEndRoleName="User" isLeaf="false" isAbstract="false">
@@ -167,7 +153,7 @@
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="20da3ae0-c232-4e3f-8373-394317fd09b2" name="UC-6: CRUD Notifications" isAbstract="false" isLeaf="false">
+      <useCase Id="20da3ae0-c232-4e3f-8373-394317fd09b2" name="UC-5: CRUD Notifications" isAbstract="false" isLeaf="false">
         <elementDefinition Id="2afd4591-c63a-4f63-afcb-789116656adc" />
         <subjects>
           <subsystemMoniker Id="85a5f64e-791a-46d2-9ae6-374794c40f1e" />
@@ -218,7 +204,7 @@
         <elementDefinition Id="4d885a34-1b7f-45aa-b0d6-8e343422a9f3" />
         <targetEnds>
           <association Id="9eed0778-a255-4693-acee-c0bd4af2e1b3" isDerived="false" sourceEndRoleName="FundService" targetEndRoleName="UC-8: Scrape data" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="4ebb9270-a094-4733-bf0c-bdad41f95400" LastKnownName="UC-8: Scrape data" />
+            <useCaseMoniker Id="4ebb9270-a094-4733-bf0c-bdad41f95400" LastKnownName="UC-7: Scrape data" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="7951cf6b-2a2b-4469-8931-a8f9ba3cae4b" name="FundService" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -234,7 +220,7 @@
             <elementDefinition Id="5a3081f6-d062-402f-8e15-242ccf2930e5" />
           </association>
           <association Id="d67fd560-79b9-4b5e-af26-48790f2d2a04" isDerived="false" sourceEndRoleName="FundService" targetEndRoleName="UC-7:Notifying User" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="68c8ee28-5cb5-4938-b23d-179cb5b51084" LastKnownName="UC-7:Notifying User" />
+            <useCaseMoniker Id="68c8ee28-5cb5-4938-b23d-179cb5b51084" LastKnownName="UC-6:Notifying User" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="fc38137e-de49-49c7-82c8-c30eef871abb" name="FundService" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -253,7 +239,7 @@
       </actor>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="4ebb9270-a094-4733-bf0c-bdad41f95400" name="UC-8: Scrape data" isAbstract="false" isLeaf="false">
+      <useCase Id="4ebb9270-a094-4733-bf0c-bdad41f95400" name="UC-7: Scrape data" isAbstract="false" isLeaf="false">
         <elementDefinition Id="ce0844fc-2df5-4302-a2a4-387face80014" />
         <subjects>
           <subsystemMoniker Id="85a5f64e-791a-46d2-9ae6-374794c40f1e" />
@@ -268,5 +254,25 @@
   </packagedElements>
   <package Id="46660af8-7ea3-49e7-a9a8-add780156613" name="ModelingProject1">
     <elementDefinition Id="3fa45840-67de-4910-a31d-9b456e9c2cb0" />
+    <profileInstances>
+      <packageHasProfileInstances Id="e8289dca-b4d6-430f-8b39-2af7121b4282">
+        <profileInstance Id="57aad9fd-781b-46cb-9617-c5f186867bb1" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="3725cac1-7766-44ba-aaf7-24dcab7cf600">
+        <profileInstance Id="c0f3b561-5723-4be4-a3d6-dcf3615a1138" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="1ae0820b-f77c-407a-b588-741088c4e185">
+        <profileInstance Id="2565d4ce-abe5-4c22-aed2-6711b7057145" name="CSharpProfile">
+          <elementDefinition Id="3c82b182-420b-4425-b677-c551062c29f1" />
+        </profileInstance>
+        <elementDefinition Id="32d2662c-e967-4b05-bcd9-932d94d3cea7" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </useCaseModelRoot>

@@ -1,28 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="e3fb5a0e-829e-4d22-98e8-4a7e2dab3855" name="UC-5-CRUDofNotifications" linkedPackageId="613f48d5-b59b-4e8d-92a8-620f87855a0d" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="573f554d-103a-4a15-85cb-f3a83f7f6926">
-      <profileInstance Id="5b703a96-3ed2-47dc-9bab-d462c888d142" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="4b8aa541-0a2f-4266-bc24-ab5fa98de23b">
-      <profileInstance Id="634db98d-a0e9-4fe0-b83e-2ffda103601c" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="4d695e7d-b037-4863-9c80-8b90eca31ec2">
-      <profileInstance Id="d38505f5-3c4a-44c5-9db6-f56ced8c6835" name="CSharpProfile">
-        <elementDefinition Id="3c82b182-420b-4425-b677-c551062c29f1" />
-      </profileInstance>
-      <elementDefinition Id="32d2662c-e967-4b05-bcd9-932d94d3cea7" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="e3fb5a0e-829e-4d22-98e8-4a7e2dab3855" name="UC-5-CRUDofNotifications" linkedPackageId="613f48d5-b59b-4e8d-92a8-620f87855a0d" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
   <packagedElements>
     <packageHasNamedElement>
       <interaction Id="b29b8647-9aa3-43b0-9a06-0f354cc5a5ec" name="UC-5-CRUDofNotifications" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
+        <ownedCommentsInternal>
+          <comment Id="02d1ef3d-a769-4379-9530-81d81a769987">
+            <elementDefinition Id="fbb65a09-dc0b-48f7-973d-10d0c52f22f2" />
+            <body>Covers Functional Requirements in 3.2.3</body>
+          </comment>
+        </ownedCommentsInternal>
         <elementDefinition Id="187521d3-c22c-4943-934d-3c87271d8b71" />
         <fragments>
           <behaviorExecutionSpecification Id="2f3f5290-c8e9-44ac-9742-949b0ffdceb2" name="BehaviorExecutionSpecification1">
@@ -846,5 +832,25 @@
   </packagedElements>
   <package Id="613f48d5-b59b-4e8d-92a8-620f87855a0d" name="ModelingProject1">
     <elementDefinition Id="3fa45840-67de-4910-a31d-9b456e9c2cb0" />
+    <profileInstances>
+      <packageHasProfileInstances Id="573f554d-103a-4a15-85cb-f3a83f7f6926">
+        <profileInstance Id="5b703a96-3ed2-47dc-9bab-d462c888d142" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="4b8aa541-0a2f-4266-bc24-ab5fa98de23b">
+        <profileInstance Id="634db98d-a0e9-4fe0-b83e-2ffda103601c" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="4d695e7d-b037-4863-9c80-8b90eca31ec2">
+        <profileInstance Id="d38505f5-3c4a-44c5-9db6-f56ced8c6835" name="CSharpProfile">
+          <elementDefinition Id="3c82b182-420b-4425-b677-c551062c29f1" />
+        </profileInstance>
+        <elementDefinition Id="32d2662c-e967-4b05-bcd9-932d94d3cea7" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </SequenceDesignerModel>

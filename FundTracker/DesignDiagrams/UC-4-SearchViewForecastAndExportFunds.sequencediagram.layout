@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<sequenceDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.875, 8.625" name="UC-4">
+<sequenceDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13.625, 8.625" name="UC-4">
   <SequenceDesignerModelMoniker Id="430dcdfa-edcf-46e2-9993-05c5bcba379c" />
   <nestedChildShapes>
     <lifelineShape Id="75167fa1-d629-42d6-9632-edc3ae4db3c6" absoluteBounds="1.025, 1, 0.15, 7.35" visible="true" visualStyleMode="Modified">
@@ -186,5 +186,9 @@
         <umlExecutionSpecificationShapeMoniker Id="1ece93db-d7a8-4465-8292-ceb2c456c07c" />
       </nodes>
     </returnMessageConnector>
+    <commentShape Id="59c84350-f93f-4a47-8aa2-0cfdc2cd4071" absoluteBounds="12.125, 0.5, 1.25, 0.75" customColor="251, 247, 200">
+      <commentMoniker Id="61f5b8d8-bc36-42b4-9c76-a35fd5bfa0c8" />
+      <relativeChildShapes />
+    </commentShape>
   </nestedChildShapes>
 </sequenceDesignerDiagram>

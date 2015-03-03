@@ -1,28 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="92b1e89b-2658-4e67-83e9-c9538da0b36b" name="UC-2-Login" linkedPackageId="908ec729-9fa8-45e5-bcb9-28fd07068b43" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="f4435fe6-448f-4df0-82a7-a8f3b4837912">
-      <profileInstance Id="bd739259-bfbe-4536-b20d-586d6dc7428f" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="cfd34b67-64bc-45a8-8af6-e2a457734b92">
-      <profileInstance Id="a0cda404-6097-4a3e-a9e6-022e867e28f8" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="d329b497-88fc-4a48-890e-ac7b56b3e2fe">
-      <profileInstance Id="26fa8983-97ac-41a1-955f-7e601eb3cc93" name="CSharpProfile">
-        <elementDefinition Id="3c82b182-420b-4425-b677-c551062c29f1" />
-      </profileInstance>
-      <elementDefinition Id="32d2662c-e967-4b05-bcd9-932d94d3cea7" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="92b1e89b-2658-4e67-83e9-c9538da0b36b" name="UC-2-Login" linkedPackageId="908ec729-9fa8-45e5-bcb9-28fd07068b43" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
   <packagedElements>
     <packageHasNamedElement>
       <interaction Id="51935c8f-b204-49f3-a6c0-aab1a8394a25" name="UC-2-Login" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
+        <ownedCommentsInternal>
+          <comment Id="3b0ba9b2-403f-490e-9e5d-8effee54a38f">
+            <elementDefinition Id="3d543efe-45c8-4db1-a477-1beae332ff1d" />
+            <body>Covers Functional Requirements in 3.2.1.3.2 and 3.2.1.3.3</body>
+          </comment>
+        </ownedCommentsInternal>
         <elementDefinition Id="e6c98f62-717f-470a-9df0-6dd3b6359c6e" />
         <fragments>
           <behaviorExecutionSpecification Id="1450bd67-3dcf-4d44-b002-c461c5bf64d8" name="BehaviorExecutionSpecification1">
@@ -169,5 +155,25 @@
   </packagedElements>
   <package Id="908ec729-9fa8-45e5-bcb9-28fd07068b43" name="ModelingProject1">
     <elementDefinition Id="3fa45840-67de-4910-a31d-9b456e9c2cb0" />
+    <profileInstances>
+      <packageHasProfileInstances Id="f4435fe6-448f-4df0-82a7-a8f3b4837912">
+        <profileInstance Id="bd739259-bfbe-4536-b20d-586d6dc7428f" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="cfd34b67-64bc-45a8-8af6-e2a457734b92">
+        <profileInstance Id="a0cda404-6097-4a3e-a9e6-022e867e28f8" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="d329b497-88fc-4a48-890e-ac7b56b3e2fe">
+        <profileInstance Id="26fa8983-97ac-41a1-955f-7e601eb3cc93" name="CSharpProfile">
+          <elementDefinition Id="3c82b182-420b-4425-b677-c551062c29f1" />
+        </profileInstance>
+        <elementDefinition Id="32d2662c-e967-4b05-bcd9-932d94d3cea7" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </SequenceDesignerModel>

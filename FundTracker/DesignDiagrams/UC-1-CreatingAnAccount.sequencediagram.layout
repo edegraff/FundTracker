@@ -43,5 +43,9 @@
         <lifelineShapeMoniker Id="493dc5bf-70ac-4ca5-9b33-2111d48affd3" />
       </nodes>
     </returnMessageConnector>
+    <commentShape Id="3b17df50-2978-4f98-9bc5-b540707f74b0" absoluteBounds="5.5, 0.625, 1.25, 0.75" customColor="251, 247, 200">
+      <commentMoniker Id="5db084ba-df1b-471e-8242-6e7335340ffc" />
+      <relativeChildShapes />
+    </commentShape>
   </nestedChildShapes>
 </sequenceDesignerDiagram>

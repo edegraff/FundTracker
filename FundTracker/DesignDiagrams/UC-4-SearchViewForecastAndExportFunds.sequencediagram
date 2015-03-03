@@ -1,28 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="430dcdfa-edcf-46e2-9993-05c5bcba379c" name="UC-4: SearchViewForecastAndExportFunds" linkedPackageId="95d3c74c-e539-45d0-9b64-a97b2534f874" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="a69916c5-9240-4047-b838-2d4585479a77">
-      <profileInstance Id="9c4e370f-ba9f-42b8-bb74-a9dbf6a8e771" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="c5e2dbc1-60eb-419d-bcd8-6d0ed92a29cc">
-      <profileInstance Id="d5b7c044-6ffc-4c0d-95e9-a77a5cfbb3a8" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="f7773939-3498-424e-ae50-69da95d1e0de">
-      <profileInstance Id="f9967546-3eda-43cf-9cc5-58b195c6080b" name="CSharpProfile">
-        <elementDefinition Id="3c82b182-420b-4425-b677-c551062c29f1" />
-      </profileInstance>
-      <elementDefinition Id="32d2662c-e967-4b05-bcd9-932d94d3cea7" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="430dcdfa-edcf-46e2-9993-05c5bcba379c" name="UC-4: SearchViewForecastAndExportFunds" linkedPackageId="95d3c74c-e539-45d0-9b64-a97b2534f874" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
   <packagedElements>
     <packageHasNamedElement>
       <interaction Id="52b993c5-74c6-4227-a384-7d68a6f3b8e6" name="UC-4: SearchViewForecastAndExportFunds" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
+        <ownedCommentsInternal>
+          <comment Id="61f5b8d8-bc36-42b4-9c76-a35fd5bfa0c8">
+            <elementDefinition Id="65c1586a-1072-4961-b548-d7b6b184180f" />
+            <body>Covers Functional Requirements in 3.2.1.1, 3.2.1.2, 3.2.1.5</body>
+          </comment>
+        </ownedCommentsInternal>
         <elementDefinition Id="79084773-b2da-43e3-b02f-ef662ebf0c34" />
         <fragments>
           <behaviorExecutionSpecification Id="5b886967-0f8c-42b4-b19f-1a6c07c61ab6" name="BehaviorExecutionSpecification1">
@@ -283,16 +269,16 @@
               <lifelineMoniker Id="1128b096-0b55-45db-86f2-e197a17b8fc2" LastKnownName="fundProjector : FundProjector" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="e5c9dde0-25c5-4085-89d2-0eb69335f3ab" name="MessageOccurrenceSpecification26">
-            <elementDefinition Id="6e0dafbc-eb5c-40ab-857b-6a578893eb74" />
-            <covered>
-              <lifelineMoniker Id="1128b096-0b55-45db-86f2-e197a17b8fc2" LastKnownName="fundProjector : FundProjector" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="16cb1a83-04c3-49e0-b423-e364289ec422" name="MessageOccurrenceSpecification25">
             <elementDefinition Id="7595123f-db9f-4137-9ca7-b7cdc0afcc24" />
             <covered>
               <lifelineMoniker Id="691f17a1-6cca-41e8-84d2-a49a931c9b14" LastKnownName="fundEntitiesController : FundEntitiesController" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="e5c9dde0-25c5-4085-89d2-0eb69335f3ab" name="MessageOccurrenceSpecification26">
+            <elementDefinition Id="6e0dafbc-eb5c-40ab-857b-6a578893eb74" />
+            <covered>
+              <lifelineMoniker Id="1128b096-0b55-45db-86f2-e197a17b8fc2" LastKnownName="fundProjector : FundProjector" />
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="54fd92bd-0663-4978-a126-c8ac7c1fe803" name="MessageOccurrenceSpecification27">
@@ -411,16 +397,16 @@
               <lifelineMoniker Id="c2a2ca0f-6e23-44f2-baef-70e36c3946f8" LastKnownName="databaseContext : DatabaseContext" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="68cc5b71-85d1-410e-9942-1c3757cb58e5" name="MessageOccurrenceSpecification34">
-            <elementDefinition Id="5429ea7b-5c51-4ef6-9eb2-4cf6f7e52559" />
-            <covered>
-              <lifelineMoniker Id="c2a2ca0f-6e23-44f2-baef-70e36c3946f8" LastKnownName="databaseContext : DatabaseContext" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="cdb003f7-2d52-4973-8c1c-aa20281f9270" name="MessageOccurrenceSpecification33">
             <elementDefinition Id="ae112648-7ba9-46f4-a3b8-4e9d550fd65b" />
             <covered>
               <lifelineMoniker Id="691f17a1-6cca-41e8-84d2-a49a931c9b14" LastKnownName="fundEntitiesController : FundEntitiesController" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="68cc5b71-85d1-410e-9942-1c3757cb58e5" name="MessageOccurrenceSpecification34">
+            <elementDefinition Id="5429ea7b-5c51-4ef6-9eb2-4cf6f7e52559" />
+            <covered>
+              <lifelineMoniker Id="c2a2ca0f-6e23-44f2-baef-70e36c3946f8" LastKnownName="databaseContext : DatabaseContext" />
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="aa7bca3a-6ed1-4872-8a15-28bd2366cb1c" name="MessageOccurrenceSpecification35">
@@ -508,16 +494,16 @@
               <lifelineMoniker Id="1128b096-0b55-45db-86f2-e197a17b8fc2" LastKnownName="fundProjector : FundProjector" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="a1efbf3a-35da-4355-a2a5-672423403f76" name="MessageOccurrenceSpecification31">
-            <elementDefinition Id="3a0455b8-6e92-4917-afcb-4564226daf88" />
-            <covered>
-              <lifelineMoniker Id="691f17a1-6cca-41e8-84d2-a49a931c9b14" LastKnownName="fundEntitiesController : FundEntitiesController" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="ec581ae6-a8d8-4390-ac39-7dfe21116d4d" name="MessageOccurrenceSpecification32">
             <elementDefinition Id="e24d009a-f6cf-4a4e-a7df-aa45fcd73a26" />
             <covered>
               <lifelineMoniker Id="713a3a42-eb1d-41f2-ab74-6dcbef7ab0ab" LastKnownName="Visitor/Actor : Lifeline1" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="a1efbf3a-35da-4355-a2a5-672423403f76" name="MessageOccurrenceSpecification31">
+            <elementDefinition Id="3a0455b8-6e92-4917-afcb-4564226daf88" />
+            <covered>
+              <lifelineMoniker Id="691f17a1-6cca-41e8-84d2-a49a931c9b14" LastKnownName="fundEntitiesController : FundEntitiesController" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="51dfeaa8-6cd8-427a-9ceb-a0a49c2cec20" name="ExecutionOccurrenceSpecification16">
@@ -857,5 +843,25 @@
   </packagedElements>
   <package Id="95d3c74c-e539-45d0-9b64-a97b2534f874" name="ModelingProject1">
     <elementDefinition Id="3fa45840-67de-4910-a31d-9b456e9c2cb0" />
+    <profileInstances>
+      <packageHasProfileInstances Id="a69916c5-9240-4047-b838-2d4585479a77">
+        <profileInstance Id="9c4e370f-ba9f-42b8-bb74-a9dbf6a8e771" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="c5e2dbc1-60eb-419d-bcd8-6d0ed92a29cc">
+        <profileInstance Id="d5b7c044-6ffc-4c0d-95e9-a77a5cfbb3a8" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="f7773939-3498-424e-ae50-69da95d1e0de">
+        <profileInstance Id="f9967546-3eda-43cf-9cc5-58b195c6080b" name="CSharpProfile">
+          <elementDefinition Id="3c82b182-420b-4425-b677-c551062c29f1" />
+        </profileInstance>
+        <elementDefinition Id="32d2662c-e967-4b05-bcd9-932d94d3cea7" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </SequenceDesignerModel>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="3fa45840-67de-4910-a31d-9b456e9c2cb0"
   name="ModelingProject1" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -7,6 +7,10 @@
     <comment
       Id="e318b100-6a50-41e3-b2c6-4c608bc13078">
       <body>Database Is connected to every controller and FundEntity, Notification, UserProfile, UserTransaction</body>
+    </comment>
+    <comment
+      Id="68b6491e-c9fc-4c11-b2e6-3ba898fbb270">
+      <body>Overview of the sequence diagrams</body>
     </comment>
   </ownedCommentsInternal>
   <profileInstances>
@@ -360,7 +364,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="2afd4591-c63a-4f63-afcb-789116656adc"
-              LastKnownName="UC-6: CRUD Notifications"
+              LastKnownName="UC-5: CRUD Notifications"
               LastKnownLocation="DesignDiagrams.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -435,7 +439,7 @@
     <packageHasNamedElement>
       <useCase
         Id="e86efd74-947c-4d25-ad7d-a997f0feaf47"
-        name="UC-7:Notifying User"
+        name="UC-6:Notifying User"
         isAbstract="false"
         isLeaf="false">
         <targetEnds>
@@ -509,7 +513,7 @@
     <packageHasNamedElement>
       <useCase
         Id="2afd4591-c63a-4f63-afcb-789116656adc"
-        name="UC-6: CRUD Notifications"
+        name="UC-5: CRUD Notifications"
         isAbstract="false"
         isLeaf="false">
         <subjects>
@@ -662,7 +666,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="ce0844fc-2df5-4302-a2a4-387face80014"
-              LastKnownName="UC-8: Scrape data"
+              LastKnownName="UC-7: Scrape data"
               LastKnownLocation="DesignDiagrams.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -701,7 +705,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="e86efd74-947c-4d25-ad7d-a997f0feaf47"
-              LastKnownName="UC-7:Notifying User"
+              LastKnownName="UC-6:Notifying User"
               LastKnownLocation="DesignDiagrams.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -737,7 +741,7 @@
     <packageHasNamedElement>
       <useCase
         Id="ce0844fc-2df5-4302-a2a4-387face80014"
-        name="UC-8: Scrape data"
+        name="UC-7: Scrape data"
         isAbstract="false"
         isLeaf="false">
         <subjects>
@@ -815,6 +819,12 @@
         isAbstract="false"
         isLeaf="false"
         isReentrant="false">
+        <ownedCommentsInternal>
+          <comment
+            Id="65c1586a-1072-4961-b548-d7b6b184180f">
+            <body>Covers Functional Requirements in 3.2.1.1, 3.2.1.2, 3.2.1.5</body>
+          </comment>
+        </ownedCommentsInternal>
         <fragments>
           <behaviorExecutionSpecification
             Id="594eafb9-03f6-4f3b-8ee4-8beb5ae84c39"
@@ -2486,6 +2496,12 @@
         isAbstract="false"
         isLeaf="false"
         isReentrant="false">
+        <ownedCommentsInternal>
+          <comment
+            Id="18288679-3a3d-45d9-a560-442734eebe2b">
+            <body>Covers Functional Requirements in 3.2.1.3.2 and 3.2.1.3.3</body>
+          </comment>
+        </ownedCommentsInternal>
         <fragments>
           <behaviorExecutionSpecification
             Id="eb0a0d86-3aef-4c38-948e-a18e215d8c26"
@@ -2767,6 +2783,12 @@
         isAbstract="false"
         isLeaf="false"
         isReentrant="false">
+        <ownedCommentsInternal>
+          <comment
+            Id="3d543efe-45c8-4db1-a477-1beae332ff1d">
+            <body>Covers Functional Requirements in 3.2.1.3.2 and 3.2.1.3.3</body>
+          </comment>
+        </ownedCommentsInternal>
         <fragments>
           <behaviorExecutionSpecification
             Id="a50229d0-1b1f-4c75-b2ed-aad36b63be98"
@@ -3048,6 +3070,12 @@
         isAbstract="false"
         isLeaf="false"
         isReentrant="false">
+        <ownedCommentsInternal>
+          <comment
+            Id="fbb65a09-dc0b-48f7-973d-10d0c52f22f2">
+            <body>Covers Functional Requirements in 3.2.3</body>
+          </comment>
+        </ownedCommentsInternal>
         <fragments>
           <behaviorExecutionSpecification
             Id="2fab5e60-2b62-4793-972f-f1bd30ad27bc"
@@ -4658,6 +4686,12 @@
         isAbstract="false"
         isLeaf="false"
         isReentrant="false">
+        <ownedCommentsInternal>
+          <comment
+            Id="90d8a0b0-712c-4d74-bbc4-b24dfef545c7">
+            <body>Covers Functional Requirements 3.2.3.2 and 3.2.3.3</body>
+          </comment>
+        </ownedCommentsInternal>
         <fragments>
           <behaviorExecutionSpecification
             Id="d63ef081-e0ee-44d7-a470-29cfa251b7e4"
@@ -5637,6 +5671,12 @@
         isAbstract="false"
         isLeaf="false"
         isReentrant="false">
+        <ownedCommentsInternal>
+          <comment
+            Id="048d263c-d930-4688-bdfd-7ce86804ce82">
+            <body>Covers Functional Requirements in 3.2.2</body>
+          </comment>
+        </ownedCommentsInternal>
         <fragments>
           <behaviorExecutionSpecification
             Id="a759caf4-c420-426e-b6ac-86ba2594e7d7"
@@ -6602,6 +6642,12 @@
         isAbstract="false"
         isLeaf="false"
         isReentrant="false">
+        <ownedCommentsInternal>
+          <comment
+            Id="b87cb0e9-8a09-483f-be16-7f918d1831d6">
+            <body>Covers Functional Requirements 3.2.1.3.1 and 3.2.1.4</body>
+          </comment>
+        </ownedCommentsInternal>
         <fragments>
           <behaviorExecutionSpecification
             Id="473ac5f4-a41f-4b43-9a48-6b228587ba7e"
