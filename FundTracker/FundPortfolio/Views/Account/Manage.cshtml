@@ -3,12 +3,12 @@
     ViewBag.Title = "Manage Account";
 }
 
-<div class="section hcenter htwo">
-        <h2>@ViewBag.Title.</h2>
-    <div class="hdivider"></div>
-
+<h1 class="page-header">@ViewBag.Title.</h1>
+<div class="indent-left">
     <p class="message-success">@ViewBag.StatusMessage</p>
     <p>You're logged in as <strong>@User.Identity.Name</strong>.</p>
+</div>
+
     @if (ViewBag.HasLocalPassword)
     {
         @Html.Partial("_ChangePasswordPartial")
@@ -17,14 +17,13 @@
     {
         @Html.Partial("_SetPasswordPartial")
     }
-    <div class="hdivider"></div>
 
-    <section id="externalLogins">
-        @Html.Action("RemoveExternalLogins")
-        <h3>Add an external login:</h3>
-        @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
-    </section>
-</div>
+<section id="externalLogins">
+    @Html.Action("RemoveExternalLogins")
+    <h3>Add an external login:</h3>
+    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+</section>
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

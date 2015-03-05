@@ -1,4 +1,19 @@
-﻿/* Add sidebar options to small drop down */
+﻿/* Custom CSS */
+
+.hcenter {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.indent-left {
+    margin-left: 20px;
+}
+
+table.td-hspace-small td {
+    padding-right: 20px;
+}
+
+/* Add sidebar options to small drop down */
 
 @media (max-width: 768px) {
     div.navbar-collapse.collapse.in ul.sidebar-nav-options {
@@ -17,7 +32,7 @@ ul.sidebar-nav-options {
     }
 }
 
-/* for the log out button */
+/* Log out button */
 
 .nav>li>form>a {
     position: relative;
@@ -44,4 +59,42 @@ ul.sidebar-nav-options {
   color: #fff;
   background-color: transparent;
   text-decoration: none;
+}
+
+/* To help disply auto-generated VS html */
+
+h3 {
+    padding-top: 10px;
+    border-bottom-width: 1px;
+    border-bottom-style: dotted;
+    border-bottom-color: #C5C1C1;
+}
+
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+    fieldset legend {
+        display: none;
+    }
+
+    fieldset ol {
+        padding: 0;
+        list-style: none;
+    }
+
+        fieldset ol li {
+            padding-bottom: 5px;
+        }
+
+label {
+    display: block;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+label.checkbox {
+    display: inline;
 }
