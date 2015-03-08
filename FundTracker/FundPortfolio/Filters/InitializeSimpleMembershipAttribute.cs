@@ -39,7 +39,7 @@ namespace FundPortfolio.Filters
 						}
 					}
 
-					WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+					WebSecurity.InitializeDatabaseConnection("AzureConnection", "UserProfile", "UserId", "Email", autoCreateTables: true);
 				}
 				catch (Exception ex)
 				{

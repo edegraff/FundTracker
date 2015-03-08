@@ -63,6 +63,10 @@
     <Compile Include="Migrations\201503020527440_createdAllModels.Designer.cs">
       <DependentUpon>201503020527440_createdAllModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503080125005_AddedUserTables.cs" />
+    <Compile Include="Migrations\201503080125005_AddedUserTables.Designer.cs">
+      <DependentUpon>201503080125005_AddedUserTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ChangeNotification.cs" />
     <Compile Include="Models\FundEntity.cs" />
@@ -87,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503020527440_createdAllModels.resx">
       <DependentUpon>201503020527440_createdAllModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503080125005_AddedUserTables.resx">
+      <DependentUpon>201503080125005_AddedUserTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
