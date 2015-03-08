@@ -30,7 +30,7 @@
 			<div id="navbar" class="navbar-collapse collapse">
 				@using (Html.BeginForm("index", "fundEntities", FormMethod.Post, new { @class = "navbar-form navbar-right search-form" }))
 				{
-					@Html.TextBox("searchBox", null, new { @class = "form-control", @placeholder = "Search Funds..." });
+					@Html.TextBox("searchTerm", null, new { @class = "form-control", @placeholder = "Search Funds..." });
 				}
 
 				<ul class="nav navbar-nav navbar-right">

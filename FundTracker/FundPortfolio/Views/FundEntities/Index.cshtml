@@ -13,6 +13,9 @@
 			<th>
 				@Html.DisplayNameFor(model => model.name)
 			</th>
+            <th>
+                Current Price
+            </th>
 		</tr>
 	</thead>
 	<tbody>
@@ -24,6 +27,9 @@
 						@Html.DisplayFor(modelItem => item.name)
 					</a>
 				</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CurrentValue)
+                </td>
 			</tr>
 		}
 	</tbody>
