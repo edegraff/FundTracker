@@ -37,6 +37,49 @@ namespace FundPortfolio.Controllers
                 return HttpNotFound();
             }
             return View(fundEntity);
+        }
+
+        // GET: FundEntities/CreateReport
+        public ActionResult CreateReport()
+        {
+            return View((from fund in db.Funds
+                         select fund).ToList());
+        } 
+
+        // GET: FundEntities/Report
+        public ActionResult Report(DateTime start, DateTime end, String fund0, String fund1, String fund2)
+        {
+            List<FundEntity> funds = new List<FundEntity>();
+
+            if (fund0 == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            else
+            {
+                // Add non-null funds
+                funds.Add(db.Funds.Find(fund0));
+
+                if (fund1 != null)
+                {
+                    funds.Add(db.Funds.Find(fund1));
+
+                    if (fund2 != null)
+                    {
+                        funds.Add(db.Funds.Find(fund2));
+                    }
+                }
+            }
+            
+            // Ensure all requested funds were found
+            for (int i=0; i < funds.Count; i++) {
+                if (funds[i] == null)
+                {
+                    return HttpNotFound();
+                }
+            }
+
+            return View(funds);
         } 
 
         protected override void Dispose(bool disposing)

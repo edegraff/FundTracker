@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Common.Models.FundEntity>
+
+@{
+    ViewBag.Title = "Custom Report";
+}
+
+<h1 class="page-header">@ViewBag.Title</h1>
+
+<table class="table">
+    <tr>
+        <th>
+            Date
+        </th>
+        @foreach (var item in Model)
+        { 
+        <th>
+            @item.name
+        </th>
+        }
+    </tr>
+
+@* Iterate over date range *@
+    @*<tr>
+        <td>
+            @date
+        </td>
+        @foreach (var item in Model)
+        {
+        <td>
+            @Html.DisplayFor(price => item.GetValue(@date))
+        </td>
+        }
+    </tr>*@
+
+</table>

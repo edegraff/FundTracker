@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Common.Models.FundEntity>
+@{
+    ViewBag.Title = "Create Report";
+}
+
+@Styles.Render("~/Content/jquery-ui.css")
+@Scripts.Render("~/bundles/jqueryui")
+
+<h1 class="page-header">@ViewBag.Title</h1>
+
+
+@using (Html.BeginForm("report", "fundEntities", FormMethod.Post, new { @class = "indent-left" }))
+{
+    <fieldset>
+        <ol>
+            <li>
+                <label>Funds (select up to 3):</label>
+                <div class="checkbox-container">
+                    @foreach (var item in Model)
+                    {
+                        <input type="checkbox" name="fund" value="@item.id">@item.name<br />
+                    }
+                </div>
+            </li>
+            <li>
+                <label>Start Date:</label>
+                <input type="text" name="start" />
+            </li>
+            <li>
+                <label>End Date:</label>
+                <input type="text" name="end" />
+            </li>
+            <li>
+                <label>Create:</label>
+                <div class="indent-left">
+                    <input type="checkbox" name="graph" checked> Graph<br />
+                    <input type="checkbox" name="table" checked> Table<br />
+                    <input type="checkbox" name="csv"> .csv file for export<br />
+                </div>
+            </li>
+        </ol>
+        <input type="hidden" name="fund0"/>
+        <input type="hidden" name="fund1" />
+        <input type="hidden" name="fund2" />
+        <input type="submit" value="Create Report" />
+    </fieldset>
+}
+
+
+<script>
+  $(function() {
+      $('input[name="start"]').datepicker();
+      $('input[name="end"]').datepicker();
+  });
+
+  $('input[type="submit"]').on('click', function () {
+      var $checked = $('input[name="fund"]:checked')
+      for (var i = 0; i < 3; i++) {
+          $('input[name="fund' + i + '"').val($checked[i].value);
+      }
+      return true;
+  })
+</script>
+
