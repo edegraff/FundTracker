@@ -16,6 +16,7 @@ namespace FundService
 		private string html;
 		private string[] ids;
 		private List<FundEntity> funds;
+        private string[] exclusions = { "581", "482", "480", "580", "483", "583" };
 
 		public Scraper(string url)
 		{
@@ -82,11 +83,14 @@ namespace FundService
 
 		private void ParseNames()
 		{
+            
 			this.funds = new List<FundEntity>();
 			HtmlAgilityPack.HtmlDocument htmlDoc = new HtmlAgilityPack.HtmlDocument();
 			htmlDoc.LoadHtml(this.html);
 			foreach (string id in ids)
 			{
+                if (exclusions.Contains(id))
+                    continue;
 				FundEntity f = new FundEntity();
 				f.id = id;
 				f.name = htmlDoc.DocumentNode.SelectSingleNode("//*[contains(text(), '" + id + ".rates.x1_Month.rate\"')]").ParentNode.ParentNode.ChildNodes[1].Element("a").InnerText;
