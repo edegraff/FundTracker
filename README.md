@@ -8,9 +8,7 @@ To work with azure we need: http://go.microsoft.com/fwlink/p/?linkid=323510&clci
 
 ## Database migrations
 
-To create a database migration automatically without after changing model code
-
-6. Type "Update-Database" in the package manager view
+To create a database migration automatically after changing some model code
 
 1. Open the Package Manager View
 2. ensure the "default project" box is set to Common (or the project you want to migrate)
