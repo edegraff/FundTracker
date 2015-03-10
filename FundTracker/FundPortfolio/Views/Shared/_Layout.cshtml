@@ -13,7 +13,8 @@
 	@Styles.Render("~/Content/bootstrap-dashboard.css")
 	@Styles.Render("~/Content/Site.css")
 	@Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquery") 
+	@RenderSection("scripts", required: false)
     <script src="~/Scripts/bootstrap.min.js"></script>
 </head>
 <body>
