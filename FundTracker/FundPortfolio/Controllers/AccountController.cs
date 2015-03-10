@@ -36,13 +36,13 @@ namespace FundPortfolio.Controllers
 		[ValidateAntiForgeryToken]
 		public ActionResult Login(LoginModel model, string returnUrl)
 		{
-			if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
+			if (ModelState.IsValid && WebSecurity.Login(model.Email, model.Password, persistCookie: model.RememberMe))
 			{
 				return RedirectToLocal(returnUrl);
 			}
 
 			// If we got this far, something failed, redisplay form
-			ModelState.AddModelError("", "The user name or password provided is incorrect.");
+			ModelState.AddModelError("", "The email or password provided is incorrect.");
 			return View(model);
 		}
 
@@ -80,8 +80,8 @@ namespace FundPortfolio.Controllers
 				// Attempt to register the user
 				try
 				{
-					WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
-					WebSecurity.Login(model.UserName, model.Password);
+					WebSecurity.CreateUserAndAccount(model.Email, model.Password);
+					WebSecurity.Login(model.Email, model.Password);
 					return RedirectToAction("Index", "Home");
 				}
 				catch (MembershipCreateUserException e)
@@ -192,7 +192,7 @@ namespace FundPortfolio.Controllers
 					}
 					catch (Exception)
 					{
-						ModelState.AddModelError("", String.Format("Unable to create local account. An account with the name \"{0}\" may already exist.", User.Identity.Name));
+						ModelState.AddModelError("", String.Format("Unable to create local account. An account with the email \"{0}\" may already exist.", User.Identity.Name));
 					}
 				}
 			}
@@ -238,57 +238,36 @@ namespace FundPortfolio.Controllers
 			else
 			{
 				// User is new, ask for their desired membership name
-				string loginData = OAuthWebSecurity.SerializeProviderUserId(result.Provider, result.ProviderUserId);
-				ViewBag.ProviderDisplayName = OAuthWebSecurity.GetOAuthClientData(result.Provider).DisplayName;
-				ViewBag.ReturnUrl = returnUrl;
-				return View("ExternalLoginConfirmation", new RegisterExternalLoginModel { UserName = result.UserName, ExternalLoginData = loginData });
-			}
-		}
 
-		//
-		// POST: /Account/ExternalLoginConfirmation
-
-		[HttpPost]
-		[AllowAnonymous]
-		[ValidateAntiForgeryToken]
-		public ActionResult ExternalLoginConfirmation(RegisterExternalLoginModel model, string returnUrl)
-		{
-			string provider = null;
-			string providerUserId = null;
-
-			if (User.Identity.IsAuthenticated || !OAuthWebSecurity.TryDeserializeProviderUserId(model.ExternalLoginData, out provider, out providerUserId))
-			{
-				return RedirectToAction("Manage");
-			}
-
-			if (ModelState.IsValid)
-			{
+				var model = new RegisterExternalLoginModel();
+				model.Email =  result.UserName;
+				string provider = result.Provider;
+				string providerUserId =  result.ProviderUserId;
 				// Insert a new user into the database
 				using (DatabaseContext db = new DatabaseContext())
 				{
-					UserProfile user = db.UserProfiles.FirstOrDefault(u => u.Email.ToLower() == model.UserName.ToLower());
+					UserProfile user = db.UserProfiles.FirstOrDefault(u => u.Email.ToLower() == model.Email.ToLower());
 					// Check if user already exists
 					if (user == null)
 					{
 						// Insert name into the profile table
-						db.UserProfiles.Add(new UserProfile { Email = model.UserName });
+						db.UserProfiles.Add(new UserProfile { Email = model.Email });
 						db.SaveChanges();
 
-						OAuthWebSecurity.CreateOrUpdateAccount(provider, providerUserId, model.UserName);
+						OAuthWebSecurity.CreateOrUpdateAccount(provider, providerUserId, model.Email);
 						OAuthWebSecurity.Login(provider, providerUserId, createPersistentCookie: false);
 
 						return RedirectToLocal(returnUrl);
 					}
 					else
 					{
-						ModelState.AddModelError("UserName", "User name already exists. Please enter a different user name.");
+						ModelState.AddModelError("Email", "Email already in use. Did you try external login or \"forgot my password\"? Otherwise please enter different email.");
 					}
-				}
-			}
 
-			ViewBag.ProviderDisplayName = OAuthWebSecurity.GetOAuthClientData(provider).DisplayName;
-			ViewBag.ReturnUrl = returnUrl;
-			return View(model);
+				}
+				ViewBag.ReturnUrl = returnUrl;
+				return View(model);
+			}
 		}
 
 		//
@@ -373,14 +352,13 @@ namespace FundPortfolio.Controllers
 			switch (createStatus)
 			{
 				case MembershipCreateStatus.DuplicateUserName:
-					return "User name already exists. Please enter a different user name.";
-
 				case MembershipCreateStatus.DuplicateEmail:
-					return "A user name for that e-mail address already exists. Please enter a different e-mail address.";
+					return "Email already exists. Have you tried your external login? Otherwise please enter a different email.";
 
 				case MembershipCreateStatus.InvalidPassword:
 					return "The password provided is invalid. Please enter a valid password value.";
 
+				case MembershipCreateStatus.InvalidUserName:
 				case MembershipCreateStatus.InvalidEmail:
 					return "The e-mail address provided is invalid. Please check the value and try again.";
 
@@ -389,9 +367,6 @@ namespace FundPortfolio.Controllers
 
 				case MembershipCreateStatus.InvalidQuestion:
 					return "The password retrieval question provided is invalid. Please check the value and try again.";
-
-				case MembershipCreateStatus.InvalidUserName:
-					return "The user name provided is invalid. Please check the value and try again.";
 
 				case MembershipCreateStatus.ProviderError:
 					return "The authentication provider returned an error. Please verify your entry and try again. If the problem persists, please contact your system administrator.";

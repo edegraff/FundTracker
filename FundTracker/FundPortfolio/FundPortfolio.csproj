@@ -305,7 +305,6 @@
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
     <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Manage.cshtml" />
@@ -329,6 +328,7 @@
     <Content Include="Views\UserTransactions\Index.cshtml" />
     <Content Include="Views\FundEntities\Report.cshtml" />
     <Content Include="Views\FundEntities\CreateReport.cshtml" />
+    <Content Include="Views\Account\ExternalLoginCallBack.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

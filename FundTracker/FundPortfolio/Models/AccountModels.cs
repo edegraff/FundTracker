@@ -11,8 +11,9 @@ namespace FundPortfolio.Models
 	public class RegisterExternalLoginModel
 	{
 		[Required]
-		[Display(Name = "User name")]
-		public string UserName { get; set; }
+		[Display(Name = "Email")]
+		[EmailAddress(ErrorMessage = "Invalid Email Address")]
+		public string Email { get; set; }
 
 		public string ExternalLoginData { get; set; }
 	}
@@ -39,8 +40,9 @@ namespace FundPortfolio.Models
 	public class LoginModel
 	{
 		[Required]
-		[Display(Name = "User name")]
-		public string UserName { get; set; }
+		[Display(Name = "Email")]
+		[EmailAddress(ErrorMessage = "Invalid Email Address")]
+		public string Email { get; set; }
 
 		[Required]
 		[DataType(DataType.Password)]
@@ -54,8 +56,9 @@ namespace FundPortfolio.Models
 	public class RegisterModel
 	{
 		[Required]
-		[Display(Name = "User name")]
-		public string UserName { get; set; }
+		[Display(Name = "Email")]
+		[EmailAddress(ErrorMessage = "Invalid Email Address")]
+		public string Email { get; set; }
 
 		[Required]
 		[StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]

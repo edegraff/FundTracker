@@ -13,8 +13,8 @@
         <legend>Registration Form</legend>
         <ol>
             <li>
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email)
             </li>
             <li>
                 @Html.LabelFor(m => m.Password)
@@ -28,6 +28,10 @@
         <input type="submit" value="Register" style="margin-bottom: 30px;"/>
     </fieldset>
 }
+
+<br>
+<h1 class="page-header">Use another service to create an account.</h1>
+@Html.Action("ExternalLoginsList")
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
