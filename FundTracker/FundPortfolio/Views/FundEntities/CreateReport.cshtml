@@ -3,8 +3,10 @@
     ViewBag.Title = "Create Report";
 }
 
-@Styles.Render("~/Content/jquery-ui.css")
-@Scripts.Render("~/bundles/jqueryui")
+@section scripts {
+    @Styles.Render("~/Content/jquery-ui.css")
+    @Scripts.Render("~/bundles/jqueryui")
+}
 
 <h1 class="page-header">@ViewBag.Title</h1>
 
@@ -35,13 +37,10 @@
                 <div class="indent-left">
                     <input type="checkbox" name="graph" checked> Graph<br />
                     <input type="checkbox" name="table" checked> Table<br />
-                    <input type="checkbox" name="csv"> .csv file for export<br />
                 </div>
             </li>
         </ol>
-        <input type="hidden" name="fund0"/>
-        <input type="hidden" name="fund1" />
-        <input type="hidden" name="fund2" />
+        <input type="hidden" name="fundIds"/>
         <input type="submit" value="Create Report" />
     </fieldset>
 }
@@ -55,9 +54,12 @@
 
   $('input[type="submit"]').on('click', function () {
       var $checked = $('input[name="fund"]:checked')
-      for (var i = 0; i < 3; i++) {
-          $('input[name="fund' + i + '"').val($checked[i].value);
+      var out = "";
+      for (var i = 0; i < $checked.length; i++) {
+          out += $checked[i].value + ",";
       }
+      out = out.substring(0, out.length - 1);
+      $('input[name="fundIds"]').val(out);
       return true;
   })
 </script>

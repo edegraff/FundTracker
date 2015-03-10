@@ -74,6 +74,7 @@
     <Compile Include="Models\FundHistory.cs" />
     <Compile Include="Models\FundProjector.cs" />
     <Compile Include="Models\Notification.cs" />
+    <Compile Include="Models\Report.cs" />
     <Compile Include="Models\UserProfile.cs" />
     <Compile Include="Models\UserTransaction.cs" />
     <Compile Include="Models\ValueNotification.cs" />

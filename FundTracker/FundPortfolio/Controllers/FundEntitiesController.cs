@@ -47,27 +47,21 @@ namespace FundPortfolio.Controllers
         } 
 
         // GET: FundEntities/Report
-        public ActionResult Report(DateTime start, DateTime end, String fund0, String fund1, String fund2)
+        public ActionResult Report(DateTime start, DateTime end, String fundIds)
         {
+            string[] ids = fundIds.Split(',');
+
             List<FundEntity> funds = new List<FundEntity>();
 
-            if (fund0 == null)
+            if (ids.Length == 0)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             else
             {
-                // Add non-null funds
-                funds.Add(db.Funds.Find(fund0));
-
-                if (fund1 != null)
+                foreach (string id in ids)
                 {
-                    funds.Add(db.Funds.Find(fund1));
-
-                    if (fund2 != null)
-                    {
-                        funds.Add(db.Funds.Find(fund2));
-                    }
+                    funds.Add(db.Funds.Find(id));
                 }
             }
             
@@ -79,7 +73,8 @@ namespace FundPortfolio.Controllers
                 }
             }
 
-            return View(funds);
+            Report report = new Report(start, end, funds);
+            return View(report);
         } 
 
         protected override void Dispose(bool disposing)

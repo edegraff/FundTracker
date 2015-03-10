@@ -35,5 +35,15 @@ namespace Common.Models
 				FundHistory.Add(new FundData() { Value = value, Date = DateTime.Now });
 			}
 		}
+
+        public float GetValueByDate(DateTime date)
+        {
+            foreach (FundData data in FundHistory)
+            {
+                if (data.Date.Date == date.Date) // Same date, don't care about time
+                    return data.Value;
+            }
+            throw new InvalidOperationException("There is no historic data for this fund");
+        }
     }
 }

@@ -1,35 +1,51 @@
-﻿@model IEnumerable<Common.Models.FundEntity>
+﻿@model Common.Models.Report
 
 @{
-    ViewBag.Title = "Custom Report";
+        ViewBag.Title = "Report";
 }
 
-<h1 class="page-header">@ViewBag.Title</h1>
+<div class="graph">
+    <br />
+    Graph here
+    <br />
+</div>
+
+<br />
+<button name="export"> Export data to .csv file </button>
+<br />
 
 <table class="table">
-    <tr>
-        <th>
-            Date
-        </th>
-        @foreach (var item in Model)
-        { 
-        <th>
-            @item.name
-        </th>
-        }
-    </tr>
+    <thead>
+        <tr>
+            <th>
+                Date
+            </th>
+            @foreach (var item in Model.FundNames)
+            {
+                <th>
+                    @item
+                </th>
+            }
+        </tr>
+    </thead>
 
-@* Iterate over date range *@
-    @*<tr>
-        <td>
-            @date
-        </td>
-        @foreach (var item in Model)
-        {
-        <td>
-            @Html.DisplayFor(price => item.GetValue(@date))
-        </td>
+    <tbody>
+        @* Iterate over date range *@
+        @{
+            for (int i = 0; i < Model.Dates.Count; i++)
+            {
+                <tr>
+                    <td>
+                        @Model.Dates[i].Date
+                    </td>
+                    @foreach (List<String> vals in Model.FundsData)
+                    {
+                    <td>
+                        @vals[i]
+                    </td>
+                    }
+                </tr>
+            }
         }
-    </tr>*@
-
+    </tbody>
 </table>
