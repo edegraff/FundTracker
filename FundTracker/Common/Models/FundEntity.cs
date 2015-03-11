@@ -26,9 +26,14 @@ namespace Common.Models
 		{
 			get
 			{
-				if (FundHistory.Count == 0)
-					throw new InvalidOperationException("There is no historic data for this fund");
-				return FundHistory[FundHistory.Count - 1].Value;
+                if (FundHistory.Count == 0)
+                {
+                    throw new InvalidOperationException("There is no historic data for this fund");
+                }
+                else
+                {
+                    return FundHistory[FundHistory.Count - 1].Value;
+                }
 			}
 			set
 			{
@@ -38,12 +43,19 @@ namespace Common.Models
 
         public float GetValueByDate(DateTime date)
         {
-            foreach (FundData data in FundHistory)
+            if (date.Date > DateTime.Now.Date)
             {
-                if (data.Date.Date == date.Date) // Same date, don't care about time
-                    return data.Value;
+                throw new IndexOutOfRangeException("There is no data for this date yet.");
             }
-            throw new InvalidOperationException("There is no historic data for this fund");
+            else
+            {
+                for (int i = FundHistory.Count - 1; i >= 0; i--)
+                {
+                    if (FundHistory[i].Date.Date <= date.Date) // Find the val of fund on the given day
+                        return FundHistory[i].Value;
+                }
+                throw new InvalidOperationException("There is no historic data for this fund");
+            }
         }
     }
 }

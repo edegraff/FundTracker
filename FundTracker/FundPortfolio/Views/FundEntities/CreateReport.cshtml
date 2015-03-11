@@ -35,12 +35,21 @@
             <li>
                 <label>Create:</label>
                 <div class="indent-left">
-                    <input type="checkbox" name="graph" checked> Graph<br />
-                    <input type="checkbox" name="table" checked> Table<br />
-                </div>
+                    <input type="checkbox" name="graph" checked> Graph (Max funds: 5)<br />
+                    <br />
+
+                    <label class="graph-options">Graph Display Type:</label>
+                    <div class="indent-left graph-options">
+                        <input type="radio" name="graph-display"> Fund Values<br />
+                        <input type="radio" name="graph-display" checked> Change in Fund Values<br />
+                    </div>
+                 </div>
             </li>
         </ol>
         <input type="hidden" name="fundIds"/>
+        <p class="validation">
+
+        </p>
         <input type="submit" value="Create Report" />
     </fieldset>
 }
@@ -52,14 +61,56 @@
       $('input[name="end"]').datepicker();
   });
 
+  $('input[name="graph"]').on('click', function () {
+      if (this.checked) {
+          $('.graph-options').show();
+      } else {
+          $('.graph-options').hide();
+      }
+  });
+
   $('input[type="submit"]').on('click', function () {
+      var passed = true;
       var $checked = $('input[name="fund"]:checked')
+
+      /* Do validations */
+      var $validation = $('p.validation');
+      $validation.empty();
+
+      // Ensure at least one fund is selected
+      if ($checked.length < 1) {
+          $validation.append("*Please select at least 1 fund.<br>");
+          passed = false;
+      }
+
+      // Check graph limitation
+      if ($('input[name="graph"]').prop('checked') && $checked.length > 5) {
+          $validation.append("*Please select 5 or less funds if you wish to create a graph.<br>");
+          passed = false;
+      }
+
+      // check dates non-blank and validity
+      if ($('input[name="start"]').val() == "" || $('input[name="end"]').val() == "") {
+          $validation.append("*Please enter both a Start and End Date.<br>");
+          passed = false;
+      } else if ($('input[name="start"]').val() > $('input[name="end"]').val()) {
+          $validation.append("*Invalid Start and End Date.  The End Date must occur after the Start Date.<br>");
+          passed = false;
+      }
+
+      // Do not actually submit if we didn't pass
+      if (passed == false) {
+          return false;
+      }
+
+      /* gather selected fund ids for submission */
       var out = "";
       for (var i = 0; i < $checked.length; i++) {
           out += $checked[i].value + ",";
       }
       out = out.substring(0, out.length - 1);
       $('input[name="fundIds"]').val(out);
+
       return true;
   })
 </script>

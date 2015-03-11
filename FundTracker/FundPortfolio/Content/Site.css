@@ -1,5 +1,9 @@
 ﻿/* Custom CSS */
 
+.validation {
+    color: red;
+}
+
 .hcenter {
     margin-left: auto;
     margin-right: auto;
