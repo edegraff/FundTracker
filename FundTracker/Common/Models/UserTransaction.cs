@@ -16,16 +16,18 @@ namespace Common.Models
 		public int UserTransactionId { get; set; }
 
 		public int UserId { get; set; }
-
+		
+		[Display(Name = "Mutual Fund")]
 		public String FundEntityId { get; set; }
 
 		[ForeignKey("FundEntityId")]
-		public FundEntity FundEntity { get; set; }
+		public virtual FundEntity FundEntity { get; set; }
 
 		[ForeignKey("UserId")]
-		public UserProfile UserProfile { get; set;  }
+		public virtual UserProfile UserProfile { get; set;  }
 
 		public DateTime Date { get; set; }
+
 		public float Value { get; set; }
 	}
 }

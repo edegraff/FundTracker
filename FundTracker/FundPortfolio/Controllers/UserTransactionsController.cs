@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Common.Models;
+using System.Web.Security;
 
 namespace FundPortfolio.Controllers
 {
@@ -18,7 +19,7 @@ namespace FundPortfolio.Controllers
         // GET: UserTransactions
         public ActionResult Index()
         {
-            var userTransactions = db.UserTransactions.Include(u => u.FundEntity).Include(u => u.UserProfile);
+            var userTransactions = db.UserTransactions.OrderBy(ut => ut.Date).Include(u => u.FundEntity).Include(u => u.UserProfile);
             return View(userTransactions.ToList());
         }
 
@@ -54,6 +55,7 @@ namespace FundPortfolio.Controllers
         {
             if (ModelState.IsValid)
             {
+				userTransaction.UserProfile = db.UserProfiles.Find(Membership.GetUser().ProviderUserKey);
                 db.UserTransactions.Add(userTransaction);
                 db.SaveChanges();
                 return RedirectToAction("Index");

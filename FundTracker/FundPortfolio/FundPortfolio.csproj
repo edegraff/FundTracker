@@ -329,6 +329,7 @@
     <Content Include="Views\FundEntities\Report.cshtml" />
     <Content Include="Views\FundEntities\CreateReport.cshtml" />
     <Content Include="Views\Account\ExternalLoginCallBack.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

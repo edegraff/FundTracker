@@ -1,0 +1,9 @@
+﻿@model DateTime?
+@Html.TextBox("", ViewContext.ViewData.TemplateInfo.FormattedModelValue, new { autocomplete = "off" })
+
+<script>
+
+$(function() {
+    $('#@ViewContext.ViewData.TemplateInfo.GetFullHtmlFieldName("")' ).datepicker();
+});
+</script>
