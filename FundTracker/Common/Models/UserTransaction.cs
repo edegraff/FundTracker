@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Common.Models
 {
 	[Table("UserTransaction")]
-	public class UserTransaction : IFundData
+	public class UserTransaction : IFundData, IValidatableObject
 	{
 		[Key]
 		[DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
@@ -33,7 +33,8 @@ namespace Common.Models
 
 		public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
 		{
-			if (Date < FundEntity.FundHistory.First().Date)
+			using( var db = new DatabaseContext() )
+			if (Date < db.Funds.Find(FundEntityId).FundHistory.First().Date)
 				yield return new ValidationResult("We don't have any fund data that far back");
 		}
 	}
