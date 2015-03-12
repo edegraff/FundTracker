@@ -4,6 +4,11 @@
         ViewBag.Title = "Report";
 }
 
+@section scripts {
+    <script src="~/Scripts/swfobject.js"></script>
+    <script src="~/Scripts/downloadify.min.js"></script>
+}
+
 <div class="graph">
     <br />
     Graph here
@@ -11,8 +16,7 @@
 </div>
 
 <br />
-<button name="export"> Export data to .csv file </button>
-<br />
+<p id="export"></p>
 <br />
 
 <table class="table">
@@ -50,3 +54,50 @@
         }
     </tbody>
 </table>
+
+<script>
+    @{
+        string names = "";
+        foreach (var item in Model.FundNames)
+        {
+            names += item + ", ";
+        }
+        names = names.Substring(0, names.Length - 2);
+    }
+
+    // Assemble export data
+    var tableData = "Date, @names"+"\n";
+    var cols = $('th').size();
+    var $cells = $('td');
+    for (var i = 0; i < $cells.size() ; i++) {
+        tableData += $cells[i].innerHTML.trim() + ", ";
+        if (i % cols == cols - 1) {
+            tableData = tableData.substring(0, tableData.length - 2) + "\n";
+        }
+    }    
+
+    var options = {
+        filename: function () {
+            return 'FundTrackerReport - @names' + '.csv'; //static file -- you could retrieve from form input box
+        },
+        data: function () {
+            return tableData; //static content -- you could retrieve from form input box
+        },
+        onComplete: function () {
+        },
+        onCancel: function () {
+        },
+        onError: function () {
+            alert('Oops, an error has occurred with your download.  Sorry.');
+        },
+        transparent: false,
+        swf: '../Media/downloadify.swf',
+        downloadImage: '../Images/download.png',
+        width: 156,
+        height: 26,
+        transparent: true,
+        append: false
+    }
+
+    Downloadify.create('export', options);
+</script>
