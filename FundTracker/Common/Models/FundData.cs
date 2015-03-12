@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Common.Models
 {
 	[Table("FundHistory")]
-	public class FundData
+	public class FundData : IFundData
 	{
 		[Key, Column(Order = 0)]
 		public String FundEntityId { get; set; }
@@ -19,7 +19,7 @@ namespace Common.Models
 		public float Value { get; set; }
 
 		[ForeignKey("FundEntityId")]
-		public FundEntity fund { get; set; }
+		public FundEntity FundEntity { get; set; }
 	}
 
 }

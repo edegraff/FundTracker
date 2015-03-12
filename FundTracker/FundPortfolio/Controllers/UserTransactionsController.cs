@@ -19,8 +19,20 @@ namespace FundPortfolio.Controllers
         // GET: UserTransactions
         public ActionResult Index()
         {
-            var userTransactions = db.UserTransactions.OrderBy(ut => ut.Date).Include(u => u.FundEntity).Include(u => u.UserProfile);
-            return View(userTransactions.ToList());
+			var userTransactions = db.UserTransactions.OrderByDescending(ut => ut.Date).Include(u => u.FundEntity).Include(u => u.UserProfile);
+			var fundListViewModel = new FundListsViewModel() { 
+				AggregateFunds = new List<AggregateFundValue>(), 
+				UserTransactions = userTransactions.ToList()
+			};
+
+			foreach( var transactionList in userTransactions.GroupBy(ut => ut.FundEntityId ).ToList() )
+			{
+				var aggregateFundValue = new AggregateFundValue(transactionList.First().FundEntity);
+				aggregateFundValue.CalculateValue(transactionList);
+				fundListViewModel.AggregateFunds.Add(aggregateFundValue);
+			}
+			
+            return View(fundListViewModel);
         }
 
         // GET: UserTransactions/Details/5
@@ -136,4 +148,10 @@ namespace FundPortfolio.Controllers
             base.Dispose(disposing);
         }
     }
+
+	public class FundListsViewModel
+	{
+		public List<AggregateFundValue> AggregateFunds { get; set; }
+		public List<UserTransaction> UserTransactions { get; set; }
+	}
 }

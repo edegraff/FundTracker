@@ -68,11 +68,13 @@
       <DependentUpon>201503080125005_AddedUserTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AggregateFundValue.cs" />
     <Compile Include="Models\ChangeNotification.cs" />
     <Compile Include="Models\FundEntity.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
-    <Compile Include="Models\FundHistory.cs" />
+    <Compile Include="Models\FundData.cs" />
     <Compile Include="Models\FundProjector.cs" />
+    <Compile Include="Models\IFundData.cs" />
     <Compile Include="Models\Notification.cs" />
     <Compile Include="Models\Report.cs" />
     <Compile Include="Models\UserProfile.cs" />

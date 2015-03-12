@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 namespace Common.Models
 {
 	[Table("UserTransaction")]
-	public class UserTransaction
+	public class UserTransaction : IFundData
 	{
 		[Key]
 		[DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
 		public int UserTransactionId { get; set; }
 
 		public int UserId { get; set; }
-		
+
 		[Display(Name = "Mutual Fund")]
 		public String FundEntityId { get; set; }
 
@@ -24,10 +24,17 @@ namespace Common.Models
 		public virtual FundEntity FundEntity { get; set; }
 
 		[ForeignKey("UserId")]
-		public virtual UserProfile UserProfile { get; set;  }
+		public virtual UserProfile UserProfile { get; set; }
 
 		public DateTime Date { get; set; }
 
+		[Display(Name = "Cost of Shares Bought")]
 		public float Value { get; set; }
+
+		public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+		{
+			if (Date < FundEntity.FundHistory.First().Date)
+				yield return new ValidationResult("We don't have any fund data that far back");
+		}
 	}
 }
