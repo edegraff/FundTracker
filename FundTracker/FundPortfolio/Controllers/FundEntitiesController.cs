@@ -47,8 +47,10 @@ namespace FundPortfolio.Controllers
         } 
 
         // GET: FundEntities/Report
-        public ActionResult Report(DateTime start, DateTime end, String fundIds)
+        public ActionResult Report(DateTime start, DateTime end, String fundIds, String graph)
         {
+            @ViewBag.graph = graph;
+
             string[] ids = fundIds.Split(',');
 
             List<FundEntity> funds = new List<FundEntity>();

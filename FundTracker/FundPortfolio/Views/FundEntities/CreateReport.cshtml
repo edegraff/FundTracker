@@ -35,18 +35,19 @@
             <li>
                 <label>Create:</label>
                 <div class="indent-left">
-                    <input type="checkbox" name="graph" checked> Graph (Max funds: 5)<br />
+                    <input type="checkbox" name="graphOn" checked> Graph (Max funds: 5)<br />
                     <br />
 
                     <label class="graph-options">Graph Display Type:</label>
                     <div class="indent-left graph-options">
-                        <input type="radio" name="graph-display"> Fund Values<br />
-                        <input type="radio" name="graph-display" checked> Change in Fund Values<br />
+                        <input type="radio" name="graphDisplay" value="VALUE_GRAPH" checked> Fund Values<br />
+                        <input type="radio" name="graphDisplay" value="CHANGE_GRAPH"> Change in Fund Values<br />
                     </div>
                  </div>
             </li>
         </ol>
         <input type="hidden" name="fundIds"/>
+        <input type="hidden" name="graph" />
         <p class="validation">
 
         </p>
@@ -59,15 +60,20 @@
   $(function() {
       $('input[name="start"]').datepicker();
       $('input[name="end"]').datepicker();
+      showHideGraphType($('input[name="graphOn"]'));
   });
 
-  $('input[name="graph"]').on('click', function () {
-      if (this.checked) {
+  $('input[name="graphOn"]').on('click', function () {
+      showHideGraphType(this);
+  });
+
+  function showHideGraphType($graph) {
+      if ($graph.checked) {
           $('.graph-options').show();
       } else {
           $('.graph-options').hide();
       }
-  });
+  }
 
   $('input[type="submit"]').on('click', function () {
       var passed = true;
@@ -110,6 +116,14 @@
       }
       out = out.substring(0, out.length - 1);
       $('input[name="fundIds"]').val(out);
+
+      /* Set hidden graph field */
+      if ($('input[name="graphOn"]:checked').length == 0) {
+          out = "NO_GRAPH";
+      } else {
+          out = $('input[name="graphDisplay"]:checked').val();
+      }
+      $('input[name="graph"]').val(out);
 
       return true;
   })

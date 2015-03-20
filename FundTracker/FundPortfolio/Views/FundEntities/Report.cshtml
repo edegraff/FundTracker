@@ -7,13 +7,12 @@
 @section scripts {
     <script src="~/Scripts/swfobject.js"></script>
     <script src="~/Scripts/downloadify.min.js"></script>
+    @Styles.Render("~/Content/c3.css")
+    <script src="/Scripts/d3.min.js" charset="utf-8"></script>
+    <script src="/Scripts/c3.min.js"></script>
 }
 
-<div class="graph">
-    <br />
-    Graph here
-    <br />
-</div>
+<div id="chart" class="graph"></div>
 
 <br />
 <p id="export"></p>
@@ -56,6 +55,7 @@
 </table>
 
 <script>
+    /* Create export */
     @{
         string names = "";
         foreach (var item in Model.FundNames)
@@ -100,4 +100,29 @@
     }
 
     Downloadify.create('export', options);
+
+
+    /* create graph */
+    var graphType = "@ViewBag.graph";
+    if ("NO_GRAPH" != graphType) {
+
+        /* Create data based on graphType */
+        if ("VALUE_GRAPH" == graphType) {
+            
+        } else if ("CHANGE_GRAPH" == graphType) {
+            
+        }
+
+        /* generate graph based on data */
+        var chart = c3.generate({
+            bindto: '#chart',
+            data: {
+                columns: [
+                  ['data1', 30, 200, 100, 400, 150, 250],
+                  ['data2', 50, 20, 10, 40, 15, 25]
+                ]
+            }
+        });
+    }
+    
 </script>
