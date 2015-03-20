@@ -32,6 +32,7 @@ namespace Common.Models
                 }
                 else
                 {
+                    FundHistory.Sort((x, y) => x.Date.CompareTo(y.Date)); // Sorts most current last
                     return FundHistory[FundHistory.Count - 1].Value;
                 }
 			}
@@ -49,6 +50,7 @@ namespace Common.Models
             }
             else
             {
+                FundHistory.Sort((x, y) => x.Date.CompareTo(y.Date)); // Sorts most current last
                 for (int i = FundHistory.Count - 1; i >= 0; i--)
                 {
                     if (FundHistory[i].Date.Date <= date.Date) // Find the val of fund on the given day
