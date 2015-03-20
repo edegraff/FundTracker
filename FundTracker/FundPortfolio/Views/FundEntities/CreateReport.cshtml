@@ -60,15 +60,15 @@
   $(function() {
       $('input[name="start"]').datepicker();
       $('input[name="end"]').datepicker();
-      showHideGraphType($('input[name="graphOn"]'));
+      showHideGraphType($('input[name="graphOn"]')[0]);
   });
 
   $('input[name="graphOn"]').on('click', function () {
       showHideGraphType(this);
   });
 
-  function showHideGraphType($graph) {
-      if ($graph.checked) {
+  function showHideGraphType(graph) {
+      if (graph.checked) {
           $('.graph-options').show();
       } else {
           $('.graph-options').hide();
@@ -90,7 +90,7 @@
       }
 
       // Check graph limitation
-      if ($('input[name="graph"]').prop('checked') && $checked.length > 5) {
+      if ($('input[name="graphOn"]').prop('checked') && $checked.length > 5) {
           $validation.append("*Please select 5 or less funds if you wish to create a graph.<br>");
           passed = false;
       }

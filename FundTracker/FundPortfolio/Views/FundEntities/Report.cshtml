@@ -78,7 +78,9 @@
 
     var options = {
         filename: function () {
-            return 'FundTrackerReport - @names' + '.csv'; //static file -- you could retrieve from form input box
+            var date = new Date();
+            date = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+            return 'FundTrackerReport - ' + date + '.csv'; //static file -- you could retrieve from form input box
         },
         data: function () {
             return tableData; //static content -- you could retrieve from form input box
