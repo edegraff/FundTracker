@@ -9,12 +9,20 @@
     margin-right: auto;
 }
 
+.left {
+    float: left;
+}
+
 .indent-left {
     margin-left: 20px;
 }
 
 table.td-hspace-small td {
     padding-right: 20px;
+}
+
+.highlight-options button {
+    
 }
 
 .checkbox-container { 
@@ -29,6 +37,14 @@ table.td-hspace-small td {
     .checkbox-container {
         width: auto;
     }
+}
+
+/* For C3 graphs */
+.c3-ygrid-line.zero-line line {
+    stroke: #A0A0A0;
+}
+.c3-ygrid-line.zero-line text {
+    fill: black;
 }
 
 /* Add sidebar options to small drop down */

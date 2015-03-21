@@ -35,14 +35,7 @@
             <li>
                 <label>Create:</label>
                 <div class="indent-left">
-                    <input type="checkbox" name="graphOn" checked> Graph (Max funds: 5)<br />
-                    <br />
-
-                    <label class="graph-options">Graph Display Type:</label>
-                    <div class="indent-left graph-options">
-                        <input type="radio" name="graphDisplay" value="VALUE_GRAPH" checked> Fund Values<br />
-                        <input type="radio" name="graphDisplay" value="CHANGE_GRAPH"> Change in Fund Values<br />
-                    </div>
+                    <input type="checkbox" name="graphOn" checked> Graph<br />
                  </div>
             </li>
         </ol>
@@ -60,20 +53,7 @@
   $(function() {
       $('input[name="start"]').datepicker();
       $('input[name="end"]').datepicker();
-      showHideGraphType($('input[name="graphOn"]')[0]);
   });
-
-  $('input[name="graphOn"]').on('click', function () {
-      showHideGraphType(this);
-  });
-
-  function showHideGraphType(graph) {
-      if (graph.checked) {
-          $('.graph-options').show();
-      } else {
-          $('.graph-options').hide();
-      }
-  }
 
   $('input[type="submit"]').on('click', function () {
       var passed = true;
@@ -89,11 +69,11 @@
           passed = false;
       }
 
-      // Check graph limitation
-      if ($('input[name="graphOn"]').prop('checked') && $checked.length > 5) {
-          $validation.append("*Please select 5 or less funds if you wish to create a graph.<br>");
-          passed = false;
-      }
+      //// Check graph limitation
+      //if ($('input[name="graphOn"]').prop('checked') && $checked.length > 5) {
+      //    $validation.append("*Please select 5 or less funds if you wish to create a graph.<br>");
+      //    passed = false;
+      //}
 
       // check dates non-blank and validity
       if ($('input[name="start"]').val() == "" || $('input[name="end"]').val() == "") {
@@ -121,7 +101,7 @@
       if ($('input[name="graphOn"]:checked').length == 0) {
           out = "NO_GRAPH";
       } else {
-          out = $('input[name="graphDisplay"]:checked').val();
+          out = "YES_GRAPH";
       }
       $('input[name="graph"]').val(out);
 
