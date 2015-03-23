@@ -19,7 +19,8 @@ namespace FundPortfolio.Controllers
         // GET: UserTransactions
         public ActionResult Index()
         {
-			var userTransactions = db.UserTransactions.OrderByDescending(ut => ut.Date).Include(u => u.FundEntity).Include(u => u.UserProfile);
+			var currentUserId = (int) Membership.GetUser().ProviderUserKey;
+			var userTransactions = db.UserTransactions.OrderByDescending(ut => ut.Date).Include(u => u.FundEntity).Include(u => u.UserProfile).Where(u => u.UserId == currentUserId);
 			var fundListViewModel = new FundListsViewModel() { 
 				AggregateFunds = new List<AggregateFundValue>(), 
 				UserTransactions = userTransactions.ToList()
@@ -54,7 +55,6 @@ namespace FundPortfolio.Controllers
         public ActionResult Create()
         {
             ViewBag.FundEntityId = new SelectList(db.Funds, "id", "name");
-            ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "Email");
             return View();
         }
 
