@@ -1,15 +1,39 @@
 ﻿@model Common.Models.FundEntity
+@using System;
+@using FundPortfolio.Views.Helpers;
 
 @{
-    ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Details";
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>@Html.DisplayFor(model => model.name)</h2>
 
 <div>
-	
+
 </div>
 <p>
-    @Html.ActionLink("Back to List", "Index")
+	@Html.ActionLink("Back to List", "Index")
 </p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>1 month</th>
+			<th>6 months</th>
+			<th>1 year</th>
+			<th>3 years</th>
+			<th>5 years</th>
+			<th>10 years</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>@Html.AsPercent(Model.AverageOver(DateTime.Now.AddMonths(-1)))</td>
+			<td>@Html.AsPercent(Model.AverageOver(DateTime.Now.AddMonths(-6)))</td>
+			<td>@Html.AsPercent(Model.AverageOver(DateTime.Now.AddYears(-1)))</td>
+			<td>@Html.AsPercent(Model.AverageOver(DateTime.Now.AddYears(-3)))</td>
+			<td>@Html.AsPercent(Model.AverageOver(DateTime.Now.AddYears(-5)))</td>
+			<td>@Html.AsPercent(Model.AverageOver(DateTime.Now.AddYears(-10)))</td>
+		</tr>
+	</tbody>
+</table>
