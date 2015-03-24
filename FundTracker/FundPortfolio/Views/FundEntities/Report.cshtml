@@ -32,10 +32,7 @@
 <table id="fundDataTable" class="table">
     <thead>
         <tr>
-            <th>
-                Date
-            </th>
-            @foreach (var item in Model.FundNames)
+            @foreach (var item in Model.Headers)
             {
                 <th>
                     @item
@@ -47,13 +44,10 @@
     <tbody>
         @* Iterate over date range *@
         @{
-            for (int i = 0; i < Model.Dates.Count; i++)
+            for (int i = 0; i < Model.Data[0].Count; i++)
             {
                 <tr>
-                    <td>
-                        @Model.Dates[i].Date.Year/@Model.Dates[i].Date.Month/@Model.Dates[i].Date.Day
-                    </td>
-                    @foreach (List<String> vals in Model.FundsData)
+                    @foreach (List<String> vals in Model.Data)
                     {
                     <td>
                         @vals[i]
@@ -66,27 +60,22 @@
 </table>
 
 <script>
+    var model = @Html.Raw(Json.Encode(Model));
     /* Create export */
-    @{
-        string names = "";
-        foreach (var item in Model.FundNames)
-        {
-            names += item + ", ";
-        }
-        names = names.Substring(0, names.Length - 2);
-    }
 
     // Assemble export data
-    var tableData = "Date, @names"+"\n";
-    var cols = $('#fundDataTable th').size();
-    var $cells = $('#fundDataTable td');
-    for (var i = 0; i < $cells.size() ; i++) {
-        tableData += $cells[i].innerHTML.trim() + ", ";
-        if (i % cols == cols - 1) {
-            tableData = tableData.substring(0, tableData.length - 2) + "\n";
+    var tableData = model.Headers.toString() +"\n";
+    var cols = model.Headers.length;
+    for (var i = 0; i < model.Data[0].length; i++) {
+        for (var j = 0; j < cols; j++) {
+            tableData += model.Data[j][i] + ",";
+            if (j == cols - 1) {
+                tableData = tableData.substring(0, tableData.length - 1) + "\n";
+            }
         }
     }
 
+    // Create export button
     var options = {
         filename: function () {
             var date = new Date();
@@ -122,64 +111,58 @@
         $('#graph-section').show();
 
         // Vars that the graph uses
-        var cols = [];
+        var columnData = [];
         var yLabel;
 
         // Temp vars
-        var i;
-        var j;
-        var $col;
+        var i, j;
+        var cols = model.Headers.length;
+        var rows = model.Data[0].length;
         var num;
 
         // Set the titles for the columns (for all types)
-        var $headers = $('#fundDataTable th');
-        for (i = 0; i < $headers.length; i++) {
-            cols[i] = [$headers[i].innerHTML.trim()];
+        for (i = 0; i < cols; i++) {
+            columnData[i] = [model.Headers[i]];
         }
-        cols[0] = ['x'];
 
-        // Set the row data (dates) (for all types)
-        var $dates = $('#fundDataTable tr>td:first-child');
-        for (i = 0; i < $dates.length; i++) {
-            cols[0][$dates.length - i] = formatDate($dates[i].innerHTML.trim());
+        // Set the initial row data (for all types)
+        for (i = 0; i < cols; i++) {
+            columnData[i] = columnData[i].concat(model.Data[i]);
+        }
+
+        // Format the dates
+        for (i = 0; i < rows; i++) {
+            columnData[0][i+1] = formatDate(columnData[0][i+1]);
         }
 
         // Specific Data for each Graph type
         var yLabelValue = "Fund Price ($)";
-        var colsValue = [];
-        copy2DeepArr(cols, colsValue);
+        var columnDataValue = [];
+        copy2DeepArr(columnData, columnDataValue);
         var yLabelDifference = "Fund Price Change ($)";
-        var colsDifference = [];
-        copy2DeepArr(cols, colsDifference);
+        var columnDataDifference = [];
+        copy2DeepArr(columnData, columnDataDifference);
 
         // Generate all the type specific data
-        for (i = 1; i < $headers.length; i++) {
-            $col = $('#fundDataTable tr>td:nth-child(' + (i + 1) + ')');
+        for (i = 1; i < model.Headers.length; i++) {
 
-            // VALUE Type
-            for (j = 0; j < $col.length; j++) {
-                num = $col[$col.length - j - 1].innerHTML.trim();
-                if ($.isNumeric(num)) {
-                    colsValue[i][j+1] = num;
-                } else {
-                    colsValue[i][j+1] = null;
-                }
-            }
+            // VALUE type
+            // default, done.
 
             // DIFFERENCE Type
             var first = null;
-            for (j = 0; j < $col.length; j++) {
-                num = $col[$col.length - j - 1].innerHTML.trim();
+            for (j = rows - 1; j >= 0; j--) {
+                num = model.Data[i][j];
 
                 if ($.isNumeric(num)) {
                     if (first == null) {
                         first = num;
-                        colsDifference[i][j + 1] = 0;
+                        columnDataDifference[i][j + 1] = 0;
                     } else {
-                        colsDifference[i][j + 1] = Math.round((num - first) * 10000) / 10000;
+                        columnDataDifference[i][j + 1] = Math.round((num - first) * 10000) / 10000;
                     }
                 } else {
-                    colsDifference[i][j + 1] = null;
+                    columnDataDifference[i][j + 1] = null;
                 }
             }
         }
@@ -189,8 +172,8 @@
         var chart = c3.generate({
             bindto: '#chart',
             data: {
-                x: 'x',
-                columns: colsValue,
+                x: 'Date',
+                columns: columnDataValue,
 
             },
             axis: {
@@ -221,11 +204,11 @@
         $('#chart-options button').on('click', function (e) {
             switch (this.name) {
                 case "value":
-                    cols = colsValue;
+                    columnData = columnDataValue;
                     yLabel = yLabelValue;
                     break;
                 case "difference":
-                    cols = colsDifference;
+                    columnData = columnDataDifference;
                     yLabel = yLabelDifference;
                     break;
             }
@@ -233,7 +216,7 @@
 
             chart.axis.labels({ y: yLabel });
             chart.load({
-                columns: cols
+                columns: columnData
             });
         });
     }

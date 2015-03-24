@@ -36,21 +36,6 @@ namespace FundPortfolio.Controllers
             return View(fundListViewModel);
         }
 
-        // GET: UserTransactions/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            UserTransaction userTransaction = db.UserTransactions.Find(id);
-            if (userTransaction == null)
-            {
-                return HttpNotFound();
-            }
-            return View(userTransaction);
-        }
-
         // GET: UserTransactions/Create
         public ActionResult Create()
         {
