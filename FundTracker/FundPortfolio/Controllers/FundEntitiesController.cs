@@ -20,7 +20,7 @@ namespace FundPortfolio.Controllers
 			if (searchTerm == null)
 				searchTerm = "";
 			return View((from fund in db.Funds
-						 where fund.name.Contains(searchTerm)
+						 where fund.Name.Contains(searchTerm)
 						 select fund).ToList());
         }
 

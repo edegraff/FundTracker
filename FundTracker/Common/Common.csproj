@@ -67,6 +67,10 @@
     <Compile Include="Migrations\201503080125005_AddedUserTables.Designer.cs">
       <DependentUpon>201503080125005_AddedUserTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503251726046_CapitalizedALetter.cs" />
+    <Compile Include="Migrations\201503251726046_CapitalizedALetter.Designer.cs">
+      <DependentUpon>201503251726046_CapitalizedALetter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AggregateFundValue.cs" />
     <Compile Include="Models\ChangeNotification.cs" />
@@ -97,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503080125005_AddedUserTables.resx">
       <DependentUpon>201503080125005_AddedUserTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503251726046_CapitalizedALetter.resx">
+      <DependentUpon>201503251726046_CapitalizedALetter.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

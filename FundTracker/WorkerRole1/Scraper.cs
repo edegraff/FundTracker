@@ -92,8 +92,8 @@ namespace FundService
                 if (exclusions.Contains(id))
                     continue;
 				FundEntity f = new FundEntity();
-				f.id = id;
-				f.name = htmlDoc.DocumentNode.SelectSingleNode("//*[contains(text(), '" + id + ".rates.x1_Month.rate\"')]").ParentNode.ParentNode.ChildNodes[1].Element("a").InnerText;
+				f.Id = id;
+				f.Name = htmlDoc.DocumentNode.SelectSingleNode("//*[contains(text(), '" + id + ".rates.x1_Month.rate\"')]").ParentNode.ParentNode.ChildNodes[1].Element("a").InnerText;
 				this.funds.Add(f);
 			}
 		}
@@ -127,7 +127,7 @@ namespace FundService
 		{
 			foreach (FundEntity fund in this.funds)
 			{
-				string response = MakeRequest("https://www.cibc.com/ratesservice/rds?lobId=7&sourceProductCode=" + fund.id);
+				string response = MakeRequest("https://www.cibc.com/ratesservice/rds?lobId=7&sourceProductCode=" + fund.Id);
 				Newtonsoft.Json.Linq.JObject json = JsonConvert.DeserializeObject(response.Substring(response.IndexOf("{"))) as Newtonsoft.Json.Linq.JObject;
 				fund.CurrentValue = float.Parse(json.Last.First.Last.ElementAt(3).ToString());
 			}
@@ -139,11 +139,11 @@ namespace FundService
 			{
 				foreach (var fund in this.funds)
 				{
-					var existingFund = db.Funds.Find(fund.id);
+					var existingFund = db.Funds.Find(fund.Id);
 					if (existingFund != null)
 					{
 						existingFund.FundHistory.AddRange(fund.FundHistory);
-						existingFund.name = fund.name;
+						existingFund.Name = fund.Name;
 					}
 					else
 					{

@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using Common.Models;
 using System.Web.Security;
+using System.ComponentModel.DataAnnotations;
+using PagedList;
 
 namespace FundPortfolio.Controllers
 {
@@ -25,13 +27,15 @@ namespace FundPortfolio.Controllers
 				AggregateFunds = new List<AggregateFundValue>(), 
 				UserTransactions = userTransactions.ToList()
 			};
-
+			
 			foreach( var transactionList in userTransactions.GroupBy(ut => ut.FundEntityId ).ToList() )
 			{
 				var aggregateFundValue = new AggregateFundValue(transactionList.First().FundEntity);
 				aggregateFundValue.CalculateValue(transactionList);
+				fundListViewModel.TotalAssets += aggregateFundValue.Value;
 				fundListViewModel.AggregateFunds.Add(aggregateFundValue);
 			}
+
 			
             return View(fundListViewModel);
         }
@@ -39,7 +43,7 @@ namespace FundPortfolio.Controllers
         // GET: UserTransactions/Create
         public ActionResult Create()
         {
-            ViewBag.FundEntityId = new SelectList(db.Funds, "id", "name");
+            ViewBag.FundEntityId = new SelectList(db.Funds, "Id", "Name");
             return View();
         }
 
@@ -58,8 +62,7 @@ namespace FundPortfolio.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.FundEntityId = new SelectList(db.Funds, "id", "name", userTransaction.FundEntityId);
-            ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "Email", userTransaction.UserId);
+            ViewBag.FundEntityId = new SelectList(db.Funds, "Id", "Name", userTransaction.FundEntityId);
             return View(userTransaction);
         }
 
@@ -75,8 +78,7 @@ namespace FundPortfolio.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.FundEntityId = new SelectList(db.Funds, "id", "name", userTransaction.FundEntityId);
-            ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "Email", userTransaction.UserId);
+            ViewBag.FundEntityId = new SelectList(db.Funds, "Id", "Name", userTransaction.FundEntityId);
             return View(userTransaction);
         }
 
@@ -93,8 +95,7 @@ namespace FundPortfolio.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.FundEntityId = new SelectList(db.Funds, "id", "name", userTransaction.FundEntityId);
-            ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "Email", userTransaction.UserId);
+            ViewBag.FundEntityId = new SelectList(db.Funds, "Id", "Name", userTransaction.FundEntityId);
             return View(userTransaction);
         }
 
@@ -138,5 +139,8 @@ namespace FundPortfolio.Controllers
 	{
 		public List<AggregateFundValue> AggregateFunds { get; set; }
 		public List<UserTransaction> UserTransactions { get; set; }
+
+		[Display(Name = "Total Assets")]
+		public float TotalAssets { get; set; }
 	}
 }

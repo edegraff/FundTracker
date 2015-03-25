@@ -21,18 +21,18 @@ namespace Common.Migrations
 				.PrimaryKey(t => new { t.FundEntityId, t.Date })
 				.ForeignKey("dbo.FundEntity", t => t.FundEntityId, cascadeDelete: true);
 
-			Sql("insert into dbo.fundhistory (FundEntityId, Date, Value) SELECT id, currentdate, currentvalue FROM fundentity");
+			Sql("insert into dbo.fundhistory (FundEntityId, Date, Value) SELECT Id, currentdate, currentvalue FROM fundentity");
 
 			DropColumn("dbo.FundEntity", "currentDate");
 			DropColumn("dbo.FundEntity", "currentValue");
 
 			Sql(@"	WITH cte AS (
-					  SELECT[name],row_number() 
-					  OVER(PARTITION BY name ORDER BY id) AS [rn]
+					  SELECT[Name],row_number() 
+					  OVER(PARTITION BY Name ORDER BY Id) AS [rn]
 					  FROM dbo.FundEntity
 					)
 					DELETE cte WHERE [rn] > 1");
-			AddPrimaryKey("dbo.FundEntity", "id");
+			AddPrimaryKey("dbo.FundEntity", "Id");
 		}
 
 		public override void Down()
@@ -46,7 +46,7 @@ namespace Common.Migrations
 			Sql("");
 
 			DropTable("dbo.FundHistory");
-			AddPrimaryKey("dbo.FundEntity", new[] { "id", "currentDate" });
+			AddPrimaryKey("dbo.FundEntity", new[] { "Id", "currentDate" });
 		}
 	}
 }

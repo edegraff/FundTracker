@@ -25,7 +25,7 @@ namespace Common.Models
             Data[0] = new List<String>();
             for (int i = 0; i < funds.Count; i++)
             {
-                Headers.Add(funds[i].name);
+                Headers.Add(funds[i].Name);
                 Data[i+1] = new List<String>();
             }
 
