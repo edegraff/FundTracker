@@ -341,7 +341,7 @@
     <Content Include="Views\Notifications\Index.cshtml" />
     <Content Include="Views\UserTransactions\Create.cshtml" />
     <Content Include="Views\UserTransactions\Index.cshtml" />
-    <Content Include="Views\FundEntities\CreateReport.cshtml" />
+    <Content Include="Views\Report\CreateReport.cshtml" />
     <Content Include="Views\Account\ExternalLoginCallBack.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
     <Content Include="Views\UserTransactions\Delete.cshtml" />
@@ -350,6 +350,7 @@
     <Content Include="Views\Report\_GraphPartial.cshtml" />
     <Content Include="Views\Report\_ExportPartial.cshtml" />
     <Content Include="Views\Report\_TablePartial.cshtml" />
+    <Content Include="Views\Report\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -24,29 +24,6 @@ namespace FundPortfolio.Controllers
 						 select fund).ToList());
         }
 
-        // GET: FundEntities/Details/5
-        public ActionResult Details(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            FundEntity fundEntity = db.Funds.Find(id);
-            if (fundEntity == null)
-            {
-                return HttpNotFound();
-            }
-            return View(fundEntity);
-        }
-
-        // GET: FundEntities/CreateReport
-        public ActionResult CreateReport()
-        {
-            return View((from fund in db.Funds
-                         select fund).ToList());
-        } 
-
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)
