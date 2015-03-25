@@ -17,9 +17,10 @@ namespace Common.Models
 		public int UserId { get; set; }
 
 		public bool AutoReset { get; set; }
+        public bool IsEnabled { get; set; }
 		public FundEntity FundEntity { get; set; }
 		public float ThresholdValue { get; set; }
-		public TimeSpan TimeSpan { get; set; }
+        public int Days { get; set; }
 
 		[ForeignKey("UserId")]
 		public UserProfile UserProfile { get; set; }
