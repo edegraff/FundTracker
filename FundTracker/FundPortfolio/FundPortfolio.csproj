@@ -204,6 +204,7 @@
     <Compile Include="Controllers\FundEntitiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NotificationsController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\UserTransactionsController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -340,12 +341,15 @@
     <Content Include="Views\Notifications\Index.cshtml" />
     <Content Include="Views\UserTransactions\Create.cshtml" />
     <Content Include="Views\UserTransactions\Index.cshtml" />
-    <Content Include="Views\FundEntities\Report.cshtml" />
     <Content Include="Views\FundEntities\CreateReport.cshtml" />
     <Content Include="Views\Account\ExternalLoginCallBack.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
     <Content Include="Views\UserTransactions\Delete.cshtml" />
     <Content Include="Views\UserTransactions\Edit.cshtml" />
+    <Content Include="Views\Report\CustomReport.cshtml" />
+    <Content Include="Views\Report\_GraphPartial.cshtml" />
+    <Content Include="Views\Report\_ExportPartial.cshtml" />
+    <Content Include="Views\Report\_TablePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

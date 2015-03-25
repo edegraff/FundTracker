@@ -11,7 +11,7 @@
 <h1 class="page-header">@ViewBag.Title</h1>
 
 
-@using (Html.BeginForm("report", "fundEntities", FormMethod.Post, new { @class = "indent-left" }))
+@using (Html.BeginForm("customReport", "report", FormMethod.Post, new { @class = "indent-left" }))
 {
     <fieldset>
         <ol>
@@ -20,7 +20,7 @@
                 <div class="checkbox-container">
                     @foreach (var item in Model)
                     {
-                        <input type="checkbox" name="fund" value="@item.id">@item.name<br />
+                        <input type="checkbox" name="fund" value="@item.Id">@item.Name<br />
                     }
                 </div>
             </li>
