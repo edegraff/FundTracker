@@ -1,0 +1,53 @@
+﻿@model Common.Models.Report
+
+<script src="~/Scripts/swfobject.js"></script>
+<script src="~/Scripts/downloadify.min.js"></script>
+
+<div class="hcenter" style="width:156px;">
+    <p id="export"></p>
+</div>
+
+<script>
+    var model = @Html.Raw(Json.Encode(Model));
+    /* Create export */
+
+    // Assemble export data
+    var tableData = model.Headers.toString() +"\n";
+    var cols = model.Headers.length;
+    for (var i = 0; i < model.Data[0].length; i++) {
+        for (var j = 0; j < cols; j++) {
+            tableData += model.Data[j][i] + ",";
+            if (j == cols - 1) {
+                tableData = tableData.substring(0, tableData.length - 1) + "\n";
+            }
+        }
+    }
+
+    // Create export button
+    var options = {
+        filename: function () {
+            var date = new Date();
+            date = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+            return 'FundTrackerReport - ' + date + '.csv'; //static file -- you could retrieve from form input box
+        },
+        data: function () {
+            return tableData; //static content -- you could retrieve from form input box
+        },
+        onComplete: function () {
+        },
+        onCancel: function () {
+        },
+        onError: function () {
+            alert('Oops, an error has occurred with your download.  Sorry.');
+        },
+        transparent: false,
+        swf: '../Media/downloadify.swf',
+        downloadImage: '../Images/download.png',
+        width: 156,
+        height: 26,
+        transparent: true,
+        append: false
+    }
+
+    Downloadify.create('export', options);
+</script>

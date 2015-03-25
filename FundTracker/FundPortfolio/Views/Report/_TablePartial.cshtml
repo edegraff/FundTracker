@@ -1,0 +1,31 @@
+﻿@model Common.Models.Report
+
+<table id="fundDataTable" class="table">
+    <thead>
+        <tr>
+            @foreach (var item in Model.Headers)
+            {
+                <th>
+                    @item
+                </th>
+            }
+        </tr>
+    </thead>
+
+    <tbody>
+        @* Iterate over date range *@
+        @{
+            for (int i = 0; i < Model.Data[0].Count; i++)
+            {
+                <tr>
+                    @foreach (List<String> vals in Model.Data)
+                    {
+                        <td>
+                            @vals[i]
+                        </td>
+                    }
+                </tr>
+            }
+        }
+    </tbody>
+</table>

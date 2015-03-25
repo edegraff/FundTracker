@@ -9,8 +9,6 @@ namespace Common.Models
 {
     public class Report
     {
-        private DatabaseContext db = new DatabaseContext();
-
         // Initialize the Report object
         public Report(DateTime start, DateTime end, List<FundEntity> funds)
         {
@@ -123,8 +121,10 @@ namespace Common.Models
             }
         }
 
+        [NotMapped]
         public List<String> Headers { get; set; }
-        
+
+        [NotMapped]
         public List<String>[] Data { get; set; }
 
         private String formatDate(DateTime date)

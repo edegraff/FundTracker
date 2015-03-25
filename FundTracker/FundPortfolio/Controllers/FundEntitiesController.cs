@@ -46,38 +46,6 @@ namespace FundPortfolio.Controllers
                          select fund).ToList());
         } 
 
-        // GET: FundEntities/Report
-        public ActionResult Report(DateTime start, DateTime end, String fundIds, String graph)
-        {
-            @ViewBag.graph = graph;
-
-            string[] ids = fundIds.Split(',');
-
-            List<FundEntity> funds = new List<FundEntity>();
-
-            if (ids.Length == 0)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            else
-            {
-                foreach (string id in ids)
-                {
-                    funds.Add(db.Funds.Find(id));
-                }
-            }
-            
-            // Ensure all requested funds were found
-            for (int i=0; i < funds.Count; i++) {
-                if (funds[i] == null)
-                {
-                    return HttpNotFound();
-                }
-            }
-
-            Report report = new Report(start, end, funds);
-            return View(report);
-        } 
 
         protected override void Dispose(bool disposing)
         {
