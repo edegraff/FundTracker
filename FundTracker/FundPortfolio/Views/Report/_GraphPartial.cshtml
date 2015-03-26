@@ -86,6 +86,11 @@
         }
     }
 
+    var dashedRegion = {};
+    var today = formatDate(new Date());
+    for (i = 1; i < cols; i++) {
+        dashedRegion[model.Headers[i]] = [{'start':today}];
+    }
 
     /* generate initial graph to show VALUE Type */
     var chart = c3.generate({
@@ -93,7 +98,7 @@
         data: {
             x: 'Date',
             columns: columnDataValue,
-
+            regions: dashedRegion
         },
         axis: {
             x: {

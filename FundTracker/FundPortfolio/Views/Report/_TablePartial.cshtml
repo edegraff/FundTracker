@@ -11,7 +11,7 @@
             }
         </tr>
     </thead>
-
+    
     <tbody>
         @* Iterate over date range *@
         @{
@@ -29,3 +29,21 @@
         }
     </tbody>
 </table>
+<div id="predictionNote" style="display:none;">* Predicted Value</div>
+
+<script>
+    // Should we show the prediction note?
+    if (new Date() < new Date($('#fundDataTable tbody tr:first-child td:first-child')[0].innerText)) {
+        $('#predictionNote').show();
+    }    
+
+    $('#fundDataTable tbody td:first-child').each(function (e) {
+        // if prediction
+        if ((new Date()) < new Date(this.innerText)) {
+            $(this).parent().find('td:not(:first-child)').each(function (e) {
+                this.innerText += "*";
+            });
+        }
+    });
+    
+</script>
