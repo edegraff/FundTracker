@@ -4,17 +4,14 @@
 
 @{
 	ViewBag.Title = "Details";
-	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>@Html.DisplayFor(model => model.Name)</h2>
 
-<div>
-
-</div>
 <p>
 	@Html.ActionLink("Back to List", "Index")
 </p>
+
 <table class="table">
 	<thead>
 		<tr>
@@ -37,3 +34,5 @@
 		</tr>
 	</tbody>
 </table>
+
+@Html.Action("Index", "Report", new { id = Model.Id })
