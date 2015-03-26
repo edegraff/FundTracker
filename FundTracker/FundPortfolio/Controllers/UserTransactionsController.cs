@@ -43,7 +43,6 @@ namespace FundPortfolio.Controllers
         // GET: UserTransactions/Create
         public ActionResult Create()
         {
-            ViewBag.FundEntityId = new SelectList(db.Funds, "Id", "Name");
             return View();
         }
 
@@ -62,7 +61,6 @@ namespace FundPortfolio.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.FundEntityId = new SelectList(db.Funds, "Id", "Name", userTransaction.FundEntityId);
             return View(userTransaction);
         }
 
@@ -78,7 +76,6 @@ namespace FundPortfolio.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.FundEntityId = new SelectList(db.Funds, "Id", "Name", userTransaction.FundEntityId);
             return View(userTransaction);
         }
 
@@ -95,7 +92,6 @@ namespace FundPortfolio.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.FundEntityId = new SelectList(db.Funds, "Id", "Name", userTransaction.FundEntityId);
             return View(userTransaction);
         }
 

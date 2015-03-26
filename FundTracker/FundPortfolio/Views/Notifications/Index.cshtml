@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Notification List</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -13,25 +13,22 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.UserProfile.Email)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.AutoReset)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ThresholdValue)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TimeSpan)
+            @Html.DisplayNameFor(model => model.Days)
         </th>
+		<th>
+			@Html.DisplayNameFor(model => model.UserProfile.Email)
+		</th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserProfile.Email)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.AutoReset)
         </td>
@@ -39,12 +36,15 @@
             @Html.DisplayFor(modelItem => item.ThresholdValue)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TimeSpan)
+            @Html.DisplayFor(modelItem => item.Days)
         </td>
+		<td>
+			@Html.DisplayFor(modelItem => item.UserProfile.Email)
+		</td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new {  id=item.NotificationId}) |
+            @Html.ActionLink("Details", "Details", new { id = item.NotificationId }) |
+            @Html.ActionLink("Delete", "Delete", new {id=item.NotificationId })
         </td>
     </tr>
 }

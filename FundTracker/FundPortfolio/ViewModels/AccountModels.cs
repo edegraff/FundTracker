@@ -6,7 +6,7 @@ using System.Data.Entity;
 using System.Globalization;
 using System.Web.Security;
 
-namespace FundPortfolio.Models
+namespace FundPortfolio.ViewModels
 {
 	public class RegisterExternalLoginModel
 	{

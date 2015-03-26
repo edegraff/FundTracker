@@ -4,7 +4,7 @@ using System.Data.Entity.Infrastructure;
 using System.Threading;
 using System.Web.Mvc;
 using WebMatrix.WebData;
-using FundPortfolio.Models;
+using FundPortfolio.ViewModels;
 using Common.Models;
 
 namespace FundPortfolio.Filters
