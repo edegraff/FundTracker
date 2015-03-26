@@ -24,7 +24,7 @@ namespace FundPortfolio.Tests
                 var funds = db.Funds;
                 foreach (var f in funds)
                 {
-                    Console.WriteLine(f.name);
+                    Console.WriteLine(f.Name);
                     foreach (var fd in f.FundHistory)
                     {
                         Console.WriteLine(fd.Date + " -> " + fd.Value);
