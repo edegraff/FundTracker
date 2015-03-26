@@ -31,6 +31,14 @@ table.td-hspace-small td {
     padding: 10px;
 }
 
+#graph-section {
+    border-width: 1px;
+    padding: 15px;
+    padding-right: 30px;
+    border-color: rgb(207, 207, 207);
+    border-style: solid;
+}
+
 /* For C3 graphs */
 .c3-ygrid-line.zero-line line {
     stroke: #A0A0A0;

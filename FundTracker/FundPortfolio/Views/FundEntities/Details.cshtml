@@ -9,7 +9,9 @@
 <h2>@Html.DisplayFor(model => model.Name)</h2>
 
 <p>
-	@Html.ActionLink("Back to List", "Index")
+    To see more historic data for this fund please visit @Html.ActionLink("Reporting", "CreateReport", "Report").
+    <br />
+    @Html.ActionLink("Back to List", "Index")
 </p>
 
 <table class="table">
