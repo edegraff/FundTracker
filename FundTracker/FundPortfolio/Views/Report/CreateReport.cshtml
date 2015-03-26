@@ -16,8 +16,8 @@
     <fieldset>
         <ol>
             <li>
-                <label>Funds:</label>
-                <div class="checkbox-container">
+                <label>Funds</label>
+                <div class="checkbox-container form-control">
                     @foreach (var item in Model)
                     {
                         <input type="checkbox" name="fund" value="@item.Id">@item.Name<br />
@@ -25,15 +25,15 @@
                 </div>
             </li>
             <li>
-                <label>Start Date:</label>
-                <input type="text" name="start" />
+                <label>Start Date</label>
+                <input type="text" name="start" class="form-control" />
             </li>
             <li>
-                <label>End Date:</label>
-                <input type="text" name="end" />
+                <label>End Date</label>
+                <input type="text" name="end" class="form-control" />
             </li>
             <li>
-                <label>Create:</label>
+                <label>Create</label>
                 <div class="indent-left">
                     <input type="checkbox" name="graphOn" checked> Graph<br />
                  </div>
@@ -44,7 +44,7 @@
         <p class="validation">
 
         </p>
-        <input type="submit" value="Create Report" />
+        <input type="submit" value="Create Report" class="btn btn-default" />
     </fieldset>
 }
 
