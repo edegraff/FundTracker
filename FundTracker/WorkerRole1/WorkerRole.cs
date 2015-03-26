@@ -21,16 +21,14 @@ namespace FundService
 
         public override void Run()
         {
-            Trace.TraceInformation("WorkerRole1 is running");
-
-            try
-            {
-                this.RunAsync(this.cancellationTokenSource.Token).Wait();
-            }
-            finally
-            {
-                this.runCompleteEvent.Set();
-            }
+            while(true)
+            { 
+                Trace.TraceInformation("Running");
+                this.scraper.Scrape();
+                //this.notifier.Notify();
+                //Wait an hour
+                Thread.Sleep(3600000);
+            };
         }
 
         public override bool OnStart()
@@ -60,18 +58,6 @@ namespace FundService
             base.OnStop();
 
             Trace.TraceInformation("FundService has stopped");
-        }
-
-        private async Task RunAsync(CancellationToken cancellationToken)
-        {
-            while (!cancellationToken.IsCancellationRequested)
-            {
-                Trace.TraceInformation("Working");
-                this.scraper.Scrape();
-                this.notifier.Notify();
-                //Wait an hour
-                await Task.Delay(3600000);
-            }
         }
     }
 }

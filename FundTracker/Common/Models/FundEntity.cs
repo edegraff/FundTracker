@@ -16,7 +16,7 @@ namespace Common.Models
 		}
 
 		[Key]
-		public String id { get; set; }
+		public String Id { get; set; }
 		public string name { get; set; }
 
 		public virtual List<FundData> FundHistory { get; set; }

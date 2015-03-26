@@ -10,17 +10,20 @@ using Newtonsoft.Json;
 
 namespace FundService
 {
-	class Scraper
+	public class Scraper
 	{
 		private string url;
 		private string html;
 		private string[] ids;
 		private List<FundEntity> funds;
         private string[] exclusions = { "581", "482", "480", "580", "483", "583" };
+        private DateTime date;
+        private Dictionary<String, int> months;
 
 		public Scraper(string url)
 		{
-			this.url = url;
+            this.url = url;
+            months = new Dictionary<string, int> { { "Jan", 1 }, { "Feb", 2 }, { "Mar", 3 }, { "Apr", 4 }, { "May", 5 }, { "Jun", 6 }, { "Jul", 7 }, { "Aug", 8 }, { "Sep", 9 }, { "Oct", 10 }, { "Nov", 11 }, { "Dec", 12 } };
 		}
 
 		static void Main(string[] args)
@@ -31,6 +34,7 @@ namespace FundService
 
 		public void Scrape()
 		{
+            ParseDate();
 			RetrieveHTML();
 			ParseIds();
 			ParseNames();
@@ -67,6 +71,14 @@ namespace FundService
 			this.html = data;
 		}
 
+        private void ParseDate()
+        {
+            string response = MakeRequest("https://www.cibc.com/ratesservice/rds?lobId=7&sourceProductCode=483");
+            Newtonsoft.Json.Linq.JObject json = JsonConvert.DeserializeObject(response.Substring(response.IndexOf("{"))) as Newtonsoft.Json.Linq.JObject;
+            var date = json.Last.First.Last.ElementAt(5).ToString().Split();
+            this.date = new DateTime(DateTime.Now.Year, months[date[1]], int.Parse(date[2]));
+        }
+
 		private void ParseIds()
 		{
 			this.funds = new List<FundEntity>();
@@ -92,7 +104,7 @@ namespace FundService
                 if (exclusions.Contains(id))
                     continue;
 				FundEntity f = new FundEntity();
-				f.id = id;
+				f.Id = id;
 				f.name = htmlDoc.DocumentNode.SelectSingleNode("//*[contains(text(), '" + id + ".rates.x1_Month.rate\"')]").ParentNode.ParentNode.ChildNodes[1].Element("a").InnerText;
 				this.funds.Add(f);
 			}
@@ -127,10 +139,11 @@ namespace FundService
 		{
 			foreach (FundEntity fund in this.funds)
 			{
-				string response = MakeRequest("https://www.cibc.com/ratesservice/rds?lobId=7&sourceProductCode=" + fund.id);
+				string response = MakeRequest("https://www.cibc.com/ratesservice/rds?lobId=7&sourceProductCode=" + fund.Id);
 				Newtonsoft.Json.Linq.JObject json = JsonConvert.DeserializeObject(response.Substring(response.IndexOf("{"))) as Newtonsoft.Json.Linq.JObject;
 				fund.CurrentValue = float.Parse(json.Last.First.Last.ElementAt(3).ToString());
-			}
+                fund.FundHistory[0].Date = this.date;
+            }
 		}
 
 		private void SaveFundData()
@@ -139,10 +152,21 @@ namespace FundService
 			{
 				foreach (var fund in this.funds)
 				{
-					var existingFund = db.Funds.Find(fund.id);
+					var existingFund = db.Funds.Find(fund.Id);
 					if (existingFund != null)
 					{
-						existingFund.FundHistory.AddRange(fund.FundHistory);
+                        if (existingFund.CurrentValue != fund.CurrentValue)
+                        {
+                            if (existingFund.FundHistory.Last().Date.DayOfYear == fund.FundHistory[0].Date.DayOfYear)
+                            {
+                                // Value has updated for this date
+                                existingFund.FundHistory.Last().Value = fund.CurrentValue;
+                            }
+                            else
+                            {
+                                existingFund.FundHistory.AddRange(fund.FundHistory);
+                            }
+                        }
 						existingFund.name = fund.name;
 					}
 					else
