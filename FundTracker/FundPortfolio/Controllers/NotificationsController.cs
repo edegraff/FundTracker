@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Common.Models;
+using FundPortfolio.ViewModels;
+using System.Web.Security;
 
 namespace FundPortfolio.Controllers
 {
@@ -40,8 +42,8 @@ namespace FundPortfolio.Controllers
         // GET: Notifications/Create
         public ActionResult Create()
         {
-            ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "Email");
-            return View();
+			ViewBag.types = new[] { typeof(ChangeNotification), typeof(ValueNotification) };
+            return View(new NotificationViewModel());
         }
 
         // POST: Notifications/Create
@@ -53,6 +55,7 @@ namespace FundPortfolio.Controllers
         {
             if (ModelState.IsValid)
             {
+				notification.UserProfile = db.UserProfiles.Find(Membership.GetUser().ProviderUserKey);
                 db.Notifications.Add(notification);
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -20,7 +20,8 @@ namespace Common.Models
         public bool IsEnabled { get; set; }
 		public FundEntity FundEntity { get; set; }
 		public float ThresholdValue { get; set; }
-        public int Days { get; set; }
+		[Display(Name="Days before or after the current date to notify")]
+		public int Days { get; set; }
 
 		[ForeignKey("UserId")]
 		public UserProfile UserProfile { get; set; }

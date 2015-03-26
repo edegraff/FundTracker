@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Common.Models;
+using FundPortfolio.ModelBinder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,7 +19,7 @@ namespace FundPortfolio
 		protected void Application_Start()
 		{
 			AreaRegistration.RegisterAllAreas();
-
+			ModelBinders.Binders.Add(typeof(Notification), new AbstractModelBinder());
 			WebApiConfig.Register(GlobalConfiguration.Configuration);
 			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
