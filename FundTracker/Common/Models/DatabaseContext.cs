@@ -22,6 +22,8 @@ namespace Common.Models
 		public System.Data.Entity.DbSet<Common.Models.Notification> Notifications { get; set; }
 
 		public System.Data.Entity.DbSet<Common.Models.UserTransaction> UserTransactions { get; set; }
+
+		public System.Data.Entity.DbSet<Common.Models.FundData> FundDatas { get; set; }
 	}
 
 

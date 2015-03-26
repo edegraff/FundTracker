@@ -11,46 +11,40 @@
 <h1 class="page-header">@ViewBag.Title</h1>
 
 
-@using (Html.BeginForm("report", "fundEntities", FormMethod.Post, new { @class = "indent-left" }))
+@using (Html.BeginForm("customReport", "report", FormMethod.Post, new { @class = "indent-left" }))
 {
     <fieldset>
         <ol>
             <li>
-                <label>Funds (select up to 3):</label>
-                <div class="checkbox-container">
+                <label>Funds</label>
+                <div class="checkbox-container form-control">
                     @foreach (var item in Model)
                     {
-                        <input type="checkbox" name="fund" value="@item.id">@item.name<br />
+                        <input type="checkbox" name="fund" value="@item.Id">@item.Name<br />
                     }
                 </div>
             </li>
             <li>
-                <label>Start Date:</label>
-                <input type="text" name="start" />
+                <label>Start Date</label>
+                <input type="text" name="start" class="form-control" />
             </li>
             <li>
-                <label>End Date:</label>
-                <input type="text" name="end" />
+                <label>End Date</label>
+                <input type="text" name="end" class="form-control" />
             </li>
             <li>
-                <label>Create:</label>
+                <label>Create</label>
                 <div class="indent-left">
-                    <input type="checkbox" name="graph" checked> Graph (Max funds: 5)<br />
-                    <br />
-
-                    <label class="graph-options">Graph Display Type:</label>
-                    <div class="indent-left graph-options">
-                        <input type="radio" name="graph-display"> Fund Values<br />
-                        <input type="radio" name="graph-display" checked> Change in Fund Values<br />
-                    </div>
+                    <input type="checkbox" name="graphOn" checked> Graph<br />
                  </div>
             </li>
         </ol>
         <input type="hidden" name="fundIds"/>
+        <input type="hidden" name="graph" />
         <p class="validation">
 
         </p>
-        <input type="submit" value="Create Report" />
+        <input type="submit" value="Create Report" class="btn btn-default" />
     </fieldset>
 }
 
@@ -59,14 +53,6 @@
   $(function() {
       $('input[name="start"]').datepicker();
       $('input[name="end"]').datepicker();
-  });
-
-  $('input[name="graph"]').on('click', function () {
-      if (this.checked) {
-          $('.graph-options').show();
-      } else {
-          $('.graph-options').hide();
-      }
   });
 
   $('input[type="submit"]').on('click', function () {
@@ -83,11 +69,11 @@
           passed = false;
       }
 
-      // Check graph limitation
-      if ($('input[name="graph"]').prop('checked') && $checked.length > 5) {
-          $validation.append("*Please select 5 or less funds if you wish to create a graph.<br>");
-          passed = false;
-      }
+      //// Check graph limitation
+      //if ($('input[name="graphOn"]').prop('checked') && $checked.length > 5) {
+      //    $validation.append("*Please select 5 or less funds if you wish to create a graph.<br>");
+      //    passed = false;
+      //}
 
       // check dates non-blank and validity
       if ($('input[name="start"]').val() == "" || $('input[name="end"]').val() == "") {
@@ -110,6 +96,14 @@
       }
       out = out.substring(0, out.length - 1);
       $('input[name="fundIds"]').val(out);
+
+      /* Set hidden graph field */
+      if ($('input[name="graphOn"]:checked').length == 0) {
+          out = "NO_GRAPH";
+      } else {
+          out = "YES_GRAPH";
+      }
+      $('input[name="graph"]').val(out);
 
       return true;
   })

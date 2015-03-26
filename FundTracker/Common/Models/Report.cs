@@ -9,23 +9,22 @@ namespace Common.Models
 {
     public class Report
     {
-        private DatabaseContext db = new DatabaseContext();
-
         // Initialize the Report object
         public Report(DateTime start, DateTime end, List<FundEntity> funds)
         {
             /* Initializations */
             start = start.Date;
             end = end.Date;
-            Dates = new List<DateTime>();
-            FundNames = new List<String>(); 
-            FundsData = new List<String>[funds.Count];
+            Headers = new List<String>(); 
+            Data = new List<String>[funds.Count + 1];
 
 
+            Headers.Add("Date");
+            Data[0] = new List<String>();
             for (int i = 0; i < funds.Count; i++)
             {
-                FundNames.Add(funds[i].name);
-                FundsData[i] = new List<String>();
+                Headers.Add(funds[i].Name);
+                Data[i+1] = new List<String>();
             }
 
             int daySpan;
@@ -53,11 +52,11 @@ namespace Common.Models
                 {
                     // Set date to the first day beyond the prediction range
                     date = date.AddDays(FundProjector.projectionLimit - daySpan + 1);
-                    Dates.Add(date);
+                    Data[0].Add(formatDate(date));
                     for (int f = 0; f < funds.Count; f++)
                     {
                         // Label the end of projection
-                        FundsData[f].Add("Projection Unavailable");
+                        Data[f+1].Add("Projection Unavailable");
                     }
                     date = date.AddDays(-1);
                 }
@@ -75,11 +74,11 @@ namespace Common.Models
                 // Fill in any prediction values
                 for (int i = 0; i < daySpan; i++)
                 {
-                    Dates.Add(date);
+                    Data[0].Add(formatDate(date));
                     for (int f = 0; f < funds.Count; f++)
                     {
                         // add the prediction value for each fund
-                        FundsData[f].Add(projections[f].getPredictionByDate(date).ToString());
+                        Data[f+1].Add(projections[f].getPredictionByDate(date).ToString());
                     }
                     date = date.AddDays(-1);
                 }
@@ -96,7 +95,7 @@ namespace Common.Models
 
             for (int i = 0; i <= daySpan; i++)
             {
-                Dates.Add(date);
+                Data[0].Add(formatDate(date));
                 endOfData = true;
                 for (int f = 0; f < funds.Count; f++)
                 {
@@ -104,13 +103,13 @@ namespace Common.Models
                     {
                         // Try to add the value from the date
                         val = funds[f].GetValueByDate(date);
-                        FundsData[f].Add(val.ToString());
+                        Data[f+1].Add(val.ToString());
                         endOfData = false;
                     }
                     catch (InvalidOperationException e)
                     {
                         // If no value found add End of Data message instead
-                        FundsData[f].Add("Earlier Data Unavailable");
+                        Data[f+1].Add("Earlier Data Unavailable");
                     }
                 }
 
@@ -122,9 +121,15 @@ namespace Common.Models
             }
         }
 
-        public List<String> FundNames { get; set; }
-        
-        public List<DateTime> Dates { get; set; }
-        public List<String>[] FundsData { get; set; }
+        [NotMapped]
+        public List<String> Headers { get; set; }
+
+        [NotMapped]
+        public List<String>[] Data { get; set; }
+
+        private String formatDate(DateTime date)
+        {
+            return date.Date.Year + "/" + date.Date.Month + "/" + date.Date.Day;
+        }
     }
 }

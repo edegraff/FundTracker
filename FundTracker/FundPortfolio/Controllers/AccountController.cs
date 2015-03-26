@@ -9,7 +9,7 @@ using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using FundPortfolio.Filters;
-using FundPortfolio.Models;
+using FundPortfolio.ViewModels;
 using Common.Models;
 
 namespace FundPortfolio.Controllers

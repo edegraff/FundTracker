@@ -51,7 +51,7 @@ namespace FundService
             };
             MailMessage message = new MailMessage("fundtracker.ece493@gmail.com", notification.UserProfile.Email);
             message.Subject = "Notification from FundTracker!";
-            message.Body = "Hello,\n\nThe fund " + notification.FundEntity.name + " has exceeded its threshold\n\n"
+            message.Body = "Hello,\n\nThe fund " + notification.FundEntity.Name + " has exceeded its threshold\n\n"
                 + "View notifications at https://ece493.azurewebsites.net/Notifications\n\nSincerely,\nFundTracker";
             smtp.Send(message);
         }

@@ -11,7 +11,7 @@
 	<thead>
 		<tr>
 			<th>
-				@Html.DisplayNameFor(model => model.name)
+				@Html.DisplayNameFor(model => model.Name)
 			</th>
             <th>
                 Current Price
@@ -23,8 +23,8 @@
 		{
 			<tr>
 				<td>
-					<a href="@(Url.Action("Details", "FundEntities", new { id = item.id}))">
-						@Html.DisplayFor(modelItem => item.name)
+					<a href="@(Url.Action("Details", "FundEntities", new { id = item.Id }))">
+						@Html.DisplayFor(modelItem => item.Name)
 					</a>
 				</td>
                 <td>

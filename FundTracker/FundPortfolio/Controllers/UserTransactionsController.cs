@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using Common.Models;
 using System.Web.Security;
+using System.ComponentModel.DataAnnotations;
+using PagedList;
 
 namespace FundPortfolio.Controllers
 {
@@ -19,42 +21,28 @@ namespace FundPortfolio.Controllers
         // GET: UserTransactions
         public ActionResult Index()
         {
-			var userTransactions = db.UserTransactions.OrderByDescending(ut => ut.Date).Include(u => u.FundEntity).Include(u => u.UserProfile);
+			var currentUserId = (int) Membership.GetUser().ProviderUserKey;
+			var userTransactions = db.UserTransactions.OrderByDescending(ut => ut.Date).Include(u => u.FundEntity).Include(u => u.UserProfile).Where(u => u.UserId == currentUserId);
 			var fundListViewModel = new FundListsViewModel() { 
 				AggregateFunds = new List<AggregateFundValue>(), 
 				UserTransactions = userTransactions.ToList()
 			};
-
+			
 			foreach( var transactionList in userTransactions.GroupBy(ut => ut.FundEntityId ).ToList() )
 			{
 				var aggregateFundValue = new AggregateFundValue(transactionList.First().FundEntity);
 				aggregateFundValue.CalculateValue(transactionList);
+				fundListViewModel.TotalAssets += aggregateFundValue.Value;
 				fundListViewModel.AggregateFunds.Add(aggregateFundValue);
 			}
+
 			
             return View(fundListViewModel);
-        }
-
-        // GET: UserTransactions/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            UserTransaction userTransaction = db.UserTransactions.Find(id);
-            if (userTransaction == null)
-            {
-                return HttpNotFound();
-            }
-            return View(userTransaction);
         }
 
         // GET: UserTransactions/Create
         public ActionResult Create()
         {
-            ViewBag.FundEntityId = new SelectList(db.Funds, "id", "name");
-            ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "Email");
             return View();
         }
 
@@ -73,8 +61,6 @@ namespace FundPortfolio.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.FundEntityId = new SelectList(db.Funds, "id", "name", userTransaction.FundEntityId);
-            ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "Email", userTransaction.UserId);
             return View(userTransaction);
         }
 
@@ -90,8 +76,6 @@ namespace FundPortfolio.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.FundEntityId = new SelectList(db.Funds, "id", "name", userTransaction.FundEntityId);
-            ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "Email", userTransaction.UserId);
             return View(userTransaction);
         }
 
@@ -108,8 +92,6 @@ namespace FundPortfolio.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.FundEntityId = new SelectList(db.Funds, "id", "name", userTransaction.FundEntityId);
-            ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "Email", userTransaction.UserId);
             return View(userTransaction);
         }
 
@@ -153,5 +135,8 @@ namespace FundPortfolio.Controllers
 	{
 		public List<AggregateFundValue> AggregateFunds { get; set; }
 		public List<UserTransaction> UserTransactions { get; set; }
+
+		[Display(Name = "Total Assets")]
+		public float TotalAssets { get; set; }
 	}
 }

@@ -9,7 +9,7 @@ namespace Common.Models
 	public class AggregateFundValue
 	{
 		public float Units { get; set; }
-		public String Name { get { return FundEntity.name; } }
+		public String Name { get { return FundEntity.Name; } }
 		public float Value
 		{
 			get

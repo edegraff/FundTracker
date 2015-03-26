@@ -92,6 +92,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -189,6 +195,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModelBinder\AbstractModelBinder.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -198,13 +205,16 @@
     <Compile Include="Controllers\FundEntitiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NotificationsController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\UserTransactionsController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="ViewModels\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\NotificationViewModel.cs" />
+    <Compile Include="Views\Helpers\ViewHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-dashboard.css" />
@@ -212,7 +222,10 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\c3.css" />
+    <Content Include="Content\c3.min.css" />
     <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -259,8 +272,13 @@
     <None Include="Scripts\jquery-2.1.3.intellisense.js" />
     <Content Include="Images\button_search.png" />
     <Content Include="Images\FundTrackerLogo.png" />
+    <Content Include="LICENSE.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\c3.js" />
+    <Content Include="Scripts\c3.min.js" />
+    <Content Include="Scripts\d3.js" />
+    <Content Include="Scripts\d3.min.js" />
     <Content Include="Scripts\downloadify.min.js" />
     <Content Include="Scripts\jquery-2.1.3.js" />
     <Content Include="Scripts\jquery-2.1.3.min.js" />
@@ -325,14 +343,19 @@
     <Content Include="Views\Notifications\Edit.cshtml" />
     <Content Include="Views\Notifications\Index.cshtml" />
     <Content Include="Views\UserTransactions\Create.cshtml" />
-    <Content Include="Views\UserTransactions\Delete.cshtml" />
-    <Content Include="Views\UserTransactions\Details.cshtml" />
-    <Content Include="Views\UserTransactions\Edit.cshtml" />
     <Content Include="Views\UserTransactions\Index.cshtml" />
-    <Content Include="Views\FundEntities\Report.cshtml" />
-    <Content Include="Views\FundEntities\CreateReport.cshtml" />
+    <Content Include="Views\Report\CreateReport.cshtml" />
     <Content Include="Views\Account\ExternalLoginCallBack.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\UserTransactions\Delete.cshtml" />
+    <Content Include="Views\UserTransactions\Edit.cshtml" />
+    <Content Include="Views\Report\CustomReport.cshtml" />
+    <Content Include="Views\Report\_GraphPartial.cshtml" />
+    <Content Include="Views\Report\_ExportPartial.cshtml" />
+    <Content Include="Views\Report\_TablePartial.cshtml" />
+    <Content Include="Views\Report\Index.cshtml" />
+    <Content Include="Views\Notifications\_CreateChange.cshtml" />
+    <Content Include="Views\Notifications\_CreateValue.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,16 @@
+﻿@model Common.Models.Report
+
+@{
+	ViewBag.Title = "Report";
+	Layout = null;
+}
+
+@if (@ViewBag.graph != "NO_GRAPH")
+{
+    ViewBag.GraphOptions = true;
+    @Html.Partial("_GraphPartial", Model);
+}
+
+@Html.Partial("_ExportPartial", Model)
+
+@Html.Partial("_TablePartial", Model)

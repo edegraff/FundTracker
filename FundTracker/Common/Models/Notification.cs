@@ -23,8 +23,9 @@ namespace Common.Models
 
 		public bool AutoReset { get; set; }
         public bool IsEnabled { get; set; }
-		public virtual FundEntity FundEntity { get; set; }
+		public FundEntity FundEntity { get; set; }
 		public float ThresholdValue { get; set; }
+		[Display(Name="Days before or after the current date to notify")]
 		public int Days { get; set; }
 
 		[ForeignKey("UserId")]

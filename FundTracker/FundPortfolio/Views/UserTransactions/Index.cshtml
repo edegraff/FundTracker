@@ -14,13 +14,12 @@
 		<th>
 			@Html.DisplayNameFor(af => Model.AggregateFunds.FirstOrDefault().Name)
 		</th>
-		<th>			
+		<th>
 			@Html.DisplayNameFor(af => Model.AggregateFunds.FirstOrDefault().Units)
 		</th>
-		<th>			
+		<th>
 			@Html.DisplayNameFor(af => Model.AggregateFunds.FirstOrDefault().Value)
 		</th>
-		<th></th>
 	</tr>
 
 	@foreach (var item in Model.AggregateFunds)
@@ -37,6 +36,15 @@
 			</td>
 		</tr>
 	}
+	<tr class="">
+		<td>
+			@Html.DisplayNameFor(mv => mv.TotalAssets)
+		</td>
+		<td></td>
+		<td>
+			@Html.DisplayFor(mv => mv.TotalAssets)
+		</td>
+	</tr>
 
 </table>
 
@@ -46,38 +54,37 @@
 <p>
 	@Html.ActionLink("Add Transaction", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(ut => Model.UserTransactions.FirstOrDefault().FundEntity.name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(ut => Model.UserTransactions.FirstOrDefault().Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(ut => Model.UserTransactions.FirstOrDefault().Value)
-        </th>
-        <th></th>
-    </tr>
+<table class="table table-striped">
+	<tr>
+		<th>
+			@Html.DisplayNameFor(ut => Model.UserTransactions.FirstOrDefault().FundEntity.Name)
+		</th>
+		<th>
+			@Html.DisplayNameFor(ut => Model.UserTransactions.FirstOrDefault().Date)
+		</th>
+		<th>
+			@Html.DisplayNameFor(ut => Model.UserTransactions.FirstOrDefault().Value)
+		</th>
+		<th></th>
+	</tr>
 
-@foreach (var item in userTransactions)
-{
-    <tr>
-        <td>
-            @Html.DisplayFor(userTransactionsItem => item.FundEntity.name)
-        </td>
-        <td>
-            @Html.DisplayFor(userTransactionsItem => item.Date)
-        </td>
-        <td>
-            @Html.DisplayFor(userTransactionsItem => item.Value)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.UserTransactionId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.UserTransactionId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UserTransactionId })
-        </td>
-    </tr>
-}
+	@foreach (var item in userTransactions)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(userTransactionsItem => item.FundEntity.Name)
+			</td>
+			<td>
+				@Html.DisplayFor(userTransactionsItem => item.Date)
+			</td>
+			<td>
+				@Html.DisplayFor(userTransactionsItem => item.Value)
+			</td>
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { id = item.UserTransactionId }) |
+				@Html.ActionLink("Delete", "Delete", new { id = item.UserTransactionId })
+			</td>
+		</tr>
+	}
 
 </table>

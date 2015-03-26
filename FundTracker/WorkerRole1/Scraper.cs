@@ -105,7 +105,7 @@ namespace FundService
                     continue;
 				FundEntity f = new FundEntity();
 				f.Id = id;
-				f.name = htmlDoc.DocumentNode.SelectSingleNode("//*[contains(text(), '" + id + ".rates.x1_Month.rate\"')]").ParentNode.ParentNode.ChildNodes[1].Element("a").InnerText;
+				f.Name = htmlDoc.DocumentNode.SelectSingleNode("//*[contains(text(), '" + id + ".rates.x1_Month.rate\"')]").ParentNode.ParentNode.ChildNodes[1].Element("a").InnerText;
 				this.funds.Add(f);
 			}
 		}
@@ -167,7 +167,7 @@ namespace FundService
                                 existingFund.FundHistory.AddRange(fund.FundHistory);
                             }
                         }
-						existingFund.name = fund.name;
+						existingFund.Name = fund.Name;
 					}
 					else
 					{
