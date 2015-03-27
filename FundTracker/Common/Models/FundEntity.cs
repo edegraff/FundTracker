@@ -97,6 +97,62 @@ namespace Common.Models
 			return (p2 - p1) / p1;
 		}
 
+        /*
+         * Calculates the average fund value since the given date.  Also ensures the given date is within the data range. 
+         * The average is in the float, and the count of entries averaged in the int.
+         */
+        public Tuple<float, int> averageSince(DateTime date) 
+        {
+            date = date.Date;
+            if (this.getFirstDate() > date)
+            {
+                throw new IndexOutOfRangeException("Data does not go back to " + date.ToShortDateString() + ", only to " + this.getFirstDate().ToShortDateString());
+            }
+
+            DateTime nowDate = DateTime.Now.Date.AddDays(1);
+            FundData cur = FundHistory.First();
+            List<float> vals = new List<float>();
+
+            int i = 0;
+            while (FundHistory[i].Date.Date < date) // Skip values that are before the requested period
+            {
+                i++;
+            }
+
+            while (date != nowDate)
+            {
+                if (i < FundHistory.Count)
+                {
+                    cur = FundHistory[i];
+                }
+
+                if (cur.Date.Date == date) // found exact date match
+                {
+                    vals.Add(cur.Value);
+                    i++;
+                    date = date.AddDays(1);
+                }
+                else // no specific data recorded for this day
+                {
+                    vals.Add(FundHistory[i-1].Value);
+                    date = date.AddDays(1);
+                }
+                
+            }
+            return new Tuple<float, int>(vals.Average(), vals.Count);
+        }
+
+        public DateTime getFirstDate()
+        {
+            if (FundHistory.Count() > 0) {
+                FundHistory.OrderBy(x => x.Date); // Sorts most current last
+                return FundHistory.First().Date.Date;
+            } 
+            else
+            {
+                throw new IndexOutOfRangeException("There is no data for this fund yet.");
+            }
+        }
 	
 	}
 }

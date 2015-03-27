@@ -20,10 +20,20 @@
     }
     
     <div id="chart"></div>
+    <div id="chartPredictionNote" class="right" style="display:none;">* Highlighted area depicts predicted values</div>
+    <br />
 </div>
 
 <script>
     var model = @Html.Raw(Json.Encode(Model));
+
+    // Should we show the prediction note?
+    // Set whether we will highlight a predicted region on graph as well.
+    var predictedRegion = [];
+    if (new Date() < new Date(model.Data[0][0])) {
+        $('#chartPredictionNote').show();
+        predictedRegion = [ {start: formatDate(new Date())} ];
+    }
 
     /* create graph */
 
@@ -84,19 +94,12 @@
         }
     }
 
-    var dashedRegion = {};
-    var today = formatDate(new Date());
-    for (i = 1; i < cols; i++) {
-        dashedRegion[model.Headers[i]] = [{'start':today}];
-    }
-
     /* generate initial graph to show VALUE Type */
     var chart = c3.generate({
         bindto: '#chart',
         data: {
             x: 'Date',
-            columns: columnDataValue,
-            regions: dashedRegion
+            columns: columnDataValue
         },
         axis: {
             x: {
@@ -118,7 +121,8 @@
             y: {
                 lines: [{ value: 0, class: 'zero-line', label: '0' }],
             }
-        }
+        },
+        regions: predictedRegion
 
     });
 
