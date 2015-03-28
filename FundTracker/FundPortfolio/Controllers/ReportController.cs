@@ -38,7 +38,6 @@ namespace FundPortfolio.Controllers
             List<FundEntity> funds = new List<FundEntity>();
             funds.Add(fundEntity);
 
-            FundProjector prj = new FundProjector(fundEntity);
             DateTime start = DateTime.Now.AddMonths(-1);
             DateTime end = DateTime.Now.AddDays(FundProjector.projectionLimit);
 

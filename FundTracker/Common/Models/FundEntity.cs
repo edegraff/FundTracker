@@ -98,61 +98,85 @@ namespace Common.Models
 		}
 
         /*
-         * Calculates the average fund value since the given date.  Also ensures the given date is within the data range. 
-         * The average is in the float, and the count of entries averaged in the int.
+         * Returns any historical data for the fund within the date range.  
+         * The list will be truncated for any day beyond nowDate.  (As there should not be data beyond 'now'.)
+         * Fills any unavailable data slot with float.NaN
+         * Ordered by earliest date first.
          */
-        public Tuple<float, int> averageSince(DateTime date) 
+        public Tuple<List<float>, List<DateTime>> getDataInRange(DateTime start, DateTime end, DateTime nowDate)
         {
-            date = date.Date;
-            if (this.getFirstDate() > date)
+            if (nowDate == null)
             {
-                throw new IndexOutOfRangeException("Data does not go back to " + date.ToShortDateString() + ", only to " + this.getFirstDate().ToShortDateString());
+                nowDate = DateTime.Now.Date;
             }
 
-            DateTime nowDate = DateTime.Now.Date.AddDays(1);
-            FundData cur = FundHistory.First();
-            List<float> vals = new List<float>();
+            start = start.Date;
+            end = end.Date;
+            nowDate = nowDate.Date;
+            
+            if (start > end)
+            {
+                throw new ArgumentException("Start date after End date.");
+            }
 
+            List<float> vals = new List<float>();
+            List<DateTime> dates = new List<DateTime>();
+
+            // If no data return vals filled with NaN
+            if (FundHistory.Count == 0)
+            {
+                while (start <= end)
+                {
+                    vals.Add(float.NaN);
+                    dates.Add(start);
+                    start = start.AddDays(1);
+                }
+                return new Tuple<List<float>, List<DateTime>>(vals, dates);
+            }
+
+            // Else, assemble the data
+            FundHistory.OrderBy(x => x.Date); // Sorts most current last
+            FundData cur = FundHistory.First();
+
+            // Ensure we have early enough data for start date, otherwise fill with NaN
+            while (cur.Date.Date >= start && start <= nowDate) 
+            {
+                vals.Add(float.NaN);
+                dates.Add(start);
+                start = start.AddDays(1);
+            }
+
+            // Skip values that are before the requested period, but do not exceed FundHistory.Count
             int i = 0;
-            while (FundHistory[i].Date.Date < date) // Skip values that are before the requested period
+            while (i < FundHistory.Count && FundHistory[i].Date.Date < start) 
             {
                 i++;
             }
 
-            while (date != nowDate)
+            // Deal with the peroid between start and nowDate
+            while (start <= nowDate && start <= end)
             {
-                if (i < FundHistory.Count)
+                if (i < FundHistory.Count) // Ensure i is in range
                 {
                     cur = FundHistory[i];
                 }
 
-                if (cur.Date.Date == date) // found exact date match
+                if (cur.Date.Date == start) // found exact date match
                 {
                     vals.Add(cur.Value);
+                    dates.Add(start);
                     i++;
-                    date = date.AddDays(1);
+                    start = start.AddDays(1);
                 }
                 else // no specific data recorded for this day
                 {
-                    vals.Add(FundHistory[i-1].Value);
-                    date = date.AddDays(1);
+                    vals.Add(FundHistory[i - 1].Value);
+                    dates.Add(start);
+                    start = start.AddDays(1);
                 }
-                
             }
-            return new Tuple<float, int>(vals.Average(), vals.Count);
-        }
 
-        public DateTime getFirstDate()
-        {
-            if (FundHistory.Count() > 0) {
-                FundHistory.OrderBy(x => x.Date); // Sorts most current last
-                return FundHistory.First().Date.Date;
-            } 
-            else
-            {
-                throw new IndexOutOfRangeException("There is no data for this fund yet.");
-            }
+            return new Tuple<List<float>, List<DateTime>>(vals, dates);
         }
-	
 	}
 }
