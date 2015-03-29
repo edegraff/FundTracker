@@ -11,7 +11,7 @@ namespace Common.Models
         // How many days we will project for
         public const int projectionLimit = 3;
 
-        public FundProjector(FundEntity fundentity, DateTime nowDate)
+        public FundProjector(ITimeSeriesFundData fundentity, DateTime nowDate)
         {
             NowDate = nowDate.Date;
             Fund = fundentity;
@@ -20,7 +20,7 @@ namespace Common.Models
         }
 
         private DateTime NowDate { get; set;  }
-        private FundEntity Fund { get; set; }
+		private ITimeSeriesFundData Fund { get; set; }
         public List<float> Projection { get; set;  }
 
         /*
@@ -34,7 +34,7 @@ namespace Common.Models
         private void doProjection()
         {
             // Get the relevant historic data
-            Tuple<List<float>, List<DateTime>> historic = this.Fund.getDataInRange(this.NowDate.AddDays(-180), this.NowDate, this.NowDate);
+            Tuple<List<float>, List<DateTime>> historic = this.Fund.GetDataInRange(this.NowDate.AddDays(-180), this.NowDate, this.NowDate);
             List<float> histVals = historic.Item1;
             List<DateTime> histDates = historic.Item2;
             removeNaNs(histVals, histDates);

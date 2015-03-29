@@ -35,7 +35,7 @@ namespace FundPortfolio.Controllers
                 return HttpNotFound();
             }
            
-            List<FundEntity> funds = new List<FundEntity>();
+            var funds = new List<ITimeSeriesFundData>();
             funds.Add(fundEntity);
 
             DateTime start = DateTime.Now.AddMonths(-1);
@@ -52,7 +52,7 @@ namespace FundPortfolio.Controllers
 
             string[] ids = fundIds.Split(',');
 
-            List<FundEntity> funds = new List<FundEntity>();
+            var funds = new List<ITimeSeriesFundData>();
 
             if (ids.Length == 0)
             {

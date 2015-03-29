@@ -76,17 +76,19 @@
       <DependentUpon>201503251944546_NotificationsChange.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AggregateFundValue.cs" />
+    <Compile Include="Models\AggregateFundData.cs" />
     <Compile Include="Models\ChangeNotification.cs" />
     <Compile Include="Models\FundEntity.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\FundData.cs" />
     <Compile Include="Models\FundProjector.cs" />
     <Compile Include="Models\IFundData.cs" />
+    <Compile Include="Models\ITimeSeriesFundData.cs" />
     <Compile Include="Models\Notification.cs" />
     <Compile Include="Models\Report.cs" />
     <Compile Include="Models\UserProfile.cs" />
     <Compile Include="Models\UserTransaction.cs" />
+    <Compile Include="Models\ValueByDateAlgorithm.cs" />
     <Compile Include="Models\ValueNotification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -10,7 +10,7 @@ namespace Common.Models
     public class Report
     {
         // Initialize the Report object
-        public Report(DateTime start, DateTime end, List<FundEntity> funds)
+		public Report(DateTime start, DateTime end, List<ITimeSeriesFundData> funds)
         {
             /* Initializations */
             start = start.Date;
@@ -26,7 +26,7 @@ namespace Common.Models
             {
                 Headers.Add(funds[i].Name);
                 Data[i+1] = new List<String>();
-                tempData[i] = funds[i].getDataInRange(start, end, nowDate).Item1;
+                tempData[i] = funds[i].GetDataInRange(start, end, nowDate).Item1;
             }
 
             int dataLen = tempData[0].Count; // how many eatries in each list in tempData

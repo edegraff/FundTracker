@@ -34,7 +34,7 @@ namespace Common.Models
 		public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
 		{
 			using( var db = new DatabaseContext() )
-			if (Date < db.Funds.Find(FundEntityId).FundHistory.First().Date)
+			if (Date < db.Funds.Find(FundEntityId).FundData.First().Date)
 				yield return new ValidationResult("We don't have any fund data that far back");
 		}
 	}

@@ -11,7 +11,7 @@ namespace Common.Migrations
 		{
 			DropPrimaryKey("dbo.FundEntity");
 			CreateTable(
-				"dbo.FundHistory",
+				"dbo.FundData",
 				c => new
 					{
 						FundEntityId = c.String(nullable: false, maxLength: 128),
@@ -21,7 +21,7 @@ namespace Common.Migrations
 				.PrimaryKey(t => new { t.FundEntityId, t.Date })
 				.ForeignKey("dbo.FundEntity", t => t.FundEntityId, cascadeDelete: true);
 
-			Sql("insert into dbo.fundhistory (FundEntityId, Date, Value) SELECT Id, currentdate, currentvalue FROM fundentity");
+			Sql("insert into dbo.fundhistory (FundEntityId, Date, CurrentValue) SELECT Id, currentdate, currentvalue FROM fundentity");
 
 			DropColumn("dbo.FundEntity", "currentDate");
 			DropColumn("dbo.FundEntity", "currentValue");
@@ -39,13 +39,13 @@ namespace Common.Migrations
 		{
 			AddColumn("dbo.FundEntity", "currentValue", c => c.Single(nullable: false));
 			AddColumn("dbo.FundEntity", "currentDate", c => c.DateTime(nullable: false));
-			DropForeignKey("dbo.FundHistory", "FundEntityId", "dbo.FundEntity");
-			DropIndex("dbo.FundHistory", new[] { "FundEntityId" });
+			DropForeignKey("dbo.FundData", "FundEntityId", "dbo.FundEntity");
+			DropIndex("dbo.FundData", new[] { "FundEntityId" });
 			DropPrimaryKey("dbo.FundEntity");
 
 			Sql("");
 
-			DropTable("dbo.FundHistory");
+			DropTable("dbo.FundData");
 			AddPrimaryKey("dbo.FundEntity", new[] { "Id", "currentDate" });
 		}
 	}

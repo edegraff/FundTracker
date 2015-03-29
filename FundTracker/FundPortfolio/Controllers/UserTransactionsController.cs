@@ -24,15 +24,15 @@ namespace FundPortfolio.Controllers
 			var currentUserId = (int) Membership.GetUser().ProviderUserKey;
 			var userTransactions = db.UserTransactions.OrderByDescending(ut => ut.Date).Include(u => u.FundEntity).Include(u => u.UserProfile).Where(u => u.UserId == currentUserId);
 			var fundListViewModel = new FundListsViewModel() { 
-				AggregateFunds = new List<AggregateFundValue>(), 
+				AggregateFunds = new List<AggregateFundData>(), 
 				UserTransactions = userTransactions.ToList()
 			};
 			
 			foreach( var transactionList in userTransactions.GroupBy(ut => ut.FundEntityId ).ToList() )
 			{
-				var aggregateFundValue = new AggregateFundValue(transactionList.First().FundEntity);
+				var aggregateFundValue = new AggregateFundData(transactionList.First().FundEntity);
 				aggregateFundValue.CalculateValue(transactionList);
-				fundListViewModel.TotalAssets += aggregateFundValue.Value;
+				fundListViewModel.TotalAssets += aggregateFundValue.CurrentValue;
 				fundListViewModel.AggregateFunds.Add(aggregateFundValue);
 			}
 
@@ -52,7 +52,7 @@ namespace FundPortfolio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserTransactionId,UserId,FundEntityId,Date,Value")] UserTransaction userTransaction)
+        public ActionResult Create([Bind(Include = "UserTransactionId,UserId,FundEntityId,Date,CurrentValue")] UserTransaction userTransaction)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace FundPortfolio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserTransactionId,UserId,FundEntityId,Date,Value")] UserTransaction userTransaction)
+        public ActionResult Edit([Bind(Include = "UserTransactionId,UserId,FundEntityId,Date,CurrentValue")] UserTransaction userTransaction)
         {
             if (ModelState.IsValid)
             {
@@ -136,7 +136,7 @@ namespace FundPortfolio.Controllers
 
 	public class FundListsViewModel
 	{
-		public List<AggregateFundValue> AggregateFunds { get; set; }
+		public List<AggregateFundData> AggregateFunds { get; set; }
 		public List<UserTransaction> UserTransactions { get; set; }
 
 		[Display(Name = "Total Assets")]

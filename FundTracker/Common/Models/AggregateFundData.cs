@@ -6,11 +6,27 @@ using System.Threading.Tasks;
 
 namespace Common.Models
 {
-	public class AggregateFundValue
+	public class AggregateFundData : ITimeSeriesFundData
 	{
+
 		public float Units { get; set; }
-		public String Name { get { return FundEntity.Name; } }
-		public float Value
+		public string Name { get { return FundEntity.Name; } }
+
+		public virtual List<FundData> AssestValues { get; set; }
+
+		public IEnumerable<IFundData> FundData
+		{
+			get
+			{
+				return AssestValues;
+			}
+			set
+			{
+				AssestValues = (List<FundData>)value;
+			}
+		}
+
+		public float CurrentValue
 		{
 			get
 			{
@@ -23,7 +39,7 @@ namespace Common.Models
 		}
 		private FundEntity FundEntity { get; set; }
 
-		public AggregateFundValue(FundEntity fundEntity)
+		public AggregateFundData(FundEntity fundEntity)
 		{
 			FundEntity = fundEntity;
 			Units = 0;
@@ -31,10 +47,12 @@ namespace Common.Models
 
 		public void CalculateValue(IEnumerable<IFundData> fundData)
 		{
+			Units = 0;
 			foreach (var fundDatum in fundData)
 				try
 				{
 					Units += fundDatum.Value / FundEntity.GetValueByDate(fundDatum.Date);
+					AssestValues.Add(new FundData() { Value = CurrentValue });
 				}
 				catch (InvalidOperationException)
 				{
@@ -43,5 +61,8 @@ namespace Common.Models
 				}
 
 		}
+
+
+
 	}
 }
