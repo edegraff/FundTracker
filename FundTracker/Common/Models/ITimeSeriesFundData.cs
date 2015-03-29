@@ -11,6 +11,6 @@ namespace Common.Models
 
 		float CurrentValue { get; }
 
-		IEnumerable<IFundData> FundData { get; set; }
+		IEnumerable<IFundData> FundData { get;  }
 	}
 }

@@ -18,6 +18,8 @@ namespace Common.Models
 		{
 			if (nowDate == null)
 				nowDate = DateTime.Now.Date;
+
+
 			start = start.Date;
 			end = end.Date;
 			nowDate = nowDate.Date;
@@ -42,30 +44,51 @@ namespace Common.Models
 				return new Tuple<List<float>, List<DateTime>>(vals, dates);
 			}
 
-
-
 			// Else, assemble the data
-			IFundData previous = null;
-			var arr = timeSeriesData.FundData.OrderBy(x => x.Date)
-											.SkipWhile((fundData) => { if (fundData.Date.Date >= start) return false; previous = fundData; return true; })
-											.TakeWhile(fundData => fundData.Date.Date <= end);
-
-			var previousVal = float.NaN;
-			if (previous != null)
-				previousVal = previous.Value;
-			var cur = arr.First();
+			var fundData = timeSeriesData.FundData.OrderBy(x => x.Date); // Sorts most current last
+			IFundData cur = fundData.First();
 
 			// Ensure we have early enough data for start date, otherwise fill with NaN
 			while (cur.Date.Date >= start && start <= nowDate)
 			{
-				vals.Add(previousVal);
+				vals.Add(float.NaN);
 				dates.Add(start);
 				start = start.AddDays(1);
 			}
 
+			// Skip values that are before the requested period, but do not exceed timerSeriesData.FundData.Count
+			int i = 0;
+			while (i < fundData.Count() && fundData.ElementAt(i).Date.Date < start)
+			{
+				i++;
+			}
+
+			// Deal with the peroid between start and nowDate
+			while (start <= nowDate && start <= end)
+			{
+				if (i < fundData.Count()) // Ensure i is in range
+				{
+					cur = fundData.ElementAt(i);
+				}
+
+				if (cur.Date.Date == start) // found exact date match
+				{
+					vals.Add(cur.Value);
+					dates.Add(start);
+					i++;
+					start = start.AddDays(1);
+				}
+				else // no specific data recorded for this day
+				{
+					vals.Add(fundData.ElementAt(i - 1).Value);
+					dates.Add(start);
+					start = start.AddDays(1);
+				}
+			}
 
 			return new Tuple<List<float>, List<DateTime>>(vals, dates);
 		}
+
 	}
 }
 

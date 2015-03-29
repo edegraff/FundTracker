@@ -4,29 +4,30 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Globalization;
+using System.Linq;
 
 namespace Common.Models
 {
     public class Report
     {
         // Initialize the Report object
-		public Report(DateTime start, DateTime end, List<ITimeSeriesFundData> funds)
+		public Report(DateTime start, DateTime end, IEnumerable<ITimeSeriesFundData> funds)
         {
             /* Initializations */
             start = start.Date;
             end = end.Date;
             Headers = new List<String>(); 
-            Data = new List<String>[funds.Count + 1];
+            Data = new List<String>[funds.Count() + 1];
             DateTime nowDate = DateTime.Now.Date;
-            List<float>[] tempData = new List<float>[funds.Count];
+            List<float>[] tempData = new List<float>[funds.Count()];
 
             Headers.Add("Date");
             Data[0] = new List<String>();
-            for (int i = 0; i < funds.Count; i++)
+            for (int i = 0; i < funds.Count(); i++)
             {
-                Headers.Add(funds[i].Name);
+                Headers.Add(funds.ElementAt(i).Name);
                 Data[i+1] = new List<String>();
-                tempData[i] = funds[i].GetDataInRange(start, end, nowDate).Item1;
+                tempData[i] = funds.ElementAt(i).GetDataInRange(start, end, nowDate).Item1;
             }
 
             int dataLen = tempData[0].Count; // how many eatries in each list in tempData
@@ -38,7 +39,7 @@ namespace Common.Models
             while (j < dataLen)
             {
                 currentEmpty = true;
-                for (int i = 0; i < funds.Count; i++)
+                for (int i = 0; i < funds.Count(); i++)
                 {
                     if (!float.IsNaN(tempData[i][j]))
                     {
@@ -55,7 +56,7 @@ namespace Common.Models
                     if (previousEmpty)
                     {
                         Data[0].Add(formatDate(start.AddDays(j-1)));
-                        for (int i = 0; i < funds.Count; i++)
+                        for (int i = 0; i < funds.Count(); i++)
                         {
                             Data[i + 1].Add("Earlier Data Unavailable");
                         }
@@ -72,7 +73,7 @@ namespace Common.Models
             while (j < dataLen && start <= nowDate && start <= end)
             {
                 Data[0].Add(formatDate(start));
-                for (int i = 0; i < funds.Count; i++)
+                for (int i = 0; i < funds.Count(); i++)
                 {
                     if (float.IsNaN(tempData[i][j]))
                     {
@@ -91,10 +92,10 @@ namespace Common.Models
             if (nowDate < end)
             {
                 // Initialize the projections
-                FundProjector[] prjs = new FundProjector[funds.Count];
-                for (int i = 0; i < funds.Count; i++)
+                FundProjector[] prjs = new FundProjector[funds.Count()];
+                for (int i = 0; i < funds.Count(); i++)
                 {
-                    prjs[i] = new FundProjector(funds[i], nowDate);
+                    prjs[i] = new FundProjector(funds.ElementAt(i), nowDate);
                 }
 
                 nowDate = nowDate.AddDays(FundProjector.projectionLimit); // now the limit of projection
@@ -102,7 +103,7 @@ namespace Common.Models
                 while (j < FundProjector.projectionLimit && start <= nowDate && start <= end)
                 {
                     Data[0].Add(formatDate(start));
-                    for (int i = 0; i < funds.Count; i++)
+                    for (int i = 0; i < funds.Count(); i++)
                     {
                         Data[i + 1].Add(prjs[i].Projection[j].ToString());
                     }
@@ -115,7 +116,7 @@ namespace Common.Models
             if (start <= end)
             {
                 Data[0].Add(formatDate(start));
-                for (int i = 0; i < funds.Count; i++)
+                for (int i = 0; i < funds.Count(); i++)
                 {
                     Data[i + 1].Add("Further Projection Unavailable");
                 }
@@ -123,7 +124,7 @@ namespace Common.Models
             }
 
             /* Section 5 - reverse order, so newest first */
-            for (int i = 0; i < funds.Count+1; i++)
+            for (int i = 0; i < funds.Count()+1; i++)
             {
                 Data[i].Reverse();
             }

@@ -20,10 +20,6 @@ namespace Common.Models
 			{
 				return AssestValues;
 			}
-			set
-			{
-				AssestValues = (List<FundData>)value;
-			}
 		}
 
 		public float CurrentValue
@@ -41,6 +37,7 @@ namespace Common.Models
 
 		public AggregateFundData(FundEntity fundEntity)
 		{
+			AssestValues = new List<FundData>();
 			FundEntity = fundEntity;
 			Units = 0;
 		}
@@ -52,7 +49,7 @@ namespace Common.Models
 				try
 				{
 					Units += fundDatum.Value / FundEntity.GetValueByDate(fundDatum.Date);
-					AssestValues.Add(new FundData() { Value = CurrentValue });
+					AssestValues.Add(new FundData() { Value = CurrentValue, Date = fundDatum.Date });
 				}
 				catch (InvalidOperationException)
 				{

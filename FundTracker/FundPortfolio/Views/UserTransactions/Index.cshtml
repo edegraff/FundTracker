@@ -1,14 +1,19 @@
-﻿@model FundPortfolio.Controllers.FundListsViewModel
+﻿@model FundPortfolio.ViewModels.UserTransactionIndexViewModel
 @using Common.Models
 
 @{
     ViewBag.Title = "Index";
+	ViewBag.GraphOptions = true;
     Layout = "~/Views/Shared/_Layout.cshtml";
 	var aggregateFunds = Model.AggregateFunds;
 	var userTransactions = Model.UserTransactions;
 }
 
 <h2>Current Assets</h2>
+@if (Model.GraphReport != null)
+{
+	@Html.Partial("~/views/Report/_GraphPartial.cshtml", Model.GraphReport);
+}
 <table class="table">
 	<tr>
 		<th>
@@ -18,7 +23,7 @@
 			@Html.DisplayNameFor(af => Model.AggregateFunds.FirstOrDefault().Units)
 		</th>
 		<th>
-			@Html.DisplayNameFor(af => Model.AggregateFunds.FirstOrDefault().Value)
+			@Html.DisplayNameFor(af => Model.AggregateFunds.FirstOrDefault().CurrentValue)
 		</th>
 	</tr>
 
@@ -32,7 +37,7 @@
 				@Html.DisplayFor(aggregateFundsItem => item.Units)
 			</td>
 			<td>
-				@Html.DisplayFor(aggregateFundsItem => item.Value)
+				@Html.DisplayFor(aggregateFundsItem => item.CurrentValue)
 			</td>
 		</tr>
 	}
