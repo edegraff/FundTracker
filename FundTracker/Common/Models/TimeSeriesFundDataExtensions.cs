@@ -8,6 +8,24 @@ namespace Common.Models
 {
 	public static class TimeSeriesFundDataExtensions
 	{
+		public static IEnumerable<IFundData> GetDataInRange(this ITimeSeriesFundData timeSeriesData, DateTime start, DateTime end)
+		{
+			IFundData previous = null;
+			var data = timeSeriesData.FundData.OrderBy(fd => fd.Date)
+									.SkipWhile((fd) =>
+									{
+										if (fd.Date <= start)
+										{
+											previous = fd; return true;
+										}
+										return false;
+									}).TakeWhile(fd => fd.Date <= end);
+			var returnData = new List<IFundData>(data.Count() + 1);
+			if (previous != null)
+				returnData.Add(previous);
+			returnData.AddRange(data);
+			return returnData;
+		}
 		/*
 	 * Returns any historical data for the fund within the date range.  
 	 * The list will be truncated for any day beyond nowDate.  (As there should not be data beyond 'now'.)

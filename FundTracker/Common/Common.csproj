@@ -88,7 +88,7 @@
     <Compile Include="Models\Report.cs" />
     <Compile Include="Models\UserProfile.cs" />
     <Compile Include="Models\UserTransaction.cs" />
-    <Compile Include="Models\ValueByDateAlgorithm.cs" />
+    <Compile Include="Models\TimeSeriesFundDataExtensions.cs" />
     <Compile Include="Models\ValueNotification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
