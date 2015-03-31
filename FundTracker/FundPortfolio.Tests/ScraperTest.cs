@@ -25,7 +25,7 @@ namespace FundPortfolio.Tests
                 foreach (var f in funds)
                 {
                     Console.WriteLine(f.Name);
-                    foreach (var fd in f.FundHistory)
+                    foreach (var fd in f.FundData)
                     {
                         Console.WriteLine(fd.Date + " -> " + fd.Value);
                     }

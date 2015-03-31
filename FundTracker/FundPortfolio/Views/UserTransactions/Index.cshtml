@@ -1,14 +1,20 @@
-﻿@model FundPortfolio.Controllers.FundListsViewModel
+﻿@model FundPortfolio.ViewModels.UserTransactionIndexViewModel
 @using Common.Models
 
 @{
     ViewBag.Title = "Index";
+	ViewBag.GraphOptions = false;
     Layout = "~/Views/Shared/_Layout.cshtml";
 	var aggregateFunds = Model.AggregateFunds;
 	var userTransactions = Model.UserTransactions;
 }
-
-<h2>Current Assets</h2>
+<h1>Portfolio</h1>
+<h3>Last Months Data</h3>
+@if (Model.GraphReport != null)
+{
+	@Html.Partial("~/views/Report/_GraphPartial.cshtml", Model.GraphReport);
+}
+<h3>Current Assets</h3>
 <table class="table">
 	<tr>
 		<th>
@@ -18,7 +24,7 @@
 			@Html.DisplayNameFor(af => Model.AggregateFunds.FirstOrDefault().Units)
 		</th>
 		<th>
-			@Html.DisplayNameFor(af => Model.AggregateFunds.FirstOrDefault().Value)
+			@Html.DisplayNameFor(af => Model.AggregateFunds.FirstOrDefault().CurrentValue)
 		</th>
 	</tr>
 
@@ -32,7 +38,7 @@
 				@Html.DisplayFor(aggregateFundsItem => item.Units)
 			</td>
 			<td>
-				@Html.DisplayFor(aggregateFundsItem => item.Value)
+				@Html.DisplayFor(aggregateFundsItem => item.CurrentValue)
 			</td>
 		</tr>
 	}
@@ -48,9 +54,7 @@
 
 </table>
 
-
-
-<h2>History</h2>
+<h3>History</h3>
 <p>
 	@Html.ActionLink("Add Transaction", "Create")
 </p>

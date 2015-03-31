@@ -69,17 +69,11 @@
           passed = false;
       }
 
-      //// Check graph limitation
-      //if ($('input[name="graphOn"]').prop('checked') && $checked.length > 5) {
-      //    $validation.append("*Please select 5 or less funds if you wish to create a graph.<br>");
-      //    passed = false;
-      //}
-
       // check dates non-blank and validity
       if ($('input[name="start"]').val() == "" || $('input[name="end"]').val() == "") {
           $validation.append("*Please enter both a Start and End Date.<br>");
           passed = false;
-      } else if ($('input[name="start"]').val() > $('input[name="end"]').val()) {
+      } else if (new Date($('input[name="start"]').val()) > new Date($('input[name="end"]').val())) {
           $validation.append("*Invalid Start and End Date.  The End Date must occur after the Start Date.<br>");
           passed = false;
       }

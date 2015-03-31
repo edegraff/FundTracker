@@ -142,7 +142,7 @@ namespace FundService
 				string response = MakeRequest("https://www.cibc.com/ratesservice/rds?lobId=7&sourceProductCode=" + fund.Id);
 				Newtonsoft.Json.Linq.JObject json = JsonConvert.DeserializeObject(response.Substring(response.IndexOf("{"))) as Newtonsoft.Json.Linq.JObject;
 				fund.CurrentValue = float.Parse(json.Last.First.Last.ElementAt(3).ToString());
-                fund.FundHistory[0].Date = this.date;
+                fund.FundData.First().Date = this.date;
             }
 		}
 
@@ -157,14 +157,14 @@ namespace FundService
 					{
                         if (existingFund.CurrentValue != fund.CurrentValue)
                         {
-                            if (existingFund.FundHistory.Last().Date.DayOfYear == fund.FundHistory[0].Date.DayOfYear)
+                            if (existingFund.FundData.Last().Date.DayOfYear == fund.FundData.First().Date.DayOfYear)
                             {
                                 // Value has updated for this date
-                                existingFund.FundHistory.Last().Value = fund.CurrentValue;
+                                existingFund.FundData.Last().Value = fund.CurrentValue;
                             }
                             else
                             {
-                                existingFund.FundHistory.AddRange(fund.FundHistory);
+								existingFund.FundHistory.AddRange(fund.FundHistory);
                             }
                         }
 						existingFund.Name = fund.Name;

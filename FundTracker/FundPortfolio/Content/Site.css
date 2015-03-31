@@ -13,6 +13,10 @@
     float: left;
 }
 
+.right {
+    float: right;
+}
+
 .indent-left {
     margin-left: 20px;
 }
