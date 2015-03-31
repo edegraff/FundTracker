@@ -67,7 +67,7 @@ namespace Common.Models
 			IFundData cur = fundData.First();
 
 			// Ensure we have early enough data for start date, otherwise fill with NaN
-			while (cur.Date.Date >= start && start <= nowDate)
+			while (cur.Date.Date > start && start <= nowDate)
 			{
 				vals.Add(float.NaN);
 				dates.Add(start);

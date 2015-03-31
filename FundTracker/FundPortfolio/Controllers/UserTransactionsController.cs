@@ -26,14 +26,13 @@ namespace FundPortfolio.Controllers
 			var userTransactions = db.UserTransactions.OrderByDescending(ut => ut.Date).Include(u => u.FundEntity).Include(u => u.UserProfile).Where(u => u.UserId == currentUserId);
 			var fundListViewModel = new UserTransactionIndexViewModel()
 			{
-				AggregateFunds = new List<AggregateFundData>(),
+				AggregateFunds = new List<AggregateTransactionData>(),
 				UserTransactions = userTransactions.ToList()
 			};
 
 			foreach (var transactionList in userTransactions.GroupBy(ut => ut.FundEntityId).ToList())
 			{
-				var aggregateFundValue = new AggregateFundData(transactionList.First().FundEntity);
-				aggregateFundValue.CalculateValue(transactionList);
+				var aggregateFundValue = new AggregateTransactionData(transactionList.First().FundEntity, transactionList);
 				fundListViewModel.TotalAssets += aggregateFundValue.CurrentValue;
 				fundListViewModel.AggregateFunds.Add(aggregateFundValue);
 			}

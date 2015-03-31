@@ -36,6 +36,8 @@ namespace Common.Models
 			using( var db = new DatabaseContext() )
 			if (Date < db.Funds.Find(FundEntityId).FundData.First().Date)
 				yield return new ValidationResult("We don't have any fund data that far back");
+			else if (Date > DateTime.Now)
+				yield return new ValidationResult("You cannot have transactions in the future");
 		}
 	}
 }

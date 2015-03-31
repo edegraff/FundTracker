@@ -55,6 +55,7 @@ namespace Common.Models
 			}
 		}
 
+
 		public float GetValueByDate(DateTime date)
 		{
 			if (date.Date > DateTime.Now.Date)
@@ -63,7 +64,7 @@ namespace Common.Models
 			}
 			else
 			{
-				FundData.OrderBy(x => x.Date); // Sorts most current last
+				FundHistory = FundHistory.OrderBy(x => x.Date).ToList(); // Sorts most current last
 				for (int i = FundHistory.Count - 1; i >= 0; i--)
 				{
 					if (FundHistory[i].Date.Date <= date.Date) // Find the val of fund on the given day
@@ -108,7 +109,5 @@ namespace Common.Models
 		{
 			return (p2 - p1) / p1;
 		}
-
-
 	}
 }

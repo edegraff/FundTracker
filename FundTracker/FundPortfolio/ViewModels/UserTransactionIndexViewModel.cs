@@ -9,7 +9,7 @@ namespace FundPortfolio.ViewModels
 {
 	public class UserTransactionIndexViewModel
 	{
-		public List<AggregateFundData> AggregateFunds { get; set; }
+		public List<AggregateTransactionData> AggregateFunds { get; set; }
 		public List<UserTransaction> UserTransactions { get; set; }
 
 		public Report GraphReport { get; set; }
