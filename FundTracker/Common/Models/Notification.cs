@@ -20,11 +20,13 @@ namespace Common.Models
 		public int NotificationId { get; set; }
 
 		public int UserId { get; set; }
-
+        [Display(Name = "Auto Reset")]
 		public bool AutoReset { get; set; }
+        [Display(Name = "Enabled")]
         public bool IsEnabled { get; set; }
-		public FundEntity FundEntity { get; set; }
-		public float ThresholdValue { get; set; }
+		public virtual FundEntity FundEntity { get; set; }
+        [Display(Name = "Threshold Value")]
+        public float ThresholdValue { get; set; }
 		[Display(Name="Days before or after the current date to notify")]
 		public int Days { get; set; }
 

@@ -12,14 +12,23 @@
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.AutoReset)
-        </th>
+        <td>
+            @Html.DisplayNameFor(model => model.FundEntity.Name)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.FundEntity.CurrentValue)
+        </td>
         <th>
             @Html.DisplayNameFor(model => model.ThresholdValue)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Days)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AutoReset)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsEnabled)
         </th>
 		<th>
 			@Html.DisplayNameFor(model => model.UserProfile.Email)
@@ -30,7 +39,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.AutoReset)
+            @Html.DisplayFor(modelItem => item.FundEntity.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FundEntity.CurrentValue)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ThresholdValue)
@@ -38,13 +50,20 @@
         <td>
             @Html.DisplayFor(modelItem => item.Days)
         </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AutoReset)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsEnabled)
+        </td>
 		<td>
 			@Html.DisplayFor(modelItem => item.UserProfile.Email)
 		</td>
         <td>
             @Html.ActionLink("Edit", "Edit", new {  id=item.NotificationId}) |
             @Html.ActionLink("Details", "Details", new { id = item.NotificationId }) |
-            @Html.ActionLink("Delete", "Delete", new {id=item.NotificationId })
+            @Html.ActionLink("Delete", "Delete", new {id=item.NotificationId }) |
+            @Html.ActionLink("Enable/Disable", "Toggle", new { id = item.NotificationId })
         </td>
     </tr>
 }

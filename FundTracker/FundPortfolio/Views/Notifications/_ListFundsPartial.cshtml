@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Common.Models.FundEntity>
+
+<label>Select a Fund</label>
+<div class="checkbox-container form-control">
+    @foreach (var item in Model)
+    {
+        if(item.Id.Equals("300"))
+        { 
+            <input type="radio" name="fund" value="@item.Id" checked>@item.Name <br />
+        } else
+        {    
+            <input type="radio" name="fund" value="@item.Id">@item.Name<br />
+        }
+    }
+</div>
+<br />
+<input type="hidden" name="fundId" value="300"/>
+
+<script>
+    $('input[name="fund"]').on('click', function () {
+        var $fundId = $("input:radio[name='fund']:checked").val();
+
+        $('input[name="fundId"]').val($fundId);
+    })
+</script>

@@ -20,8 +20,14 @@ namespace FundPortfolio.Controllers
         // GET: Notifications
         public ActionResult Index()
         {
-            var notifications = db.Notifications.Include(n => n.UserProfile);
+            int userId = (int) Membership.GetUser().ProviderUserKey;
+            var notifications = db.Notifications.Include(n => n.UserProfile).Where(n => n.UserId == userId);
             return View(notifications.ToList());
+        }
+
+        public ActionResult IndexFunds()
+        {
+            return PartialView("_ListFundsPartial", db.Funds);
         }
 
         // GET: Notifications/Details/5
@@ -51,10 +57,15 @@ namespace FundPortfolio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "NotificationId,UserId,AutoReset,ThresholdValue,TimeSpan")] Notification notification)
+        public ActionResult Create([Bind(Include = "NotificationId,UserId,AutoReset,ThresholdValue,Days")] Notification notification, String fundId)
         {
+            System.IO.StreamWriter file = new System.IO.StreamWriter("c:/Users/Evan DeGraff/text.txt");
+            file.Write("ID: " + fundId);
+
+            file.Close();
             if (ModelState.IsValid)
             {
+                notification.FundEntity = db.Funds.Find(fundId);
 				notification.UserProfile = db.UserProfiles.Find(Membership.GetUser().ProviderUserKey);
                 db.Notifications.Add(notification);
                 db.SaveChanges();
@@ -120,6 +131,15 @@ namespace FundPortfolio.Controllers
         {
             Notification notification = db.Notifications.Find(id);
             db.Notifications.Remove(notification);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        // Enable/Disables the notification
+        public ActionResult Toggle(int? id)
+        {
+            Notification notification = db.Notifications.Find(id);
+            notification.IsEnabled = !notification.IsEnabled;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

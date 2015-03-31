@@ -25,7 +25,7 @@ namespace FundService
             { 
                 Trace.TraceInformation("Running");
                 this.scraper.Scrape();
-                //this.notifier.Notify();
+                this.notifier.Notify();
                 //Wait an hour
                 Thread.Sleep(3600000);
             };

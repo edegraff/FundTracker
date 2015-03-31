@@ -356,6 +356,7 @@
     <Content Include="Views\Report\Index.cshtml" />
     <Content Include="Views\Notifications\_CreateChange.cshtml" />
     <Content Include="Views\Notifications\_CreateValue.cshtml" />
+    <Content Include="Views\Notifications\_ListFundsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -13,8 +13,9 @@ namespace FundPortfolio.Tests
         {
             //DeleteNotifications();
             //PopulateNotifications();
+            //ReadNotifications();
             FundService.Notifier notifier = new FundService.Notifier();
-            notifier.Notify();
+            //notifier.Notify();
         }
 
         public void PopulateNotifications()
@@ -24,6 +25,7 @@ namespace FundPortfolio.Tests
                 ChangeNotification n = new ChangeNotification();
                 n.UserId = 11;
                 n.FundEntity = db.Funds.Find("511");
+                Console.WriteLine(n.FundEntity.Name);
                 n.IsPercent = false;
                 n.ThresholdValue = 0.003f;
                 n.Days = -7;
@@ -47,6 +49,17 @@ namespace FundPortfolio.Tests
                 }
                 db.Notifications.RemoveRange(list);
                 db.SaveChanges();
+            }
+        }
+
+        public void ReadNotifications()
+        {
+            using (var db = new DatabaseContext())
+            {
+                foreach (var n in db.Notifications)
+                {
+                    Console.WriteLine(n.FundEntity.Name);
+                }
             }
         }
     }
