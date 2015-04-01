@@ -9,10 +9,11 @@ using System.Web.Mvc;
 using Common.Models;
 using FundPortfolio.ViewModels;
 using System.Web.Security;
+using FundPortfolio.Filters;
 
 namespace FundPortfolio.Controllers
 {
-	[Authorize]
+    [Authorize, InitializeSimpleMembership]
     public class NotificationsController : Controller
     {
         private DatabaseContext db = new DatabaseContext();
