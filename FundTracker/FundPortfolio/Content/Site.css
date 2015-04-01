@@ -1,138 +1,146 @@
 ﻿/* Custom CSS */
 
 .validation {
-    color: red;
+	color: red;
 }
 
 .hcenter {
-    margin-left: auto;
-    margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .left {
-    float: left;
+	float: left;
 }
 
 .right {
-    float: right;
+	float: right;
 }
 
 .indent-left {
-    margin-left: 20px;
+	margin-left: 20px;
 }
 
 table.td-hspace-small td {
-    padding-right: 20px;
+	padding-right: 20px;
 }
 
 .highlight-options button {
-    
 }
 
 .checkbox-container {
-    height: 400px; 
-    overflow-y: scroll;
-    padding: 10px;
+	height: 400px;
+	overflow-y: scroll;
+	padding: 10px;
 }
 
 #graph-section {
-    border-width: 1px;
-    padding: 15px;
-    padding-right: 30px;
-    border-color: rgb(207, 207, 207);
-    border-style: solid;
+	border-width: 1px;
+	padding: 15px;
+	padding-right: 30px;
+	border-color: rgb(207, 207, 207);
+	border-style: solid;
 }
 
 /* For C3 graphs */
 .c3-ygrid-line.zero-line line {
-    stroke: #A0A0A0;
+	stroke: #A0A0A0;
 }
+
 .c3-ygrid-line.zero-line text {
-    fill: black;
+	fill: black;
 }
 
 /* Add sidebar options to small drop down */
 
 @media (max-width: 768px) {
-    div.navbar-collapse.collapse.in ul.sidebar-nav-options {
-        display: block;
-    }
+	div.navbar-collapse.collapse.in ul.sidebar-nav-options {
+		display: block;
+	}
 }
 
 ul.sidebar-nav-options {
-    display: none;
+	display: none;
 }
 
 /* For the search bar */
 @media (max-width: 768px) {
-    .navbar-form.search-form {
-        margin-top: 0px;
-    }
+	.navbar-form.search-form {
+		margin-top: 0px;
+	}
 }
 
 /* Log out button */
 
-.nav>li>form>a {
-    position: relative;
-    display: block;
-    padding: 10px 15px;
-}
-.navbar-nav>li>form>a {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    line-height: 20px;
-}
-@media (min-width: 768px) {
-    .navbar-nav > li > form > a {
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
-}
-.navbar-inverse .navbar-nav>li>form>a {
-    color: #9d9d9d;
+.nav > li > form > a {
+	position: relative;
+	display: block;
+	padding: 10px 15px;
 }
 
-.navbar-inverse .navbar-nav > li > form > a:hover,
-.navbar-inverse .navbar-nav > li > form > a:focus {
-  color: #fff;
-  background-color: transparent;
-  text-decoration: none;
+.navbar-nav > li > form > a {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	line-height: 20px;
 }
+
+@media (min-width: 768px) {
+	.navbar-nav > li > form > a {
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+}
+
+.navbar-inverse .navbar-nav > li > form > a {
+	color: #9d9d9d;
+}
+
+	.navbar-inverse .navbar-nav > li > form > a:hover,
+	.navbar-inverse .navbar-nav > li > form > a:focus {
+		color: #fff;
+		background-color: transparent;
+		text-decoration: none;
+	}
 
 /* To help disply auto-generated VS html */
 
 h3 {
-    padding-top: 10px;
-    border-bottom-width: 1px;
-    border-bottom-style: dotted;
-    border-bottom-color: #C5C1C1;
+	padding-top: 10px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #C5C1C1;
+}
+
+h4 {
+	font-weight: normal;
+	color: #3ED0EA;
 }
 
 fieldset {
-    border: none;
-    margin: 0;
-    padding: 0;
+	border: none;
+	margin: 0;
+	padding: 0;
 }
 
-    fieldset legend {
-        display: none;
-    }
+	fieldset legend {
+		display: none;
+	}
 
-    fieldset ol {
-        padding: 0;
-        list-style: none;
-    }
+	fieldset ol {
+		padding: 0;
+		list-style: none;
+	}
 
-        fieldset ol li {
-            padding-bottom: 5px;
-        }
+		fieldset ol li {
+			padding-bottom: 5px;
+		}
 
 label {
-    display: block;
-    font-size: 1.2em;
-    font-weight: 600;
+	display: block;
+	font-size: 1.2em;
+	font-weight: 600;
 }
 
-label.checkbox {
-    display: inline;
-}
+	label.checkbox {
+		display: inline;
+	}
