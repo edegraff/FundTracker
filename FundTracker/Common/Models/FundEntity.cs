@@ -55,6 +55,7 @@ namespace Common.Models
 			}
 		}
 
+
 		public float GetValueByDate(DateTime date)
 		{
 			if (date.Date > DateTime.Now.Date)
@@ -63,7 +64,7 @@ namespace Common.Models
 			}
 			else
 			{
-				FundData.OrderBy(x => x.Date); // Sorts most current last
+				FundHistory = FundHistory.OrderBy(x => x.Date).ToList(); // Sorts most current last
 				for (int i = FundHistory.Count - 1; i >= 0; i--)
 				{
 					if (FundHistory[i].Date.Date <= date.Date) // Find the val of fund on the given day
@@ -78,17 +79,14 @@ namespace Common.Models
 		{
 			if (!FundHistory.Exists(f => f.Date <= minDate))
 				return null;
-			var fundsValues = (from data in FundData
-							   where data.Date >= minDate
-							   orderby data.Date
-							   select data.Value).ToList();
-			if (fundsValues.Count == 0)
+			var fundsValues = this.GetDataInRange(minDate, DateTime.Now).Select( fd => fd.Value);
+			if (fundsValues.Count() == 0)
 				return null;
 
 			return GeometicAverage(ToPercentChange(fundsValues));
 		}
 
-		private double GeometicAverage(List<double> fundsValues)
+		private double GeometicAverage(IEnumerable<double> fundsValues)
 		{
 			double product = 1.0f;
 			foreach (var value in fundsValues)
@@ -96,7 +94,7 @@ namespace Common.Models
 			return (Math.Pow(product, (double)1 / fundsValues.Count()) - 1.0d);
 		}
 
-		private List<double> ToPercentChange(List<float> fundsValues)
+		private IEnumerable<double> ToPercentChange(IEnumerable<float> fundsValues)
 		{
 			var fundPercents = new List<double>();
 			for (int i = 0; i < fundsValues.Count() - 1; i++)
@@ -108,7 +106,5 @@ namespace Common.Models
 		{
 			return (p2 - p1) / p1;
 		}
-
-
 	}
 }

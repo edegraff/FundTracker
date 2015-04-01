@@ -1,12 +1,21 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+	ViewBag.Title = "Home Page";
 }
 <h1 class="page-header">Welcome to FundTracker!</h1>
 
-<p class="medium-padding">
-    We track mutual funds allowing you to:
-    <br />&nbsp&nbsp&nbsp* See fund performance history
-    <br />&nbsp&nbsp&nbsp* Simulate your own investments
-    <br />&nbsp&nbsp&nbsp* Receive custom notifications
-</p>
+<div class="medium-padding">
+
+	<h4 class="info">Explore Our Funds</h4>
+	<p>Currently we have all the funds listed on CIBCs site. This information is updated hourly so we have up-to-date information to keep you informed. 
+	Either click on the @Html.ActionLink("Funds", "Index", "FundEntities") link or type any part of a Funds name in the search bar </p>
+	<h4>Create Advanced Reports</h4>
+	<p>Compare any number of funds to see how one fund stacks up against another with interactive graphs. See our predictions on whether a fund is going to increase or decrease.
+	 Get every minute change in the history of fund and then export that data so you can analyze it however you want. </p>
+	<h4>Track Your Investments and Total Assets</h4>
+	<p>Input how much you bought and sold of each fund. See how much money you have spent and the current value of each of your investments.</p>
+	<h4>Get Notified When a Fund is Going to Skyrocket or going to Take a Dive</h4>
+	<p>Customize your notifications based on many factors. Know when a fund decreases in a short period of time indicating you should sell. Be notified when a fund reaches a desired
+	 value so you know when to buy. Get notifications based off our predictions so you are one step ahead of the game.</p>
+
+</div>
 

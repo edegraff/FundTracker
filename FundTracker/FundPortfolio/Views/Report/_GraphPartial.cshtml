@@ -8,15 +8,20 @@
 
 <div id="graph-section">
     @{
-        if (ViewBag.GraphOptions)
-        {
-            <div id="chart-options" class="highlight-options">
-                <label class="left indent-left">Chart Display Type By: </label>
-                <button name="value" class="indent-left">Value</button>
-                <button name="difference" class="indent-left">Change since Start Date</button>
-            </div>
+		if (ViewBag.GraphOptions)
+		{
+
+			<label class="left indent-left">Chart Display Type By: &nbsp;&nbsp;</label>
+			<div class="btn-group" data-toggle="buttons">
+				<label class="btn btn-default active">
+					<input type="radio" name="chart-options" id="value" autocomplete="off" checked> Value
+				</label>
+				<label class="btn btn-default">
+					<input type="radio" name="chart-options" id="difference" autocomplete="off">Change since Start Date
+				</label>
+			</div>
             <br />
-        }
+		}
     }
     
     <div id="chart"></div>
@@ -126,26 +131,25 @@
 
     });
 
-    // Set click listener on chart option buttons
-    $('#chart-options button').on('click', function (e) {
-        switch (this.name) {
-            case "value":
-                columnData = columnDataValue;
-                yLabel = yLabelValue;
-                break;
-            case "difference":
-                columnData = columnDataDifference;
-                yLabel = yLabelDifference;
-                break;
-        }
+	// Set click listener on chart option buttons
+    $(document.getElementsByName("chart-options")).on('change', function (e) {
+    	switch (this.id) {
+    		case "value":
+    			columnData = columnDataValue;
+    			yLabel = yLabelValue;
+    			break;
+    		case "difference":
+    			columnData = columnDataDifference;
+    			yLabel = yLabelDifference;
+    			break;
+    	}
 
 
-        chart.axis.labels({ y: yLabel });
-        chart.load({
-            columns: columnData
-        });
+    	chart.axis.labels({ y: yLabel });
+    	chart.load({
+    		columns: columnData
+    	});
     });
-
 
     function formatDate(date) {
         var d = new Date(date);

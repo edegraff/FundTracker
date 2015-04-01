@@ -11,10 +11,11 @@ using System.Web.Security;
 using System.ComponentModel.DataAnnotations;
 using PagedList;
 using FundPortfolio.ViewModels;
+using FundPortfolio.Filters;
 
 namespace FundPortfolio.Controllers
 {
-	[Authorize]
+	[Authorize, InitializeSimpleMembership]
 	public class UserTransactionsController : Controller
 	{
 		private DatabaseContext db = new DatabaseContext();
@@ -26,17 +27,18 @@ namespace FundPortfolio.Controllers
 			var userTransactions = db.UserTransactions.OrderByDescending(ut => ut.Date).Include(u => u.FundEntity).Include(u => u.UserProfile).Where(u => u.UserId == currentUserId);
 			var fundListViewModel = new UserTransactionIndexViewModel()
 			{
-				AggregateFunds = new List<AggregateFundData>(),
+				AggregateFunds = new List<AggregateTransactionData>(),
 				UserTransactions = userTransactions.ToList()
 			};
 
 			foreach (var transactionList in userTransactions.GroupBy(ut => ut.FundEntityId).ToList())
 			{
-				var aggregateFundValue = new AggregateFundData(transactionList.First().FundEntity);
-				aggregateFundValue.CalculateValue(transactionList);
+				var aggregateFundValue = new AggregateTransactionData(transactionList.First().FundEntity, transactionList);
 				fundListViewModel.TotalAssets += aggregateFundValue.CurrentValue;
+				fundListViewModel.TotalPaid += aggregateFundValue.TotalPaid;
 				fundListViewModel.AggregateFunds.Add(aggregateFundValue);
 			}
+
 			if (fundListViewModel.AggregateFunds.Count() != 0)
 				fundListViewModel.GraphReport = new Report(DateTime.Now.AddMonths(-1), DateTime.Now, fundListViewModel.AggregateFunds);
 			return View(fundListViewModel);

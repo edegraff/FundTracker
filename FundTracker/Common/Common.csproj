@@ -76,7 +76,7 @@
       <DependentUpon>201503251944546_NotificationsChange.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AggregateFundData.cs" />
+    <Compile Include="Models\AggregateTransactionData.cs" />
     <Compile Include="Models\ChangeNotification.cs" />
     <Compile Include="Models\FundEntity.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
