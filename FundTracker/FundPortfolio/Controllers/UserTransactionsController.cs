@@ -11,10 +11,11 @@ using System.Web.Security;
 using System.ComponentModel.DataAnnotations;
 using PagedList;
 using FundPortfolio.ViewModels;
+using FundPortfolio.Filters;
 
 namespace FundPortfolio.Controllers
 {
-	[Authorize]
+	[Authorize, InitializeSimpleMembership]
 	public class UserTransactionsController : Controller
 	{
 		private DatabaseContext db = new DatabaseContext();

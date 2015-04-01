@@ -10,7 +10,6 @@ namespace FundPortfolio.Controllers
 	[RequireHttps]
 	public class HomeController : Controller
 	{
-		DatabaseContext db = new DatabaseContext();
 
 		public ActionResult Index()
 		{

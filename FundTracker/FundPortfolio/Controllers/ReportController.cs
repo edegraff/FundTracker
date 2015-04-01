@@ -77,6 +77,14 @@ namespace FundPortfolio.Controllers
 
             Report report = new Report(start, end, funds);
             return View(report);
-        } 
+        }
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing)
+			{
+				db.Dispose();
+			}
+			base.Dispose(disposing);
+		}
     }
 }
