@@ -35,8 +35,10 @@ namespace FundPortfolio.Controllers
 			{
 				var aggregateFundValue = new AggregateTransactionData(transactionList.First().FundEntity, transactionList);
 				fundListViewModel.TotalAssets += aggregateFundValue.CurrentValue;
+				fundListViewModel.TotalPaid += aggregateFundValue.TotalPaid;
 				fundListViewModel.AggregateFunds.Add(aggregateFundValue);
 			}
+
 			if (fundListViewModel.AggregateFunds.Count() != 0)
 				fundListViewModel.GraphReport = new Report(DateTime.Now.AddMonths(-1), DateTime.Now, fundListViewModel.AggregateFunds);
 			return View(fundListViewModel);

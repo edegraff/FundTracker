@@ -12,6 +12,13 @@ namespace Common.Models
 
 
 		public float Units { get; set; }
+
+		[Display(Name = "Total Cost of Shares Bought ($)")]
+		public float TotalPaid { get; set; }
+
+		[Display(Name = "Net Profit (%)")]
+		public float NetPercentProfit { get { return (CurrentValue - TotalPaid) / TotalPaid; } }
+
 		public string Name { get { return FundEntity.Name; } }
 
 		public virtual List<FundData> AssestValues { get; set; }
@@ -24,7 +31,7 @@ namespace Common.Models
 			}
 		}
 
-		[Display(Name = "Value")]
+		[Display(Name = "Value ($)")]
 		public float CurrentValue
 		{
 			get
@@ -43,7 +50,8 @@ namespace Common.Models
 			AssestValues = new List<FundData>();
 			FundEntity = fundEntity;
 			Units = 0;
-			Calculate(CalculateAllUnitValues(transactionList));
+			TotalPaid = 0;
+			Calculate(CalculateTotalPaidAndUnits(transactionList));
 		}
 
 		public void Calculate(IEnumerable<IFundData> unitList)
@@ -83,13 +91,14 @@ namespace Common.Models
 			}
 		}
 
-		private IEnumerable<IFundData> CalculateAllUnitValues(IEnumerable<IFundData> transactionData)
+		private IEnumerable<IFundData> CalculateTotalPaidAndUnits(IEnumerable<IFundData> transactionData)
 		{
 			var unitList = new List<FundData>();
 			foreach (var transaction in transactionData)
 			{
 				var currentFundValue = FundEntity.GetValueByDate(transaction.Date);
 				Units += transaction.Value / currentFundValue;
+				TotalPaid += transaction.Value;
 				unitList.Add(new FundData() { Value = Units, Date = transaction.Date });
 			}
 			return unitList;

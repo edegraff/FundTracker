@@ -28,7 +28,7 @@ namespace Common.Models
 
 		public DateTime Date { get; set; }
 
-		[Display(Name = "Cost of Shares Bought")]
+		[Display(Name = "Cost of Shares Bought ($)")]
 		public float Value { get; set; }
 
 		public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)

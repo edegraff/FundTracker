@@ -15,5 +15,9 @@ namespace FundPortfolio.ViewModels
 		public Report GraphReport { get; set; }
 		[Display(Name = "Total Assets")]
 		public float TotalAssets { get; set; }
+		[Display(Name = "Total Paid")]
+		public float TotalPaid { get; set; }
+
+		public float TotalNetPercentProft { get { return (TotalAssets - TotalPaid) / TotalPaid; } }
 	}
 }
