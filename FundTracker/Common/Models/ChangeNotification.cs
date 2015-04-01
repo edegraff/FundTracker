@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace Common.Models
 	[Table("ChangeNotification")]
 	public class ChangeNotification : Notification
 	{
+        [Display(Name = "Percentage Threshold")]
 		public bool IsPercent { get; set; }
 
 		public override bool ShouldNotify()

@@ -5,7 +5,7 @@
     <h3>Registered external logins:</h3>
     <table class="indent-left td-hspace-small bold">
         <tbody>
-            @foreach (FundPortfolio.Models.ExternalLogin externalLogin in Model)
+            @foreach (FundPortfolio.ViewModels.ExternalLogin externalLogin in Model)
             {
                 <tr>
                     <td>@externalLogin.ProviderDisplayName</td>
