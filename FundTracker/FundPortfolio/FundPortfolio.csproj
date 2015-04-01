@@ -274,6 +274,7 @@
     <Content Include="Images\button_search.png" />
     <Content Include="Images\FundTrackerLogo.png" />
     <Content Include="LICENSE.txt" />
+    <Content Include="Media\downloadify.swf" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\c3.js" />
