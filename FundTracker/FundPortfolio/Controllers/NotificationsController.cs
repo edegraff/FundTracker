@@ -60,10 +60,6 @@ namespace FundPortfolio.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "NotificationId,UserId,AutoReset,ThresholdValue,Days")] Notification notification, String fundId)
         {
-            System.IO.StreamWriter file = new System.IO.StreamWriter("c:/Users/Evan DeGraff/text.txt");
-            file.Write("ID: " + fundId);
-
-            file.Close();
             if (ModelState.IsValid)
             {
                 notification.FundEntity = db.Funds.Find(fundId);
