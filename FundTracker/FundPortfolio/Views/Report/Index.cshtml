@@ -5,9 +5,9 @@
 	Layout = null;
 }
 
-@if (@ViewBag.graph != "NO_GRAPH")
+@if (@ViewBag.Graph)
 {
-    ViewBag.GraphOptions = true;
+    ViewBag.GraphOptions = false;
     @Html.Partial("_GraphPartial", Model);
 }
 

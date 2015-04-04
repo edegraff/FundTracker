@@ -27,7 +27,7 @@ namespace FundPortfolio.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            @ViewBag.graph = "YES_GRAPH";
+            ViewBag.Graph = true;
 
             FundEntity fundEntity = db.Funds.Find(id);
             if (fundEntity == null)
@@ -46,9 +46,9 @@ namespace FundPortfolio.Controllers
         }
 
         // GET: CustomReport
-        public ActionResult CustomReport(DateTime start, DateTime end, String fundIds, String graph)
+        public ActionResult CustomReport(DateTime start, DateTime end, String fundIds, bool graph)
         {
-            @ViewBag.graph = graph;
+            ViewBag.Graph = graph;
 
             string[] ids = fundIds.Split(',');
 

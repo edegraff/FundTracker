@@ -4,7 +4,7 @@
     ViewBag.Title = "Report";
 }
 
-@if (@ViewBag.graph != "NO_GRAPH") {
+@if (@ViewBag.graph) {
     ViewBag.GraphOptions = true;
     @Html.Partial("_GraphPartial", Model);
 }

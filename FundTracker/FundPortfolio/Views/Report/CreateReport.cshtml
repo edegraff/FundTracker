@@ -93,9 +93,9 @@
 
       /* Set hidden graph field */
       if ($('input[name="graphOn"]:checked').length == 0) {
-          out = "NO_GRAPH";
+          out = false;
       } else {
-          out = "YES_GRAPH";
+          out = true;
       }
       $('input[name="graph"]').val(out);
 
