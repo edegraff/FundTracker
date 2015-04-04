@@ -19,6 +19,9 @@
 				<label class="btn btn-default">
 					<input type="radio" name="chart-options" id="difference" autocomplete="off">Change since Start Date
 				</label>
+                <label class="btn btn-default">
+                    <input type="radio" name="chart-options" id="percent" autocomplete="off">% Change since Start Date
+                </label>
 			</div>
             <br />
 		}
@@ -74,6 +77,9 @@
     var yLabelDifference = "Fund Price Change ($)";
     var columnDataDifference = [];
     copy2DeepArr(columnData, columnDataDifference);
+    var yLabelPercent = "Fund Price Change (%)";
+    var columnDataPercent = [];
+    copy2DeepArr(columnData, columnDataPercent);
 
     // Generate all the type specific data
     for (i = 1; i < model.Headers.length; i++) {
@@ -95,6 +101,23 @@
                 }
             } else {
                 columnDataDifference[i][j + 1] = null;
+            }
+        }
+
+        // PERCENT Type
+        var first = null;
+        for (j = rows - 1; j >= 0; j--) {
+            num = model.Data[i][j];
+
+            if ($.isNumeric(num)) {
+                if (first == null) {
+                    first = num;
+                    columnDataPercent[i][j + 1] = 0;
+                } else {
+                    columnDataPercent[i][j + 1] = Math.round((num - first)/first * 10000) / 100;
+                }
+            } else {
+                columnDataPercent[i][j + 1] = null;
             }
         }
     }
@@ -142,6 +165,10 @@
     			columnData = columnDataDifference;
     			yLabel = yLabelDifference;
     			break;
+    	    case "percent":
+    	        columnData = columnDataPercent;
+    	        yLabel = yLabelPercent;
+    	        break;
     	}
 
 
