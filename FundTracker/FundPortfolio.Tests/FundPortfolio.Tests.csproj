@@ -160,6 +160,7 @@
     <Compile Include="Controllers\HomeControllerTest.cs" />
     <Compile Include="NotifierTest.cs" />
     <Compile Include="ScraperTest.cs" />
+    <Compile Include="TestReport.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
