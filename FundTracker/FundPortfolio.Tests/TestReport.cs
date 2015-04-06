@@ -8,12 +8,16 @@ namespace FundPortfolio.Tests
     [TestClass]
     public class TestReport
     {
+        /*
+         * 3.2.1.1.2 Visitors and Users will be able to compare mutual funds side by side.
+         * The report object conglomerates data so that it is easier to display comparison data.
+         */
         [TestMethod]
         public void ReportObjectInit()
         {
             // Stub
             int difference = 7;
-            DateTime start = DateTime.Today.AddDays(-3);
+            DateTime start = DateTime.Today.AddDays(-3).Date;
             DateTime end = start.AddDays(difference);
 
             IEnumerable<ITimeSeriesFundData> funds = createStub(start);
@@ -55,7 +59,7 @@ namespace FundPortfolio.Tests
 
         /*
          * Initializes some fake data.
-         * includes 3 fake funds.
+         * includes 2 fake funds.
          * fund1 - name = "test fund 1"
          *       - id = "fund1test"
          *       - data
