@@ -11,6 +11,7 @@ namespace Common.Models
     public class Report
     {
         // Initialize the Report object
+        //  3.2.1.1.2 Visitors and Users will be able to compare mutual funds side by side. (The report object is used to create a usable object for easily displaying multiple fund data)
 		public Report(DateTime start, DateTime end, IEnumerable<ITimeSeriesFundData> funds)
         {
             /* Initializations */

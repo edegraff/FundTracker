@@ -27,8 +27,6 @@ namespace FundPortfolio.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            ViewBag.Graph = true;
-
             FundEntity fundEntity = db.Funds.Find(id);
             if (fundEntity == null)
             {
@@ -50,6 +48,7 @@ namespace FundPortfolio.Controllers
         {
             ViewBag.Graph = graph;
 
+            //3.2.1.1.2 Visitors and Users will be able to compare mutual funds side by side. (The ids of the funds that will be compared)
             string[] ids = fundIds.Split(',');
 
             var funds = new List<ITimeSeriesFundData>();
