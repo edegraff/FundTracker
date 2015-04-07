@@ -8,21 +8,27 @@ ECE 493 Capstone Project
 4. Open project in Visual Studio
 5. Build the solution (F6), this will download all needed packages
 
-## Running Website
+## Running
+#### Production
+1. Go to https://ece493.azurewebsites.net/
+
+#### Debug Website
 1. Open Solution in Visual Studio
 2. Press play button
 
-## Running Service
+#### Service
 1. Open Solution in Visual Studio
 2. Right click on "FundCloudService" in solution explorer
 3. Select Debug>Start New Instance
 
-## Running Tests
+#### Tests
 1. Open Solution in Visual Studio
 2. Select Test > Windows > Test Explorer
 3. Select Run All in the newly opened window.
 
-## Database Migrations
+## Maintenance
+
+#### Database Migrations
 To create a database migration automatically after changing some model code
 
 1. Open the Package Manager View
@@ -34,4 +40,4 @@ To create a database migration automatically after changing some model code
 
 For more information https://msdn.microsoft.com/en-ca/data/jj591621.aspx
 
-## Publishing to Azure
+#### Publishing to Azure
