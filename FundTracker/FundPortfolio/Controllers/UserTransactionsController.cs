@@ -12,7 +12,7 @@ using System.ComponentModel.DataAnnotations;
 using PagedList;
 using FundPortfolio.ViewModels;
 using FundPortfolio.Filters;
-
+using Microsoft.AspNet.Identity;
 namespace FundPortfolio.Controllers
 {
 	[Authorize, InitializeSimpleMembership]
@@ -23,8 +23,8 @@ namespace FundPortfolio.Controllers
 		// GET: UserTransactions
 		public ActionResult Index()
 		{
-			var currentUserId = (int)Membership.GetUser().ProviderUserKey;
-			var userTransactions = db.UserTransactions.OrderByDescending(ut => ut.Date).Include(u => u.FundEntity).Include(u => u.UserProfile).Where(u => u.UserId == currentUserId);
+			var currentUserId = User.Identity.GetUserId(); 
+			var userTransactions = db.UserTransactions.OrderByDescending(ut => ut.Date).Include(u => u.FundEntity).Where(u => u.UserId.Equals(currentUserId));
 			var fundListViewModel = new UserTransactionIndexViewModel()
 			{
 				AggregateFunds = new List<AggregateTransactionData>(),
@@ -60,7 +60,7 @@ namespace FundPortfolio.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				userTransaction.UserProfile = db.UserProfiles.Find(Membership.GetUser().ProviderUserKey);
+				userTransaction.UserProfile = db.Users.Find(User.Identity.GetUserId());
 				db.UserTransactions.Add(userTransaction);
 				db.SaveChanges();
 				return RedirectToAction("Index");

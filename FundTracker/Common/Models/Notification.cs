@@ -19,7 +19,7 @@ namespace Common.Models
 		[DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
 		public int NotificationId { get; set; }
 
-		public int UserId { get; set; }
+		public String UserId { get; set; }
         [Display(Name = "Auto Reset")]
 		public bool AutoReset { get; set; }
         [Display(Name = "Enabled")]

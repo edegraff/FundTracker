@@ -10,6 +10,7 @@ using Common.Models;
 using FundPortfolio.ViewModels;
 using System.Web.Security;
 using FundPortfolio.Filters;
+using Microsoft.AspNet.Identity;
 
 namespace FundPortfolio.Controllers
 {
@@ -21,8 +22,8 @@ namespace FundPortfolio.Controllers
         // GET: Notifications
         public ActionResult Index()
         {
-            int userId = (int) Membership.GetUser().ProviderUserKey;
-            var notifications = db.Notifications.Include(n => n.UserProfile).Where(n => n.UserId == userId);
+            var userId =  User.Identity.GetUserId();
+            var notifications = db.Notifications.Include(n => n.UserProfile).Where(n => n.UserId.Equals(userId));
             return View(notifications.ToList());
         }
 
@@ -63,13 +64,13 @@ namespace FundPortfolio.Controllers
             if (ModelState.IsValid)
             {
                 notification.FundEntity = db.Funds.Find(fundId);
-				notification.UserProfile = db.UserProfiles.Find(Membership.GetUser().ProviderUserKey);
+				notification.UserProfile = db.Users.Find(User.Identity.GetUserId());
                 db.Notifications.Add(notification);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "Email", notification.UserId);
+            ViewBag.UserId = new SelectList(db.Users, "UserId", "Email", notification.UserId);
             return View(notification);
         }
 
@@ -85,7 +86,7 @@ namespace FundPortfolio.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "Email", notification.UserId);
+            ViewBag.UserId = new SelectList(db.Users, "UserId", "Email", notification.UserId);
             return View(notification);
         }
 
@@ -102,7 +103,7 @@ namespace FundPortfolio.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "Email", notification.UserId);
+            ViewBag.UserId = new SelectList(db.Users, "UserId", "Email", notification.UserId);
             return View(notification);
         }
 

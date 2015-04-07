@@ -1,10 +1,12 @@
-﻿@model FundPortfolio.ViewModels.RegisterModel
+﻿@using FundPortfolio.ViewModels
+@model FundPortfolio.ViewModels.RegisterViewModel
+
 @{
     ViewBag.Title = "Register";
 }
 
 <h1 class="page-header">Create a new account</h1>
-@using (Html.BeginForm())
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary()
@@ -30,8 +32,11 @@
 }
 
 <br>
-<h1 class="page-header">Use another service to create an account.</h1>
-@Html.Action("ExternalLoginsList")
+<div class="col-md-4">
+	<section id="socialLoginForm">
+		@Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+	</section>
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
