@@ -25,8 +25,10 @@ namespace FundService
                     if(shouldNotify && notification.IsEnabled)
                     {
                         SendNotification(notification);
+                        // 3.2.3.2.1 Manual Reset: A notification is sent once the specified criteria matches, but is not sent again until the User resets the notification to trigger again.
                         notification.IsEnabled = false;
-                    } 
+                    }
+                    // 3.2.3.2.2 Automatic Reset: Once the fund matches the criteria a notification is sent. As soon as the fund no longer matches the criteria the state will be reset and it will be sent again once the criteria matches.
                     else if(!shouldNotify && notification.AutoReset)
                     {
                         // Reset notification

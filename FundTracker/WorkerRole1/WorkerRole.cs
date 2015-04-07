@@ -26,7 +26,7 @@ namespace FundService
                 Trace.TraceInformation("Running");
                 this.scraper.Scrape();
                 this.notifier.Notify();
-                //Wait an hour
+                // 3.2.2.3 The funds will have a guaranteed to be accurate within one hour of change on the CIBC site.
                 Thread.Sleep(3600000);
             };
         }
@@ -61,3 +61,4 @@ namespace FundService
         }
     }
 }
+

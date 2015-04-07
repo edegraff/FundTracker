@@ -13,7 +13,7 @@ namespace FundPortfolio.Tests
         {
             //DeleteNotifications();
             //PopulateNotifications();
-            //ReadNotifications();
+            ReadNotifications();
             FundService.Notifier notifier = new FundService.Notifier();
             //notifier.Notify();
         }

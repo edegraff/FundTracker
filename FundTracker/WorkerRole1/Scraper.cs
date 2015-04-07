@@ -26,6 +26,7 @@ namespace FundService
             months = new Dictionary<string, int> { { "Jan", 1 }, { "Feb", 2 }, { "Mar", 3 }, { "Apr", 4 }, { "May", 5 }, { "Jun", 6 }, { "Jul", 7 }, { "Aug", 8 }, { "Sep", 9 }, { "Oct", 10 }, { "Nov", 11 }, { "Dec", 12 } };
 		}
 
+        // 3.2.2.1 Will periodically scrape data from CIBC to get a list of mutual funds and their current status.
 		static void Main(string[] args)
 		{
 			Scraper scraper = new Scraper("https://www.cibc.com/ca/rates/mutual-fund-rates.html");
@@ -146,6 +147,7 @@ namespace FundService
             }
 		}
 
+        // 3.2.2.2 Fund history will be stored to a database.
 		private void SaveFundData()
 		{
 			using (var db = new DatabaseContext())
