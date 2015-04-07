@@ -21,10 +21,8 @@ namespace FundPortfolio
 			AreaRegistration.RegisterAllAreas();
 			ModelBinders.Binders.Add(typeof(Notification), new AbstractModelBinder());
 			WebApiConfig.Register(GlobalConfiguration.Configuration);
-			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
-			AuthConfig.RegisterAuth();
 		}
 	}
 }
