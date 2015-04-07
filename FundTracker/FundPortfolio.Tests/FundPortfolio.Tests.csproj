@@ -148,10 +148,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ReportControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
     <Compile Include="NotifierTest.cs" />
     <Compile Include="ScraperTest.cs" />
+    <Compile Include="TestReport.cs" />
+    <Compile Include="TestProjector.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />

@@ -12,13 +12,24 @@ namespace FundPortfolio.Controllers
     {
         private DatabaseContext db = new DatabaseContext();
 
+        /*
+         * 3.2.1.1.2 Visitors and Users will be able to compare mutual funds side by side. 
+         * (This view allows users to select multiple funds to compare over a specified time period.)
+         */
         // GET: CreateReport
         public ActionResult CreateReport()
         {
             return View((from fund in db.Funds
                          select fund).ToList());
-        } 
+        }
 
+        /*
+         * 3.2.1.1.1 Visitor and Users will be able to select fund from the search to see the history of the performance. 
+         * (This view displays the history of performance for the fund.)
+         *
+         * 3.2.1.5.1 Predictions about the future performance/value of funds will be available, using existing prediction algorithms.  
+         * (This view will return prediction values by default.)
+         */
         // GET: Report
         public ActionResult Index(String id)
         {
@@ -26,8 +37,6 @@ namespace FundPortfolio.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            ViewBag.Graph = true;
 
             FundEntity fundEntity = db.Funds.Find(id);
             if (fundEntity == null)
@@ -45,6 +54,13 @@ namespace FundPortfolio.Controllers
             return View(report);
         }
 
+        /*
+         * 3.2.1.1.2 Visitors and Users will be able to compare mutual funds side by side. 
+         * (This view accepts multiple ids of funds that will be compared in the returned view with (optionally) a graph and tabular data)
+         * 
+         * 3.2.1.5.1 Predictions about the future performance/value of funds will be available, using existing prediction algorithms.  
+         * (If users selected a date into the future when creating the report predictions will be shown.)
+         */
         // GET: CustomReport
         public ActionResult CustomReport(DateTime start, DateTime end, String fundIds, bool graph)
         {

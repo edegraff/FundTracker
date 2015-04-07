@@ -106,5 +106,18 @@ namespace Common.Models
 		{
 			return (p2 - p1) / p1;
 		}
+
+        public DateTime getFirstDate()
+        {
+            if (FundHistory.Count() > 0)
+            {
+                FundHistory.OrderBy(x => x.Date); // Sorts most current last
+                return FundHistory.First().Date.Date;
+            }
+            else
+            {
+                throw new IndexOutOfRangeException("There is no data for this fund yet.");
+            }
+        }
 	}
 }

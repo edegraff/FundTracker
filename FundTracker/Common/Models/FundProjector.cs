@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Common.Models
 {
+    // 3.2.1.5.1 Predictions about the future performance/value of funds will be available, using existing prediction algorithms.  (This is the fund projector which does the calculations for the predictions.)
 	public class FundProjector
 	{
         // How many days we will project for
