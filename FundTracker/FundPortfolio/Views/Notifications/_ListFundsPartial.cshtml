@@ -1,6 +1,8 @@
 ﻿@model IEnumerable<Common.Models.FundEntity>
 
 <label>Select a Fund</label>
+
+@* 3.2.3.1 Users will be able to select specific mutual funds to be notified if they pass specified thresholds. (users can select the fund here) *@
 <div class="checkbox-container form-control">
     @foreach (var item in Model)
     {
