@@ -15,7 +15,7 @@ namespace Common.Models
 		[DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
 		public int UserTransactionId { get; set; }
 
-		public int UserId { get; set; }
+		public String UserId { get; set; }
 
 		[Display(Name = "Mutual Fund")]
 		public String FundEntityId { get; set; }

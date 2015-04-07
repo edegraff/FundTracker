@@ -43,7 +43,7 @@ namespace FundPortfolio
 
 		public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
 		{
-			var manager = new ApplicationUserManager(new UserStore<UserProfile>(context.Get<DbContext>()));
+			var manager = new ApplicationUserManager(new UserStore<UserProfile>(context.Get<Common.Models.DatabaseContext>()));
 			// Configure validation logic for usernames
 			manager.UserValidator = new UserValidator<UserProfile>(manager)
 			{

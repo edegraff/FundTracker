@@ -23,7 +23,7 @@ namespace FundPortfolio.Tests
             using (var db = new DatabaseContext())
             {
                 ChangeNotification n = new ChangeNotification();
-                n.UserId = 11;
+                n.UserId = Guid.NewGuid().ToString();
                 n.FundEntity = db.Funds.Find("511");
                 Console.WriteLine(n.FundEntity.Name);
                 n.IsPercent = false;

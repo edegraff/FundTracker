@@ -82,6 +82,10 @@
     <Compile Include="Migrations\201503251944546_NotificationsChange.Designer.cs">
       <DependentUpon>201503251944546_NotificationsChange.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504070146207_ConvertToMVC5.cs" />
+    <Compile Include="Migrations\201504070146207_ConvertToMVC5.Designer.cs">
+      <DependentUpon>201504070146207_ConvertToMVC5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AggregateTransactionData.cs" />
     <Compile Include="Models\ChangeNotification.cs" />
@@ -120,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503251944546_NotificationsChange.resx">
       <DependentUpon>201503251944546_NotificationsChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504070146207_ConvertToMVC5.resx">
+      <DependentUpon>201504070146207_ConvertToMVC5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

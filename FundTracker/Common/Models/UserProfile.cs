@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Security.Claims;
-using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -16,10 +15,6 @@ namespace Common.Models
 	[Table("UserProfile")]
 	public class UserProfile : IdentityUser
 	{
-		[Key]
-		[DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-		public int UserId { get; set; }
-		public string Email { get; set; }
 		public List<Notification> Notifications { get; set; }
 		public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<UserProfile> manager)
 		{
