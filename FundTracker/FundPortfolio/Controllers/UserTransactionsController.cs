@@ -15,6 +15,9 @@ using FundPortfolio.Filters;
 using Microsoft.AspNet.Identity;
 namespace FundPortfolio.Controllers
 {
+	// 3.2.1.3.1 Users will be able to input and save how much money they own of each stock or mutual fund. ‘i.e. my funds’
+	// 3.2.1.4.1 Users will be able to calculate what their earning would have been if they bought and sold at specific times.
+	// This whole controller takes care of these two requirements
 	[Authorize, InitializeSimpleMembership]
 	public class UserTransactionsController : Controller
 	{
@@ -44,7 +47,6 @@ namespace FundPortfolio.Controllers
 			return View(fundListViewModel);
 		}
 
-		// GET: UserTransactions/Create
 		public ActionResult Create()
 		{
 			ViewBag.FundEntityId = new SelectList(db.Funds, "Id", "Name");
@@ -52,8 +54,6 @@ namespace FundPortfolio.Controllers
 		}
 
 		// POST: UserTransactions/Create
-		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public ActionResult Create([Bind(Include = "UserTransactionId,UserId,FundEntityId,Date,Value")] UserTransaction userTransaction)
