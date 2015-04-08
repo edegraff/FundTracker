@@ -15,9 +15,9 @@ namespace FundPortfolio.Tests.Controllers
 	{
 		private class FundEntityComparer : IEqualityComparer<FundEntity>
 		{
-			public bool Equals(FundEntity x, FundEntity y)
+			public bool Equals(FundEntity left, FundEntity right)
 			{
-				return x.Id == y.Id && x.Name != y.Name;
+				return left.Id.Equals(right.Id) && left.Name.Equals(right.Name);
 			}
 
 			public int GetHashCode(FundEntity x)
@@ -27,7 +27,7 @@ namespace FundPortfolio.Tests.Controllers
 		}
 
 		[TestMethod]
-		public void Index()
+		public void FundEntityIndex()
 		{
 			using (var db = new DatabaseContext())
 			{
@@ -43,15 +43,15 @@ namespace FundPortfolio.Tests.Controllers
 				Assert.IsNotNull(result);
 				
 				//Make sure all results that exist in the database exist
-				Assert.Equals(databaseFunds.Count(), allFunds.Count());
-				Assert.Equals(databaseFunds.Count(), allFunds.Intersect(databaseFunds, new FundEntityComparer()).Count());
+				Assert.AreEqual(databaseFunds.Count(), allFunds.Count());
+				Assert.AreEqual(databaseFunds.Count(), allFunds.Intersect(databaseFunds, new FundEntityComparer()).Count());
 
 			}
 		}
 
 
 		[TestMethod]
-		public void Search()
+		public void FundEntitySearch()
 		{
 			// Arrange
 			var controller = new FundEntitiesController();
@@ -59,8 +59,8 @@ namespace FundPortfolio.Tests.Controllers
 
 			// Act
 			ViewResult searchResult = controller.Index(searchTerm) as ViewResult;
-			ViewResult result = controller.Index(null) as ViewResult;
 			var filteredFunds = searchResult.Model as IEnumerable<Common.Models.FundEntity>;
+			ViewResult result = controller.Index(null) as ViewResult;
 			var allFunds = result.Model as IEnumerable<Common.Models.FundEntity>;
 
 			// Assert
@@ -85,8 +85,8 @@ namespace FundPortfolio.Tests.Controllers
 		{
 			var now = DateTime.Today;
 			var fundEntity = new FundEntity();
-			double expectedResult = 2.81f;
-			double delta = 0.001f;
+			double expectedResult = 0.0281f;
+			double delta = 0.000003f;
 
 			fundEntity.FundHistory = new List<FundData>(){
 				new FundData(){ Value = 100f, Date = now.AddYears(-3)},
