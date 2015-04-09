@@ -13,7 +13,7 @@ namespace FundPortfolio.Tests.Controllers
 	public class HomeControllerTest
 	{
 		[TestMethod]
-		public void Index()
+		public void HomeIndex()
 		{
 			// Arrange
 			HomeController controller = new HomeController();

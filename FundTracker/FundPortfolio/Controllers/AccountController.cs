@@ -64,7 +64,7 @@ namespace FundPortfolio.Controllers
 			}
 		}
 
-		//
+		// 3.2.1.3.3 A Visitor will be able to become a User by signing in with Google+ authentication
 		// GET: /Account/Login
 		[AllowAnonymous]
 		public ActionResult Login(string returnUrl)
@@ -73,7 +73,7 @@ namespace FundPortfolio.Controllers
 			return View();
 		}
 
-		//
+		// 3.2.1.3.3 A Visitor will be able to become a User by signing in with Google+ authentication
 		// POST: /Account/Login
 		[HttpPost]
 		[AllowAnonymous]
@@ -146,7 +146,7 @@ namespace FundPortfolio.Controllers
 			}
 		}
 
-		//
+		// 3.2.1.3.2 A Visitor will be able to create an account by using Google + authentication. 
 		// GET: /Account/Register
 		[AllowAnonymous]
 		public ActionResult Register()
@@ -154,7 +154,7 @@ namespace FundPortfolio.Controllers
 			return View();
 		}
 
-		//
+		// 3.2.1.3.2 A Visitor will be able to create an account by using Google + authentication. 
 		// POST: /Account/Register
 		[HttpPost]
 		[AllowAnonymous]
@@ -168,12 +168,6 @@ namespace FundPortfolio.Controllers
 				if (result.Succeeded)
 				{
 					await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-
-					// For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-					// Send an email with this link
-					// string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-					// var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-					// await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
 					return RedirectToAction("Index", "Home");
 				}
@@ -329,7 +323,7 @@ namespace FundPortfolio.Controllers
 			return RedirectToAction("VerifyCode", new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
 		}
 
-		//
+		// 3.2.1.3.3 A Visitor will be able to become a User by signing in with Google+ authentication
 		// GET: /Account/ExternalLoginCallback
 		[AllowAnonymous]
 		public async Task<ActionResult> ExternalLoginCallback(string returnUrl)
@@ -353,6 +347,7 @@ namespace FundPortfolio.Controllers
 				case SignInStatus.Failure:
 				default:
 					// If the user does not have an account, create one
+					// 3.2.1.3.2 A Visitor will be able to create an account by using Google + authentication. 
 					var user = new UserProfile { UserName = loginInfo.Email, Email = loginInfo.Email };
 					var createResult = await UserManager.CreateAsync(user);
 					if (createResult.Succeeded)

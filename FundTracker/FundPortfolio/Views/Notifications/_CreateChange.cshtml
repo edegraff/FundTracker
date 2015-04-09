@@ -11,6 +11,7 @@
         @Html.Hidden("__type__", Model.GetType())
         @{Html.RenderAction("IndexFunds");}
 
+        @* 3.2.3.1 Users will be able to select specific mutual funds to be notified if they pass specified thresholds. (users can set a change threshhold here) *@
 		<div class="form-group">
 			@Html.LabelFor(model => model.ThresholdValue, htmlAttributes: new { @class = "control-label col-md-2" })
 			<div class="col-md-10">

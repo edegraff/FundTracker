@@ -21,6 +21,7 @@ namespace FundService
             {
                 foreach (var notification in db.Notifications)
                 {
+                    // 3.2.3.1 Users will be able to select specific mutual funds to be notified if they pass specified thresholds. (Checks if the threshhold has been exceeded and notifies correspondingly)
                     bool shouldNotify = notification.ShouldNotify(); // Avoid calculating twice.
                     if(shouldNotify && notification.IsEnabled)
                     {

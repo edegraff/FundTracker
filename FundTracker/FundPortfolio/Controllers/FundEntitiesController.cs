@@ -14,7 +14,8 @@ namespace FundPortfolio.Controllers
     {
         private DatabaseContext db = new DatabaseContext();
 
-        // GET: FundEntities
+		// 3.2.1.1.1 Visitor and Users will be able to select fund from the search to see the history of the performance.
+		// 3.2.1.2.1 Visitors and Users will be able to search for mutual funds by name
 		public ActionResult Index(String searchTerm)
         {
 			if (searchTerm == null)
@@ -24,13 +25,14 @@ namespace FundPortfolio.Controllers
 						 select fund).ToList());
         }
 
-		// GET: FundEntities/Details/5
+		// 3.2.1.1.1 Visitor and Users will be able to select fund from the search to see the history of the performance.
 		public ActionResult Details(string id)
 		{
 			if (id == null)
 			{
 				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			}
+			
 			FundEntity fundEntity = db.Funds.Find(id);
 			if (fundEntity == null)
 			{
