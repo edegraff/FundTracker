@@ -41,7 +41,6 @@ namespace FundService
 
         private void SendNotification(Notification notification)
         {
-            Console.WriteLine(notification.NotificationId);
             var smtp = new SmtpClient
             {
                 Host = "smtp.gmail.com",

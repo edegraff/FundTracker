@@ -15,7 +15,7 @@ namespace FundPortfolio.Tests
             //PopulateNotifications();
             ReadNotifications();
             FundService.Notifier notifier = new FundService.Notifier();
-            //notifier.Notify();
+            notifier.Notify();
         }
 
         public void PopulateNotifications()
@@ -58,7 +58,8 @@ namespace FundPortfolio.Tests
             {
                 foreach (var n in db.Notifications)
                 {
-                    Console.WriteLine(n.FundEntity.Name);
+                    Console.WriteLine(n.UserId);
+                    Console.WriteLine(n.UserProfile.Email);
                 }
             }
         }

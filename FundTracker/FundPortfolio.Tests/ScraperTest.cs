@@ -11,26 +11,17 @@ namespace FundPortfolio.Tests
         [TestMethod]
         public void TestScraper()
         {
-            //FundService.Scraper scraper = new FundService.Scraper("https://www.cibc.com/ca/rates/mutual-fund-rates.html");
-            //scraper.Scrape();
-            ReadFundData();
+            FundService.Scraper scraper = new FundService.Scraper("https://www.cibc.com/ca/rates/mutual-fund-rates.html");
+            scraper.Scrape();
+
+            Assert.IsTrue(scraper.date != null);
+            Assert.IsTrue(scraper.html != null);
+            Assert.IsTrue(scraper.html.Contains("html"));
+            Assert.IsTrue(scraper.ids != null);
+            Assert.IsTrue(scraper.ids.Length > 10);
+            Assert.IsTrue(scraper.funds != null);
+            Assert.IsTrue(scraper.funds.Count > 10);
         }
 
-        private void ReadFundData()
-        {
-            Console.WriteLine(DateTime.Now);
-            using (var db = new DatabaseContext())
-            {
-                var funds = db.Funds;
-                foreach (var f in funds)
-                {
-                    Console.WriteLine(f.Name);
-                    foreach (var fd in f.FundData)
-                    {
-                        Console.WriteLine(fd.Date + " -> " + fd.Value);
-                    }
-                }
-            }
-        }
     }
 }

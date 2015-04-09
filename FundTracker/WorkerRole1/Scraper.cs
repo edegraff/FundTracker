@@ -12,12 +12,13 @@ namespace FundService
 {
 	public class Scraper
 	{
-		private string url;
-		private string html;
-		private string[] ids;
-		private List<FundEntity> funds;
+        public string url { get; set; }
+        public string html { get; set; }
+        public string[] ids { get; set; }
+        public List<FundEntity> funds { get; set; }
+        public DateTime date { get; set; }
+
         private string[] exclusions = { "581", "482", "480", "580", "483", "583" };
-        private DateTime date;
         private Dictionary<String, int> months;
 
 		public Scraper(string url)
