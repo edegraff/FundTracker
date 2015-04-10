@@ -156,11 +156,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\FundEntitiesControllerTest.cs" />
+    <Compile Include="Controllers\NotificationsControllerTest.cs" />
     <Compile Include="Controllers\ReportControllerTest.cs" />
     <Compile Include="Controllers\UserTransactionsControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
-    <Compile Include="NotifierTest.cs" />
+    <Compile Include="NotificationsTest.cs" />
     <Compile Include="ScraperTest.cs" />
     <Compile Include="TestReport.cs" />
     <Compile Include="TestProjector.cs" />
