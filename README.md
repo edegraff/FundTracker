@@ -41,3 +41,19 @@ To create a database migration automatically after changing some model code
 For more information https://msdn.microsoft.com/en-ca/data/jj591621.aspx
 
 #### Publishing to Azure
+
+Note: Requires Azure account
+
+Cloud service:
+1. Right click on "FundCloudService" in solution explorer
+2. Select publish
+3. Log in to Microsoft Account
+4. Select cloud service or create new one
+5. Publish!
+
+Website:
+1. Right click on "FundPortfolio" in solution explorer
+2. Select publish
+3. Log in to Microsoft Account
+4. Select website or create new one
+5. Publish!
