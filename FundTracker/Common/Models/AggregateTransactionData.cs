@@ -56,6 +56,8 @@ namespace Common.Models
 
 		public void Calculate(IEnumerable<IFundData> unitList)
 		{
+			if (unitList.Count() == 0)
+				return;
 			unitList = unitList.OrderBy(tl => tl.Date);
 			var fundValueList = FundEntity.GetDataInRange(unitList.First().Date, DateTime.Today);
 
@@ -91,7 +93,7 @@ namespace Common.Models
 			}
 		}
 
-		private IEnumerable<IFundData> CalculateTotalPaidAndUnits(IEnumerable<IFundData> transactionData)
+		public IEnumerable<IFundData> CalculateTotalPaidAndUnits(IEnumerable<IFundData> transactionData)
 		{
 			var unitList = new List<FundData>();
 			foreach (var transaction in transactionData)

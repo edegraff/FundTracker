@@ -50,7 +50,8 @@ namespace FundPortfolio.Controllers
 		public ActionResult Create()
 		{
 			ViewBag.FundEntityId = new SelectList(db.Funds, "Id", "Name");
-			return View();
+
+			return View(new UserTransaction() { UserId = User.Identity.GetUserId() });
 		}
 
 		// POST: UserTransactions/Create
@@ -58,9 +59,8 @@ namespace FundPortfolio.Controllers
 		[ValidateAntiForgeryToken]
 		public ActionResult Create([Bind(Include = "UserTransactionId,UserId,FundEntityId,Date,Value")] UserTransaction userTransaction)
 		{
-			if (ModelState.IsValid)
+			if (ModelState.IsValid && userTransaction.UserId.Equals(User.Identity.GetUserId()))//Ensure they didn't try to hack and change user id on client side
 			{
-				userTransaction.UserProfile = db.Users.Find(User.Identity.GetUserId());
 				db.UserTransactions.Add(userTransaction);
 				db.SaveChanges();
 				return RedirectToAction("Index");
