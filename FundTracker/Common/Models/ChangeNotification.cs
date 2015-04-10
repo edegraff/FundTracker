@@ -31,7 +31,6 @@ namespace Common.Models
                 {
                     deltas.Add(this.FundEntity.CurrentValue - v);
                 }
-                return false;
             }
             if(IsPercent)
             {

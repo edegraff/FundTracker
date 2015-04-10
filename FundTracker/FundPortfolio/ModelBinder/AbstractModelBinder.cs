@@ -23,6 +23,7 @@ namespace FundPortfolio.ModelBinder
 		  ModelBindingContext bindingContext
 		)
 		{
+            
 			var providerResult =
 			bindingContext.ValueProvider.GetValue(_typeNameKey);
 
@@ -30,7 +31,12 @@ namespace FundPortfolio.ModelBinder
 			{
 				var modelTypeName = providerResult.AttemptedValue;
 
-				var modelType =
+                System.IO.StreamWriter file = new System.IO.StreamWriter("c:/Users/Evan DeGraff/type.txt");
+                file.WriteLine("Test: " + modelTypeName);
+
+                file.Close();
+
+				Type modelType =
 				  BuildManager.GetReferencedAssemblies()
 					.Cast<Assembly>()
 					.SelectMany(x => x.GetExportedTypes())
@@ -38,6 +44,16 @@ namespace FundPortfolio.ModelBinder
 					.Where(type => !type.IsAbstract).FirstOrDefault(type =>
 					  string.Equals(type.FullName, modelTypeName,
 						StringComparison.OrdinalIgnoreCase));
+
+                // Hacky fix to deal with proxy objects from the entity framework
+                if (modelTypeName.Contains("Change"))
+                {
+                    modelType = typeof(Common.Models.ChangeNotification);
+                }
+                else if (modelTypeName.Contains("Value"))
+                {
+                    modelType = typeof(Common.Models.ValueNotification);
+                }
 
 				if (modelType != null)
 				{

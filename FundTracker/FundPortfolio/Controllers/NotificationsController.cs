@@ -87,6 +87,7 @@ namespace FundPortfolio.Controllers
                 return HttpNotFound();
             }
             ViewBag.UserId = new SelectList(db.Users, "UserId", "Email", notification.UserId);
+
             return View(notification);
         }
 
