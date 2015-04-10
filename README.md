@@ -22,6 +22,7 @@ ECE 493 Capstone Project
 3. Select Debug>Start New Instance
 
 #### Tests
+View our Test Plan document, "Test Plan.doc", for information about our tests.
 1. Open Solution in Visual Studio
 2. Select Test > Windows > Test Explorer
 3. Select Run All in the newly opened window.
