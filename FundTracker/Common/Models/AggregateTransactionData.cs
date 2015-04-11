@@ -51,7 +51,7 @@ namespace Common.Models
 			FundEntity = fundEntity;
 			Units = 0;
 			TotalPaid = 0;
-			Calculate(CalculateTotalPaidAndUnits(transactionList));
+			Calculate(CalculateTotalPaidAndUnits(transactionList.OrderBy(ut => ut.Date) ));
 		}
 
 		public void Calculate(IEnumerable<IFundData> unitList)
